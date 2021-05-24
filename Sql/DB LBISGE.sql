@@ -1,3 +1,4 @@
+--Prueba
 --Creación de la base de datos.
 create database LBISGE1
 --Hacemos uso de la DB para la creación de tablas.
