@@ -40,8 +40,7 @@ namespace LBISGE
             toolTip1.SetToolTip(this.btnModificar, "Actualizar");
             //FillCombo();
 
-            r.showArea(dgvArea, IDareaColumn, NombreAreaColumn, NombreEdificioColumn);
-            r.getAreaList("st_getEdificioList", edificioCb, "NombreEdificio", "IDedificio");
+            r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
 
             //label5.Text = this.edificioCb.GetItemText(this.edificioCb.SelectedItem);
             //label5.Text = this.edificioCb.SelectedItem.ToString();
@@ -53,9 +52,8 @@ namespace LBISGE
         {
             if (IDareaTxt.Text == "") { IDareaErrorLbl.Visible = true; } else { IDareaErrorLbl.Visible = false; }
             if (nombreAreaTxt.Text == "") { nombreAreaErrorLbl.Visible = true; } else { nombreAreaErrorLbl.Visible = false; }
-            if (edificioCb.Text == "") { edificioErrorLbl.Visible = true; } else { edificioErrorLbl.Visible = false; }
 
-            if (IDareaErrorLbl.Visible || nombreAreaErrorLbl.Visible || edificioErrorLbl.Visible)
+            if (IDareaErrorLbl.Visible || nombreAreaErrorLbl.Visible)
             {
                 MainClass.ShowMSG("Campos con * son obligatorios", "stop", "Error");
             }
@@ -63,7 +61,7 @@ namespace LBISGE
             {
                 DBinsert i = new DBinsert();
                 //i.insertArea(IDareaTxt.Text, nombreAreaTxt.Text, selectIDfromCb());
-                r.showArea(dgvArea, IDareaColumn, NombreAreaColumn, NombreEdificioColumn);
+                r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
                 //show gv
             }
         }
@@ -123,9 +121,8 @@ namespace LBISGE
             //Validacion de los campos para que no queden vacios, usando el asterisco rojo
             if (IDareaTxt.Text == "") { IDareaErrorLbl.Visible = true; } else { IDareaErrorLbl.Visible = false; }
             if (nombreAreaTxt.Text == "") { nombreAreaErrorLbl.Visible = true; } else { nombreAreaErrorLbl.Visible = false; }
-            if (edificioCb.Text == "") { edificioErrorLbl.Visible = true; } else { edificioErrorLbl.Visible = false; }
 
-            if (IDareaErrorLbl.Visible || nombreAreaErrorLbl.Visible || edificioErrorLbl.Visible)
+            if (IDareaErrorLbl.Visible || nombreAreaErrorLbl.Visible)
             {
                 MainClass.ShowMSG("Campos con * son obligatorios", "stop", "Error");
             }
