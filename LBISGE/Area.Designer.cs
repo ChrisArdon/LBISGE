@@ -53,7 +53,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.IDareaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreAreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreEdificioColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArea)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -110,8 +109,7 @@
             this.dgvArea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArea.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDareaColumn,
-            this.NombreAreaColumn,
-            this.NombreEdificioColumn});
+            this.NombreAreaColumn});
             this.dgvArea.Location = new System.Drawing.Point(25, 115);
             this.dgvArea.Name = "dgvArea";
             this.dgvArea.ReadOnly = true;
@@ -297,12 +295,6 @@
             this.NombreAreaColumn.Name = "NombreAreaColumn";
             this.NombreAreaColumn.ReadOnly = true;
             // 
-            // NombreEdificioColumn
-            // 
-            this.NombreEdificioColumn.HeaderText = "Edificio";
-            this.NombreEdificioColumn.Name = "NombreEdificioColumn";
-            this.NombreEdificioColumn.ReadOnly = true;
-            // 
             // Area
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +344,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDareaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreAreaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreEdificioColumn;
     }
 }

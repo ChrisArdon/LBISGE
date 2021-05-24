@@ -69,7 +69,7 @@ namespace LBISGE
             }
         }
 
-        public void showArea(DataGridView gv, DataGridViewColumn IDareaGv, DataGridViewColumn NombreAreaGv, DataGridViewColumn NombreEdificio, string data = null) 
+        public void showArea(DataGridView gv, DataGridViewColumn IDareaGv, DataGridViewColumn NombreAreaGv, string data = null) 
         {
             try
             {
@@ -80,7 +80,7 @@ namespace LBISGE
                 }
                 else
                 {
-                    cmd = new SqlCommand("pr_getEdificioDataLIKE", MainClass.con);
+                    cmd = new SqlCommand("falta...", MainClass.con);
                     cmd.Parameters.AddWithValue("@data", data);
                 }
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -89,7 +89,7 @@ namespace LBISGE
                 da.Fill(dt);
                 IDareaGv.DataPropertyName = dt.Columns["ID"].ToString();
                 NombreAreaGv.DataPropertyName = dt.Columns["Nombre"].ToString();
-                NombreEdificio.DataPropertyName = dt.Columns["IDedificio"].ToString();
+                
 
                 gv.DataSource = dt;
             }
@@ -99,6 +99,7 @@ namespace LBISGE
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
+        //Uso en futuro formulario....
         public void getAreaList(string proceso, ComboBox cb, string displayMember, string valueMember) 
         {
             try
