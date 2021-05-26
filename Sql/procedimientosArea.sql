@@ -29,3 +29,14 @@ a.NombreDeArea as 'Nombre'
 --a.ID_edificio as 'IDedificio'
 from Areas a
 order by a.NombreDeArea asc
+
+--Busqueda
+create procedure pr_getAreaDataLIKE
+@data varchar (50)
+as 
+select
+a.ID_area as 'ID',
+a.NombreDeArea as 'Nombre_area'
+from Areas a
+where a.NombreDeArea like '%'+@data+'%'
+order by a.NombreDeArea asc
