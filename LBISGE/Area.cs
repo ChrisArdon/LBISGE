@@ -140,6 +140,7 @@ namespace LBISGE
             if (e.RowIndex != -1)
             {
                 DataGridViewRow row = dgvArea.Rows[e.RowIndex];
+                AreaID = row.Cells["IDareaColumn"].Value.ToString();
                 IDareaTxt.Text = row.Cells["IDareaColumn"].Value.ToString();
                 nombreAreaTxt.Text = row.Cells["NombreAreaColumn"].Value.ToString();
                 IDareaTxt.Enabled = false;
@@ -154,6 +155,17 @@ namespace LBISGE
             }
             else
             {
+                r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Esta seguro de eliminar registro?", "...?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                DBdelete d = new DBdelete();
+                d.delete(AreaID, "pr_deleteArea", "@IDareaPr");
                 r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
             }
         }
