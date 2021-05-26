@@ -169,5 +169,12 @@ namespace LBISGE
                 r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
             }
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            IDareaTxt.Text = "";
+            nombreAreaTxt.Text = "";
+        }
     }
 }
