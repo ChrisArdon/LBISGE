@@ -145,5 +145,17 @@ namespace LBISGE
                 IDareaTxt.Enabled = false;
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                r.showArea(dgvArea, IDareaColumn, NombreAreaColumn, textBox1.Text);
+            }
+            else
+            {
+                r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
+            }
+        }
     }
 }

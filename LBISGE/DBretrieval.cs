@@ -80,7 +80,7 @@ namespace LBISGE
                 }
                 else
                 {
-                    cmd = new SqlCommand("falta...", MainClass.con);
+                    cmd = new SqlCommand("pr_getAreaDataLIKE", MainClass.con);
                     cmd.Parameters.AddWithValue("@data", data);
                 }
                 cmd.CommandType = CommandType.StoredProcedure;

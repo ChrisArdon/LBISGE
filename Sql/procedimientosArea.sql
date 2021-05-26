@@ -36,7 +36,7 @@ create procedure pr_getAreaDataLIKE
 as 
 select
 a.ID_area as 'ID',
-a.NombreDeArea as 'Nombre_area'
+a.NombreDeArea as 'Nombre'
 from Areas a
 where a.NombreDeArea like '%'+@data+'%'
 order by a.NombreDeArea asc
