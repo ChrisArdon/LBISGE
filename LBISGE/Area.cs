@@ -130,7 +130,8 @@ namespace LBISGE
             else
             {
                 DBupdate u = new DBupdate();
-                //Falta...
+                u.updateArea(IDareaTxt.Text, nombreAreaTxt.Text);
+                r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
             }
         }
 
@@ -141,6 +142,7 @@ namespace LBISGE
                 DataGridViewRow row = dgvArea.Rows[e.RowIndex];
                 IDareaTxt.Text = row.Cells["IDareaColumn"].Value.ToString();
                 nombreAreaTxt.Text = row.Cells["NombreAreaColumn"].Value.ToString();
+                IDareaTxt.Enabled = false;
             }
         }
     }

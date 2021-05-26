@@ -31,5 +31,26 @@ namespace LBISGE
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
+        public void updateArea(string ID_area, string nombre_area)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("pr_updateArea", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@IDareapr", ID_area);
+                cmd.Parameters.AddWithValue("@nombreAreapr", nombre_area);
+
+                MainClass.con.Open();
+                cmd.ExecuteNonQuery();
+                MainClass.con.Close();
+                MainClass.ShowMSG(nombre_area + " a sido modificada correctamente", "Modificado...", "Success");
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
     }
 }

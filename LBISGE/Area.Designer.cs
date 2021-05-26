@@ -36,20 +36,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvArea = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.edificioCb = new System.Windows.Forms.ComboBox();
             this.nombreAreaTxt = new System.Windows.Forms.TextBox();
             this.IDareaTxt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.IDareaErrorLbl = new System.Windows.Forms.Label();
             this.nombreAreaErrorLbl = new System.Windows.Forms.Label();
-            this.edificioErrorLbl = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.IDareaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreAreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,20 +117,16 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.btnGuardar);
             this.groupBox2.Controls.Add(this.btnLimpiar);
             this.groupBox2.Controls.Add(this.btnEliminar);
             this.groupBox2.Controls.Add(this.btnModificar);
-            this.groupBox2.Controls.Add(this.edificioCb);
             this.groupBox2.Controls.Add(this.nombreAreaTxt);
             this.groupBox2.Controls.Add(this.IDareaTxt);
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.IDareaErrorLbl);
             this.groupBox2.Controls.Add(this.nombreAreaErrorLbl);
-            this.groupBox2.Controls.Add(this.edificioErrorLbl);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(476, 26);
             this.groupBox2.Name = "groupBox2";
@@ -143,16 +135,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar, Modificar o Eliminar";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(41, 239);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 17);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "label5";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnGuardar
             // 
@@ -201,41 +183,24 @@
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // edificioCb
-            // 
-            this.edificioCb.FormattingEnabled = true;
-            this.edificioCb.Location = new System.Drawing.Point(141, 182);
-            this.edificioCb.Name = "edificioCb";
-            this.edificioCb.Size = new System.Drawing.Size(149, 25);
-            this.edificioCb.TabIndex = 5;
-            // 
             // nombreAreaTxt
             // 
-            this.nombreAreaTxt.Location = new System.Drawing.Point(141, 129);
+            this.nombreAreaTxt.Location = new System.Drawing.Point(141, 165);
             this.nombreAreaTxt.Name = "nombreAreaTxt";
             this.nombreAreaTxt.Size = new System.Drawing.Size(149, 22);
             this.nombreAreaTxt.TabIndex = 4;
             // 
             // IDareaTxt
             // 
-            this.IDareaTxt.Location = new System.Drawing.Point(141, 76);
+            this.IDareaTxt.Location = new System.Drawing.Point(141, 112);
             this.IDareaTxt.Name = "IDareaTxt";
             this.IDareaTxt.Size = new System.Drawing.Size(149, 22);
             this.IDareaTxt.TabIndex = 3;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 182);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Edificio :";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 129);
+            this.label3.Location = new System.Drawing.Point(22, 165);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 17);
             this.label3.TabIndex = 1;
@@ -244,7 +209,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 81);
+            this.label2.Location = new System.Drawing.Point(22, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 0;
@@ -255,7 +220,7 @@
             this.IDareaErrorLbl.AutoSize = true;
             this.IDareaErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDareaErrorLbl.ForeColor = System.Drawing.Color.Red;
-            this.IDareaErrorLbl.Location = new System.Drawing.Point(288, 78);
+            this.IDareaErrorLbl.Location = new System.Drawing.Point(288, 114);
             this.IDareaErrorLbl.Name = "IDareaErrorLbl";
             this.IDareaErrorLbl.Size = new System.Drawing.Size(16, 21);
             this.IDareaErrorLbl.TabIndex = 17;
@@ -266,22 +231,11 @@
             this.nombreAreaErrorLbl.AutoSize = true;
             this.nombreAreaErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreAreaErrorLbl.ForeColor = System.Drawing.Color.Red;
-            this.nombreAreaErrorLbl.Location = new System.Drawing.Point(288, 132);
+            this.nombreAreaErrorLbl.Location = new System.Drawing.Point(288, 168);
             this.nombreAreaErrorLbl.Name = "nombreAreaErrorLbl";
             this.nombreAreaErrorLbl.Size = new System.Drawing.Size(16, 21);
             this.nombreAreaErrorLbl.TabIndex = 19;
             this.nombreAreaErrorLbl.Text = "*";
-            // 
-            // edificioErrorLbl
-            // 
-            this.edificioErrorLbl.AutoSize = true;
-            this.edificioErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edificioErrorLbl.ForeColor = System.Drawing.Color.Red;
-            this.edificioErrorLbl.Location = new System.Drawing.Point(288, 186);
-            this.edificioErrorLbl.Name = "edificioErrorLbl";
-            this.edificioErrorLbl.Size = new System.Drawing.Size(16, 21);
-            this.edificioErrorLbl.TabIndex = 20;
-            this.edificioErrorLbl.Text = "*";
             // 
             // IDareaColumn
             // 
@@ -328,10 +282,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvArea;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox edificioCb;
         private System.Windows.Forms.TextBox nombreAreaTxt;
         private System.Windows.Forms.TextBox IDareaTxt;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnModificar;
@@ -341,8 +293,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label IDareaErrorLbl;
         private System.Windows.Forms.Label nombreAreaErrorLbl;
-        private System.Windows.Forms.Label edificioErrorLbl;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDareaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreAreaColumn;
     }
