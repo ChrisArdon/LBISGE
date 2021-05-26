@@ -33,7 +33,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtSubsistemaBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvSubsistema = new System.Windows.Forms.DataGridView();
             this.Modificar = new System.Windows.Forms.GroupBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -45,9 +44,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.dgvSubsistema = new System.Windows.Forms.DataGridView();
+            this.IDareaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreAreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSubsistema)).BeginInit();
             this.Modificar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubsistema)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -79,14 +81,6 @@
             this.label1.Size = new System.Drawing.Size(82, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Subsistema :";
-            // 
-            // dgvSubsistema
-            // 
-            this.dgvSubsistema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSubsistema.Location = new System.Drawing.Point(42, 121);
-            this.dgvSubsistema.Name = "dgvSubsistema";
-            this.dgvSubsistema.Size = new System.Drawing.Size(323, 297);
-            this.dgvSubsistema.TabIndex = 1;
             // 
             // Modificar
             // 
@@ -198,15 +192,47 @@
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // dgvSubsistema
+            // 
+            this.dgvSubsistema.AllowUserToAddRows = false;
+            this.dgvSubsistema.AllowUserToDeleteRows = false;
+            this.dgvSubsistema.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSubsistema.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSubsistema.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSubsistema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSubsistema.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDareaColumn,
+            this.NombreAreaColumn});
+            this.dgvSubsistema.Location = new System.Drawing.Point(12, 109);
+            this.dgvSubsistema.Name = "dgvSubsistema";
+            this.dgvSubsistema.ReadOnly = true;
+            this.dgvSubsistema.RowHeadersVisible = false;
+            this.dgvSubsistema.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSubsistema.Size = new System.Drawing.Size(373, 331);
+            this.dgvSubsistema.TabIndex = 7;
+            // 
+            // IDareaColumn
+            // 
+            this.IDareaColumn.HeaderText = "IDarea";
+            this.IDareaColumn.Name = "IDareaColumn";
+            this.IDareaColumn.ReadOnly = true;
+            this.IDareaColumn.Visible = false;
+            // 
+            // NombreAreaColumn
+            // 
+            this.NombreAreaColumn.HeaderText = "Nombre del Area";
+            this.NombreAreaColumn.Name = "NombreAreaColumn";
+            this.NombreAreaColumn.ReadOnly = true;
+            // 
             // Subsistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(830, 509);
+            this.Controls.Add(this.dgvSubsistema);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.Modificar);
-            this.Controls.Add(this.dgvSubsistema);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Subsistema";
@@ -215,9 +241,9 @@
             this.Load += new System.EventHandler(this.Subsistema_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSubsistema)).EndInit();
             this.Modificar.ResumeLayout(false);
             this.Modificar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubsistema)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,7 +253,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtSubsistemaBusqueda;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvSubsistema;
         private System.Windows.Forms.GroupBox Modificar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -239,6 +264,9 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridView dgvSubsistema;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDareaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreAreaColumn;
     }
 }
 
