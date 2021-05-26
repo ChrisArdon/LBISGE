@@ -15,6 +15,7 @@ namespace LBISGE
     public partial class Area : Form
     {
         DBretrieval r = new DBretrieval();
+        string AreaID;
         public Area()
         {
             InitializeComponent();
@@ -60,7 +61,7 @@ namespace LBISGE
             else
             {
                 DBinsert i = new DBinsert();
-                //i.insertArea(IDareaTxt.Text, nombreAreaTxt.Text, selectIDfromCb());
+                i.insertArea(IDareaTxt.Text, nombreAreaTxt.Text);
                 r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
                 //show gv
             }
@@ -130,6 +131,16 @@ namespace LBISGE
             {
                 DBupdate u = new DBupdate();
                 //Falta...
+            }
+        }
+
+        private void dgvArea_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow row = dgvArea.Rows[e.RowIndex];
+                IDareaTxt.Text = row.Cells["IDareaColumn"].Value.ToString();
+                nombreAreaTxt.Text = row.Cells["NombreAreaColumn"].Value.ToString();
             }
         }
     }
