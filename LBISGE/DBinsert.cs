@@ -34,7 +34,7 @@ namespace LBISGE
             }
         }
 
-        public void insertArea(string ID_area, string nombre_area, string ID_edificio)
+        public void insertArea(string ID_area, string nombre_area)
         {
             try
             {
@@ -43,7 +43,6 @@ namespace LBISGE
 
                 cmd.Parameters.AddWithValue("@IDareapr", ID_area);
                 cmd.Parameters.AddWithValue("@nombreAreapr", nombre_area);
-                cmd.Parameters.AddWithValue("@IDedificioPr", ID_edificio);
 
                 MainClass.con.Open();
                 cmd.ExecuteNonQuery();
