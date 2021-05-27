@@ -38,3 +38,10 @@ from Subsistema s
 where
 s.NombreDeSubsistema like '%'+@data+'%'
 order by s.NombreDeSubsistema asc
+
+create procedure st_getSubsistemaList
+as
+select s.ID_subsistema as 'IDsubsistema',
+s.NombreDeSubsistema as 'NombreSubsistema'
+from Subsistema s
+order by s.NombreDeSubsistema asc

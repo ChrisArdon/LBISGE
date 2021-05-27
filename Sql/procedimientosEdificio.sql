@@ -47,3 +47,11 @@ select e.ID_edificio as 'IDedificio',
 e.NombreDeEdificio as 'NombreEdificio'
 from Edificios e
 order by e.NombreDeEdificio asc
+
+--Para llenar cualquier combobox
+create procedure st_getEdificioList
+as
+select e.ID_edificio as 'IDedificio',
+e.NombreDeEdificio as 'NombreEdificio'
+from Edificios e
+order by e.NombreDeEdificio asc

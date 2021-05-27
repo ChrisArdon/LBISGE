@@ -40,3 +40,10 @@ a.NombreDeArea as 'Nombre'
 from Areas a
 where a.NombreDeArea like '%'+@data+'%'
 order by a.NombreDeArea asc
+
+create procedure st_getAreaList
+as
+select a.ID_area as 'IDarea',
+a.NombreDeArea as 'NombreArea'
+from Areas a
+order by a.NombreDeArea asc
