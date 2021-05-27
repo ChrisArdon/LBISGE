@@ -12,6 +12,7 @@ namespace LBISGE
 {
     public partial class InformaciónArea : Form
     {
+        DBretrieval r = new DBretrieval();
         public InformaciónArea()
         {
             InitializeComponent();
@@ -45,6 +46,10 @@ namespace LBISGE
             toolTip1.SetToolTip(this.btnLimpiar, "Limpiar Campos");
             toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
             toolTip1.SetToolTip(this.btnModificar, "Actualizar");
+
+            r.getEdificioList("st_getEdificioList", cbEdificio, "NombreEdificio", "IDedificio");
+            r.getAreaList("st_getAreaList", cbArea, "NombreArea", "IDarea");
+            r.getSubsistemaList("st_getSubsistemaList", cbSubsistema, "NombreSubsistema", "IDsubsistema");
         }
     }
 }

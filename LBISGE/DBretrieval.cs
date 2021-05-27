@@ -68,6 +68,29 @@ namespace LBISGE
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
+        public void getEdificioList(string proceso, ComboBox cb, string displayMember, string valueMember)
+        {
+            try
+            {
+                cb.Items.Clear();
+                cb.DataSource = null;
+                cb.Items.Insert(0, "Seleccionar...");
+
+                SqlCommand cmd = new SqlCommand(proceso, MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cb.DataSource = dt;
+                cb.DisplayMember = displayMember; //nombre del edificio
+                cb.ValueMember = valueMember; //ID del edificio
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
 
         public void showArea(DataGridView gv, DataGridViewColumn IDareaGv, DataGridViewColumn NombreAreaGv, string data = null) 
         {
@@ -114,8 +137,8 @@ namespace LBISGE
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 cb.DataSource = dt;
-                cb.DisplayMember = displayMember; //nombre del edificio
-                cb.ValueMember = valueMember; //ID del edificio
+                cb.DisplayMember = displayMember; //nombre del area
+                cb.ValueMember = valueMember; //ID del area
             }
             catch (Exception ex)
             {
@@ -146,6 +169,29 @@ namespace LBISGE
 
 
                 gv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
+        public void getSubsistemaList(string proceso, ComboBox cb, string displayMember, string valueMember)
+        {
+            try
+            {
+                cb.Items.Clear();
+                cb.DataSource = null;
+                cb.Items.Insert(0, "Seleccionar...");
+
+                SqlCommand cmd = new SqlCommand(proceso, MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cb.DataSource = dt;
+                cb.DisplayMember = displayMember; //nombre del subsistema
+                cb.ValueMember = valueMember; //ID del subsistema
             }
             catch (Exception ex)
             {
