@@ -12,6 +12,7 @@ namespace LBISGE
 {
     public partial class Subsistema : Form
     {
+        DBretrieval r = new DBretrieval();
         public Subsistema()
         {
             InitializeComponent();
@@ -35,6 +36,8 @@ namespace LBISGE
             toolTip1.SetToolTip(this.btnLimpiar, "Limpiar Campos");
             toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
             toolTip1.SetToolTip(this.btnModificar, "Actualizar");
+
+            r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -50,7 +53,7 @@ namespace LBISGE
             {
                 DBinsert i = new DBinsert();
                 i.insertSubsistema(txtID_Subsistema.Text, txtSubsistema.Text);
-                //show gv
+                r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
             }
         }
     }

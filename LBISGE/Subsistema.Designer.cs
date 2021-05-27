@@ -45,10 +45,10 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dgvSubsistema = new System.Windows.Forms.DataGridView();
-            this.IDareaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreAreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDsubsistemaErrorLbl = new System.Windows.Forms.Label();
             this.nombreSubsistemaErrorLbl = new System.Windows.Forms.Label();
+            this.IDsubsistemaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreSubsistemaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.Modificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubsistema)).BeginInit();
@@ -206,8 +206,8 @@
             this.dgvSubsistema.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSubsistema.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSubsistema.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDareaColumn,
-            this.NombreAreaColumn});
+            this.IDsubsistemaColumn,
+            this.NombreSubsistemaColumn});
             this.dgvSubsistema.Location = new System.Drawing.Point(12, 109);
             this.dgvSubsistema.Name = "dgvSubsistema";
             this.dgvSubsistema.ReadOnly = true;
@@ -215,19 +215,6 @@
             this.dgvSubsistema.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSubsistema.Size = new System.Drawing.Size(373, 331);
             this.dgvSubsistema.TabIndex = 7;
-            // 
-            // IDareaColumn
-            // 
-            this.IDareaColumn.HeaderText = "IDarea";
-            this.IDareaColumn.Name = "IDareaColumn";
-            this.IDareaColumn.ReadOnly = true;
-            this.IDareaColumn.Visible = false;
-            // 
-            // NombreAreaColumn
-            // 
-            this.NombreAreaColumn.HeaderText = "Nombre del Area";
-            this.NombreAreaColumn.Name = "NombreAreaColumn";
-            this.NombreAreaColumn.ReadOnly = true;
             // 
             // IDsubsistemaErrorLbl
             // 
@@ -250,6 +237,19 @@
             this.nombreSubsistemaErrorLbl.Size = new System.Drawing.Size(16, 21);
             this.nombreSubsistemaErrorLbl.TabIndex = 19;
             this.nombreSubsistemaErrorLbl.Text = "*";
+            // 
+            // IDsubsistemaColumn
+            // 
+            this.IDsubsistemaColumn.HeaderText = "IDsubsistema";
+            this.IDsubsistemaColumn.Name = "IDsubsistemaColumn";
+            this.IDsubsistemaColumn.ReadOnly = true;
+            this.IDsubsistemaColumn.Visible = false;
+            // 
+            // NombreSubsistemaColumn
+            // 
+            this.NombreSubsistemaColumn.HeaderText = "Subsistema";
+            this.NombreSubsistemaColumn.Name = "NombreSubsistemaColumn";
+            this.NombreSubsistemaColumn.ReadOnly = true;
             // 
             // Subsistema
             // 
@@ -292,10 +292,10 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridView dgvSubsistema;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDareaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreAreaColumn;
         private System.Windows.Forms.Label IDsubsistemaErrorLbl;
         private System.Windows.Forms.Label nombreSubsistemaErrorLbl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDsubsistemaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreSubsistemaColumn;
     }
 }
 

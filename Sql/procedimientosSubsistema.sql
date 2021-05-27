@@ -18,10 +18,11 @@ create procedure pr_deleteSubsistema
 @IDsubsistemaPr varchar(10) 
 as delete from Subsistema where ID_subsistema = @IDsubsistemaPr
 
+--Obtener Data
 create procedure pr_getSubsistemaData
 as
 select 
 s.ID_subsistema as 'ID',
-s.ID_subsistema as 'Nombre'
+s.NombreDeSubsistema as 'Nombre'
 from Subsistema s
 order by s.NombreDeSubsistema asc

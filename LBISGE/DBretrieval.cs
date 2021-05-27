@@ -123,6 +123,36 @@ namespace LBISGE
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
+        public void showSubsistema(DataGridView gv, DataGridViewColumn IDsubsistemaGv, DataGridViewColumn NombresubsistemaGv, string data = null)
+        {
+            try
+            {
+                SqlCommand cmd;
+                if (data == null)
+                {
+                    cmd = new SqlCommand("pr_getSubsistemaData", MainClass.con);
+                }
+                else
+                {
+                    cmd = new SqlCommand("pr_getAreaDataLIKE", MainClass.con);
+                    cmd.Parameters.AddWithValue("@data", data);
+                }
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                IDsubsistemaGv.DataPropertyName = dt.Columns["ID"].ToString();
+                NombresubsistemaGv.DataPropertyName = dt.Columns["Nombre"].ToString();
+
+
+                gv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
 
     }
 }
