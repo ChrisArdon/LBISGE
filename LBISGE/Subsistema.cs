@@ -104,5 +104,17 @@ namespace LBISGE
             txtSubsistema.Text = "";
             txtID_Subsistema.Enabled = true;
         }
+
+        private void txtSubsistemaBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSubsistemaBusqueda.Text != "")
+            {
+                r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn, txtSubsistemaBusqueda.Text);
+            }
+            else
+            {
+                r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
+            }
+        }
     }
 }

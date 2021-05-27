@@ -73,6 +73,7 @@
             this.txtSubsistemaBusqueda.Name = "txtSubsistemaBusqueda";
             this.txtSubsistemaBusqueda.Size = new System.Drawing.Size(196, 22);
             this.txtSubsistemaBusqueda.TabIndex = 1;
+            this.txtSubsistemaBusqueda.TextChanged += new System.EventHandler(this.txtSubsistemaBusqueda_TextChanged);
             // 
             // label1
             // 
