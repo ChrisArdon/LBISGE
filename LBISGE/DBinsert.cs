@@ -55,5 +55,26 @@ namespace LBISGE
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
+        public void insertSubsistema(string ID_subsistema, string nombre_subsistema)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("pr_insertSubsistema", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@IDsubsistemaPr", ID_subsistema);
+                cmd.Parameters.AddWithValue("@NombreSubsistemaPr", nombre_subsistema);
+
+                MainClass.con.Open();
+                cmd.ExecuteNonQuery();
+                MainClass.con.Close();
+                MainClass.ShowMSG("Subsistema añadido correctamente", "Guardado...", "Success");
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
     }
 }

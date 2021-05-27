@@ -47,6 +47,8 @@
             this.dgvSubsistema = new System.Windows.Forms.DataGridView();
             this.IDareaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreAreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDsubsistemaErrorLbl = new System.Windows.Forms.Label();
+            this.nombreSubsistemaErrorLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.Modificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubsistema)).BeginInit();
@@ -92,6 +94,8 @@
             this.Modificar.Controls.Add(this.txtID_Subsistema);
             this.Modificar.Controls.Add(this.label3);
             this.Modificar.Controls.Add(this.label2);
+            this.Modificar.Controls.Add(this.IDsubsistemaErrorLbl);
+            this.Modificar.Controls.Add(this.nombreSubsistemaErrorLbl);
             this.Modificar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Modificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Modificar.Location = new System.Drawing.Point(402, 44);
@@ -112,6 +116,7 @@
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "    ";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnLimpiar
             // 
@@ -224,6 +229,28 @@
             this.NombreAreaColumn.Name = "NombreAreaColumn";
             this.NombreAreaColumn.ReadOnly = true;
             // 
+            // IDsubsistemaErrorLbl
+            // 
+            this.IDsubsistemaErrorLbl.AutoSize = true;
+            this.IDsubsistemaErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDsubsistemaErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.IDsubsistemaErrorLbl.Location = new System.Drawing.Point(371, 44);
+            this.IDsubsistemaErrorLbl.Name = "IDsubsistemaErrorLbl";
+            this.IDsubsistemaErrorLbl.Size = new System.Drawing.Size(16, 21);
+            this.IDsubsistemaErrorLbl.TabIndex = 18;
+            this.IDsubsistemaErrorLbl.Text = "*";
+            // 
+            // nombreSubsistemaErrorLbl
+            // 
+            this.nombreSubsistemaErrorLbl.AutoSize = true;
+            this.nombreSubsistemaErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreSubsistemaErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.nombreSubsistemaErrorLbl.Location = new System.Drawing.Point(371, 92);
+            this.nombreSubsistemaErrorLbl.Name = "nombreSubsistemaErrorLbl";
+            this.nombreSubsistemaErrorLbl.Size = new System.Drawing.Size(16, 21);
+            this.nombreSubsistemaErrorLbl.TabIndex = 19;
+            this.nombreSubsistemaErrorLbl.Text = "*";
+            // 
             // Subsistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +294,8 @@
         private System.Windows.Forms.DataGridView dgvSubsistema;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDareaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreAreaColumn;
+        private System.Windows.Forms.Label IDsubsistemaErrorLbl;
+        private System.Windows.Forms.Label nombreSubsistemaErrorLbl;
     }
 }
 
