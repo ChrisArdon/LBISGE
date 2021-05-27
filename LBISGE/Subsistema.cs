@@ -13,6 +13,7 @@ namespace LBISGE
     public partial class Subsistema : Form
     {
         DBretrieval r = new DBretrieval();
+        string subsistemaID;
         public Subsistema()
         {
             InitializeComponent();
@@ -54,6 +55,18 @@ namespace LBISGE
                 DBinsert i = new DBinsert();
                 i.insertSubsistema(txtID_Subsistema.Text, txtSubsistema.Text);
                 r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
+            }
+        }
+
+        private void dgvSubsistema_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow row = dgvSubsistema.Rows[e.RowIndex];
+                subsistemaID = row.Cells["IDsubsistemaColumn"].Value.ToString();
+                txtID_Subsistema.Text = row.Cells["IDsubsistemaColumn"].Value.ToString();
+                txtSubsistema.Text = row.Cells["NombreSubsistemaColumn"].Value.ToString();
+                txtID_Subsistema.Enabled = false;
             }
         }
     }

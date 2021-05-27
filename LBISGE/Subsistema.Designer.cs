@@ -215,6 +215,7 @@
             this.dgvSubsistema.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSubsistema.Size = new System.Drawing.Size(373, 331);
             this.dgvSubsistema.TabIndex = 7;
+            this.dgvSubsistema.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubsistema_CellClick);
             // 
             // IDsubsistemaErrorLbl
             // 
