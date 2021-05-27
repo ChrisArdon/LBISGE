@@ -86,5 +86,16 @@ namespace LBISGE
                 r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Esta seguro de eliminar registro?", "...?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                DBdelete d = new DBdelete();
+                d.delete(subsistemaID, "pr_deleteSubsistema", "@IDsubsistemaPr");
+                r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
+            }
+        }
     }
 }
