@@ -26,3 +26,15 @@ s.ID_subsistema as 'ID',
 s.NombreDeSubsistema as 'Nombre'
 from Subsistema s
 order by s.NombreDeSubsistema asc
+
+--Busqueda
+create procedure pr_getSubsistemaDataLIKE
+@data varchar(50)
+as
+select 
+s.ID_subsistema as 'ID',
+s.NombreDeSubsistema as 'Nombre'
+from Subsistema s
+where
+s.NombreDeSubsistema like '%'+@data+'%'
+order by s.NombreDeSubsistema asc

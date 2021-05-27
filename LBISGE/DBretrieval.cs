@@ -134,7 +134,7 @@ namespace LBISGE
                 }
                 else
                 {
-                    cmd = new SqlCommand("pr_getAreaDataLIKE", MainClass.con);
+                    cmd = new SqlCommand("pr_getSubsistemaDataLIKE", MainClass.con);
                     cmd.Parameters.AddWithValue("@data", data);
                 }
                 cmd.CommandType = CommandType.StoredProcedure;
