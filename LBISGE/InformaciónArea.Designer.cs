@@ -162,6 +162,8 @@
             // 
             // cbSubsistema
             // 
+            this.cbSubsistema.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbSubsistema.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbSubsistema.FormattingEnabled = true;
             this.cbSubsistema.Location = new System.Drawing.Point(168, 103);
             this.cbSubsistema.Name = "cbSubsistema";
@@ -179,6 +181,8 @@
             // 
             // cbArea
             // 
+            this.cbArea.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbArea.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbArea.FormattingEnabled = true;
             this.cbArea.Location = new System.Drawing.Point(168, 72);
             this.cbArea.Name = "cbArea";
@@ -196,6 +200,8 @@
             // 
             // cbEdificio
             // 
+            this.cbEdificio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbEdificio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbEdificio.FormattingEnabled = true;
             this.cbEdificio.Location = new System.Drawing.Point(168, 41);
             this.cbEdificio.Name = "cbEdificio";

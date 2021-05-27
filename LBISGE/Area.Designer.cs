@@ -35,6 +35,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvArea = new System.Windows.Forms.DataGridView();
+            this.IDareaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreAreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -47,8 +49,14 @@
             this.IDareaErrorLbl = new System.Windows.Forms.Label();
             this.nombreAreaErrorLbl = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.IDareaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreAreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_LargoArea = new System.Windows.Forms.TextBox();
+            this.txt_AnchoArea = new System.Windows.Forms.TextBox();
+            this.txt_AreaT = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArea)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -116,8 +124,29 @@
             this.dgvArea.TabIndex = 6;
             this.dgvArea.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArea_CellClick);
             // 
+            // IDareaColumn
+            // 
+            this.IDareaColumn.HeaderText = "IDarea";
+            this.IDareaColumn.Name = "IDareaColumn";
+            this.IDareaColumn.ReadOnly = true;
+            this.IDareaColumn.Visible = false;
+            // 
+            // NombreAreaColumn
+            // 
+            this.NombreAreaColumn.HeaderText = "Nombre del Area";
+            this.NombreAreaColumn.Name = "NombreAreaColumn";
+            this.NombreAreaColumn.ReadOnly = true;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txt_AreaT);
+            this.groupBox2.Controls.Add(this.txt_AnchoArea);
+            this.groupBox2.Controls.Add(this.txt_LargoArea);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.btnGuardar);
             this.groupBox2.Controls.Add(this.btnLimpiar);
             this.groupBox2.Controls.Add(this.btnEliminar);
@@ -188,14 +217,14 @@
             // 
             // nombreAreaTxt
             // 
-            this.nombreAreaTxt.Location = new System.Drawing.Point(141, 165);
+            this.nombreAreaTxt.Location = new System.Drawing.Point(149, 89);
             this.nombreAreaTxt.Name = "nombreAreaTxt";
             this.nombreAreaTxt.Size = new System.Drawing.Size(149, 22);
             this.nombreAreaTxt.TabIndex = 4;
             // 
             // IDareaTxt
             // 
-            this.IDareaTxt.Location = new System.Drawing.Point(141, 112);
+            this.IDareaTxt.Location = new System.Drawing.Point(149, 36);
             this.IDareaTxt.Name = "IDareaTxt";
             this.IDareaTxt.Size = new System.Drawing.Size(149, 22);
             this.IDareaTxt.TabIndex = 3;
@@ -203,7 +232,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 165);
+            this.label3.Location = new System.Drawing.Point(30, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 17);
             this.label3.TabIndex = 1;
@@ -212,7 +241,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 117);
+            this.label2.Location = new System.Drawing.Point(30, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 0;
@@ -223,7 +252,7 @@
             this.IDareaErrorLbl.AutoSize = true;
             this.IDareaErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDareaErrorLbl.ForeColor = System.Drawing.Color.Red;
-            this.IDareaErrorLbl.Location = new System.Drawing.Point(288, 114);
+            this.IDareaErrorLbl.Location = new System.Drawing.Point(296, 38);
             this.IDareaErrorLbl.Name = "IDareaErrorLbl";
             this.IDareaErrorLbl.Size = new System.Drawing.Size(16, 21);
             this.IDareaErrorLbl.TabIndex = 17;
@@ -234,24 +263,138 @@
             this.nombreAreaErrorLbl.AutoSize = true;
             this.nombreAreaErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreAreaErrorLbl.ForeColor = System.Drawing.Color.Red;
-            this.nombreAreaErrorLbl.Location = new System.Drawing.Point(288, 168);
+            this.nombreAreaErrorLbl.Location = new System.Drawing.Point(296, 92);
             this.nombreAreaErrorLbl.Name = "nombreAreaErrorLbl";
             this.nombreAreaErrorLbl.Size = new System.Drawing.Size(16, 21);
             this.nombreAreaErrorLbl.TabIndex = 19;
             this.nombreAreaErrorLbl.Text = "*";
             // 
-            // IDareaColumn
+            // comboBox1
             // 
-            this.IDareaColumn.HeaderText = "IDarea";
-            this.IDareaColumn.Name = "IDareaColumn";
-            this.IDareaColumn.ReadOnly = true;
-            this.IDareaColumn.Visible = false;
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "All Others",
+            "Auditorium",
+            "Auto Repair Workshop",
+            "Bank/Financial Institution",
+            "Bar, Cocktail Lounge",
+            "Barber and Beauty Shop",
+            "Casino/Gaming",
+            "Classroom/Lecture",
+            "Courtrooms",
+            "Comm/Ind Work (General, High Bay)",
+            "Comm/Ind Work (General, Low Bay)",
+            "Comm/Ind Work (High Tech, Bio Tech, Lab)",
+            "Comm/Ind Work (Loading Dock)",
+            "Comm/Ind Work (Precision)",
+            "Computer Room (Mainframe/Server)",
+            "Computer Room (Instructional/PC Lab)",
+            "Conference Room",
+            "Convention and Meeting Center",
+            "Copy Room (photocopying equipment)",
+            "Corridor",
+            "Dining Area",
+            "Dry Cleaning (Coin Operated)",
+            "Dry Cleaning (Full Service Commercial)",
+            "Exercising Centers and Gymnasium",
+            "Exhibit Display Area / Museum",
+            "Hotel/Motel Guest Room (incl. Toilets)",
+            "Kitchen and Food Preparation",
+            "Laboratory, Medical",
+            "Laundry",
+            "Library (Reading Areas)",
+            "Library (Stacks)",
+            "Lobby (Hotel)",
+            "Lobby (Main Entry and Assembly)",
+            "Lobby (Office Reception/Waiting)",
+            "Locker and Dressing Room",
+            "Mall, Arcade and Atrium",
+            "Mechanical/Electrical Room",
+            "Medical and Clinical Care",
+            "Office (General)",
+            "Office (Executive/Private)",
+            "Office (Open Plan)",
+            "Police Station and Fire Station",
+            "Religius Worship",
+            "Residential (Bedroom)",
+            "Residential (Garage)",
+            "Residential (General Living Space)",
+            "Residential (High-Rise)",
+            "Residential (Multifamily Dwelling Unit)",
+            "Residential (Single Family)",
+            "Restrooms",
+            "Retail Sales an Wholesale Showroom",
+            "Smoking Lounge",
+            "Storage (Conditioded)",
+            "Storage (Unconditioned)",
+            "Theater (Motion Picture)",
+            "Theater (Performance)",
+            "Vocational Areas"});
+            this.comboBox1.Location = new System.Drawing.Point(33, 152);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(265, 25);
+            this.comboBox1.TabIndex = 20;
             // 
-            // NombreAreaColumn
+            // label4
             // 
-            this.NombreAreaColumn.HeaderText = "Nombre del Area";
-            this.NombreAreaColumn.Name = "NombreAreaColumn";
-            this.NombreAreaColumn.ReadOnly = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(87, 124);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 17);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Tipo de Area :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(30, 204);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 17);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Largo (m) :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(30, 236);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 17);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Ancho (m) :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(227, 201);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 17);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Area (ft2) :";
+            // 
+            // txt_LargoArea
+            // 
+            this.txt_LargoArea.Location = new System.Drawing.Point(107, 201);
+            this.txt_LargoArea.Name = "txt_LargoArea";
+            this.txt_LargoArea.Size = new System.Drawing.Size(100, 22);
+            this.txt_LargoArea.TabIndex = 25;
+            // 
+            // txt_AnchoArea
+            // 
+            this.txt_AnchoArea.Location = new System.Drawing.Point(107, 236);
+            this.txt_AnchoArea.Name = "txt_AnchoArea";
+            this.txt_AnchoArea.Size = new System.Drawing.Size(100, 22);
+            this.txt_AnchoArea.TabIndex = 26;
+            // 
+            // txt_AreaT
+            // 
+            this.txt_AreaT.Enabled = false;
+            this.txt_AreaT.Location = new System.Drawing.Point(230, 221);
+            this.txt_AreaT.Name = "txt_AreaT";
+            this.txt_AreaT.Size = new System.Drawing.Size(68, 22);
+            this.txt_AreaT.TabIndex = 27;
+            this.txt_AreaT.TextChanged += new System.EventHandler(this.txt_AreaT_TextChanged);
             // 
             // Area
             // 
@@ -298,5 +441,13 @@
         private System.Windows.Forms.Label nombreAreaErrorLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDareaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreAreaColumn;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txt_AreaT;
+        private System.Windows.Forms.TextBox txt_AnchoArea;
+        private System.Windows.Forms.TextBox txt_LargoArea;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

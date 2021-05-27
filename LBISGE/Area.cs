@@ -42,7 +42,9 @@ namespace LBISGE
             //FillCombo();
 
             r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
-
+            //Double area;
+            //area = Double.Parse(txt_AnchoArea.Text) * Double.Parse(txt_LargoArea.Text);
+            //txt_AreaT.Text = area.ToString();
             //label5.Text = this.edificioCb.GetItemText(this.edificioCb.SelectedItem);
             //label5.Text = this.edificioCb.SelectedItem.ToString();
 
@@ -176,6 +178,11 @@ namespace LBISGE
             IDareaTxt.Text = "";
             nombreAreaTxt.Text = "";
             IDareaTxt.Enabled = true;
+        }
+
+        private void txt_AreaT_TextChanged(object sender, EventArgs e)
+        {
+            txt_AreaT.Text = "2";
         }
     }
 }
