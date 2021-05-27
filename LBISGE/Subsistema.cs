@@ -69,5 +69,22 @@ namespace LBISGE
                 txtID_Subsistema.Enabled = false;
             }
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (txtID_Subsistema.Text == "") { IDsubsistemaErrorLbl.Visible = true; } else { IDsubsistemaErrorLbl.Visible = false; }
+            if (txtID_Subsistema.Text == "") { nombreSubsistemaErrorLbl.Visible = true; } else { nombreSubsistemaErrorLbl.Visible = false; }
+
+            if (IDsubsistemaErrorLbl.Visible || nombreSubsistemaErrorLbl.Visible)
+            {
+                MainClass.ShowMSG("Campos con * son obligatorios", "stop", "Error");
+            }
+            else
+            {
+                DBupdate u = new DBupdate();
+                u.updateSubsistema(txtID_Subsistema.Text, txtSubsistema.Text);
+                r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
+            }
+        }
     }
 }
