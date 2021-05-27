@@ -97,5 +97,12 @@ namespace LBISGE
                 r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
             }
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtID_Subsistema.Text = "";
+            txtSubsistema.Text = "";
+            txtID_Subsistema.Enabled = true;
+        }
     }
 }

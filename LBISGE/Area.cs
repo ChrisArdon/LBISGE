@@ -175,6 +175,7 @@ namespace LBISGE
             textBox1.Text = "";
             IDareaTxt.Text = "";
             nombreAreaTxt.Text = "";
+            IDareaTxt.Enabled = true;
         }
     }
 }
