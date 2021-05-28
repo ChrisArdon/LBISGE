@@ -48,48 +48,72 @@ namespace LBISGE
             toolTip1.SetToolTip(this.btnLimpiar, "Limpiar Campos");
             toolTip1.SetToolTip(this.btnEliminar, "Eliminar");
             toolTip1.SetToolTip(this.btnModificar, "Actualizar");
-
+            //Mostramos los datos en el datagridView
             r.showEdificios(dgvEdificio, ID_edificioGvColumn, NombreEdificioGvColumn);
+        }
+
+        //Creamos la función que limpiara los textbox, habilitara textbox de ID y boton guardar
+        public void Limpiar()
+        {
+            txtID_Edificio.Text = "";
+            txtNombreEdificio.Text = "";
+            txtEdificioBusqueda.Text = "";
+            btnGuardar.Visible = true;
+            txtID_Edificio.Enabled = true;
+            errorProvider1.Clear();
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             
-            //Validacion de los campos para que no queden vacios, usando el asterisco rojo
-            if (txtID_Edificio.Text == "") { IDedfErrorLbl.Visible = true; } else { IDedfErrorLbl.Visible = false; }
-            if (txtNombreEdificio.Text == "") { nombreEdfErrorLbl.Visible = true; } else { nombreEdfErrorLbl.Visible = false; }
+            //Validacion de los campos para que no queden vacios
 
-            if (IDedfErrorLbl.Visible || nombreEdfErrorLbl.Visible)
+            if (txtID_Edificio.Text == "" || txtNombreEdificio.Text == "")
             {
-                MainClass.ShowMSG("Campos con * son obligatorios", "Stop", "Error");
+                errorProvider1.SetError(txtID_Edificio, "¡Rellenar Campo!");
+                errorProvider1.SetError(txtNombreEdificio, "¡Rellenar Campo!");
             }
             else
             {
-                DBinsert i = new DBinsert();
-                i.insertEdificio(txtID_Edificio.Text, txtNombreEdificio.Text);
-                r.showEdificios(dgvEdificio, ID_edificioGvColumn, NombreEdificioGvColumn);
+                try
+                {
+                    //Insertamos los datos
+                    DBinsert i = new DBinsert();
+                    i.insertEdificio(txtID_Edificio.Text, txtNombreEdificio.Text);
+                    //Actualizamos datos en el datagrid
+                    r.showEdificios(dgvEdificio, ID_edificioGvColumn, NombreEdificioGvColumn);
+                    Limpiar();
+                }
+                catch (Exception ex)
+                {  MessageBox.Show(ex.ToString()); }
             }
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            
-            //Validacion de los campos para que no queden vacios, usando el asterisco rojo
-            if (txtID_Edificio.Text == "") { IDedfErrorLbl.Visible = true; } else { IDedfErrorLbl.Visible = false; }
-            if (txtNombreEdificio.Text == "") { nombreEdfErrorLbl.Visible = true; } else { nombreEdfErrorLbl.Visible = false; }
-
-
-            if (IDedfErrorLbl.Visible || nombreEdfErrorLbl.Visible)
-            {
-                MainClass.ShowMSG("Campos con * son obligatorios", "Stop", "Error");
-            }
+           
+            if (txtID_Edificio.Text == "")
+            { errorProvider1.SetError(txtID_Edificio, "¡Seleccione Edificio a Modificar!"); }
             else
             {
-                DBupdate u = new DBupdate();
-                u.updateEdificio(txtID_Edificio.Text, txtNombreEdificio.Text);
-                r.showEdificios(dgvEdificio, ID_edificioGvColumn, NombreEdificioGvColumn);
-                //Continues
-            }
+                try
+                {
+                    DBupdate u = new DBupdate();
+                    //Actualizamos los datos
+                    u.updateEdificio(txtID_Edificio.Text, txtNombreEdificio.Text);
+                    //Mostramos el datagrid con los datos actualizados.
+                    r.showEdificios(dgvEdificio, ID_edificioGvColumn, NombreEdificioGvColumn);
+                    //Hacemos uso de la función limpiar para dejar los cambos vacíos.
+                    Limpiar();
+                    //Habilitamos el textbox que contiene el ID y el boton de guardar.
+                    txtID_Edificio.Enabled = true;
+                    btnGuardar.Visible = true;
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.ToString()); }
+            }     
         }
 
         private void txtEdificioBusqueda_TextChanged(object sender, EventArgs e)
@@ -107,21 +131,31 @@ namespace LBISGE
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            txtID_Edificio.Text = "";
-            txtNombreEdificio.Text = "";
-            txtEdificioBusqueda.Text = "";
+            Limpiar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Esta seguro de eliminar registro?", "...?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            if (txtID_Edificio.Text == "")
+            { errorProvider1.SetError(txtID_Edificio, "¡Seleccione Edificio a Modificar!"); }
+            else
             {
-                DBdelete d = new DBdelete();
-                d.delete(EdificioID, "pr_deleteEdificio", "@ID_edificioPr");
-                r.showEdificios(dgvEdificio, ID_edificioGvColumn, NombreEdificioGvColumn);
+                try
+                {
+                    DBdelete d = new DBdelete();
+                    //Eliminamos los datos
+                    d.delete(EdificioID, "pr_deleteEdificio", "@ID_edificioPr");
+                    //Mostramos el datagrid con los datos actualizados
+                    r.showEdificios(dgvEdificio, ID_edificioGvColumn, NombreEdificioGvColumn);
+                    //Hacemos uso de la función limpiar para dejar los cambos vacíos.
+                    Limpiar();
+                    //Habilitamos el textbox que contiene el ID y el boton de guardar
+                    txtID_Edificio.Enabled = true;
+                    btnGuardar.Visible = true;
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.ToString()); }
             }
-
         }
 
         private void dgvEdificio_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -135,6 +169,18 @@ namespace LBISGE
                 txtID_Edificio.Enabled = false;
             }
             
+        }
+
+        private void txtID_Edificio_TextChanged(object sender, EventArgs e)
+        {
+            if (txtID_Edificio.Text.Trim() != "")
+            { errorProvider1.SetError(txtID_Edificio, ""); }
+        }
+
+        private void txtNombreEdificio_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombreEdificio.Text.Trim() != "")
+            { errorProvider1.SetError(txtNombreEdificio, ""); }
         }
     }
 }

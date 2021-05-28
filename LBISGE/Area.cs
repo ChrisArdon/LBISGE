@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace LBISGE
@@ -17,9 +16,7 @@ namespace LBISGE
         DBretrieval r = new DBretrieval();
         string AreaID;
         public Area()
-        {
-            InitializeComponent();
-        }
+        { InitializeComponent();  }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
@@ -32,6 +29,35 @@ namespace LBISGE
 
         }
 
+        //Creamos la función que limpiara los textbox, habilitara textbox de ID y boton guardar
+        public void Limpiar()
+        {
+            IDareaTxt.Text = "";
+            nombreAreaTxt.Text = "";
+            txtAreaBusqueda.Text = "";
+            txt_LargoArea.Text = "";
+            TipoArea.Text = "";
+            txt_AnchoArea.Text = "";
+            txt_AreaT.Text = "";
+            btnGuardar.Visible = true;
+            IDareaTxt.Enabled = true;
+            errorProvider1.Clear();
+            MainClass.con.Close();
+        }
+        public void area()
+        {
+            if (txt_AnchoArea.Text == "" || txt_LargoArea.Text == "")
+            { }
+            else
+            {
+                Double area, ancho, largo;
+                ancho = Convert.ToDouble(txt_AnchoArea.Text);
+                largo = Convert.ToDouble(txt_LargoArea.Text);
+                //Realizamos el calculo del area en metros y lo convertimos a pies cuadrados para mostrar el resultado
+                area = (ancho * largo) * 10.7639104;
+                txt_AreaT.Text = area.ToString();
+            }        
+        }
         private void Area_Load(object sender, EventArgs e)
         {
             // Mensajes de descripción en cada uno de los botones
@@ -41,10 +67,10 @@ namespace LBISGE
             toolTip1.SetToolTip(this.btnModificar, "Actualizar");
             //FillCombo();
 
+           
             r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
-            //Double area;
-            //area = Double.Parse(txt_AnchoArea.Text) * Double.Parse(txt_LargoArea.Text);
-            //txt_AreaT.Text = area.ToString();
+            
+    
             //label5.Text = this.edificioCb.GetItemText(this.edificioCb.SelectedItem);
             //label5.Text = this.edificioCb.SelectedItem.ToString();
 
@@ -53,19 +79,24 @@ namespace LBISGE
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (IDareaTxt.Text == "") { IDareaErrorLbl.Visible = true; } else { IDareaErrorLbl.Visible = false; }
-            if (nombreAreaTxt.Text == "") { nombreAreaErrorLbl.Visible = true; } else { nombreAreaErrorLbl.Visible = false; }
-
-            if (IDareaErrorLbl.Visible || nombreAreaErrorLbl.Visible)
+            if (IDareaTxt.Text == "" || nombreAreaTxt.Text == "" || TipoArea.Text == "" || txt_LargoArea.Text == "" || txt_AnchoArea.Text == "")
             {
-                MainClass.ShowMSG("Campos con * son obligatorios", "stop", "Error");
+                //Validación de campos
+                errorProvider1.SetError(IDareaTxt, "¡Rellenar Campo!");
+                errorProvider1.SetError(nombreAreaTxt, "¡Rellenar Campo!");
+                errorProvider1.SetError(TipoArea, "¡Rellenar Campo!");
+                errorProvider1.SetError(txt_LargoArea, "¡Rellenar Campo!");
+                errorProvider1.SetError(txt_AnchoArea, "¡Rellenar Campo!");
             }
             else
             {
+                //Insertamos datos a la DB
                 DBinsert i = new DBinsert();
                 i.insertArea(IDareaTxt.Text, nombreAreaTxt.Text);
+                //Mostramos los datos en el dataGridView
                 r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
-                //show gv
+                //Limpiamos campos luego del ingreso de datos
+                Limpiar();
             }
         }
 
@@ -121,19 +152,26 @@ namespace LBISGE
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            //Validacion de los campos para que no queden vacios, usando el asterisco rojo
-            if (IDareaTxt.Text == "") { IDareaErrorLbl.Visible = true; } else { IDareaErrorLbl.Visible = false; }
-            if (nombreAreaTxt.Text == "") { nombreAreaErrorLbl.Visible = true; } else { nombreAreaErrorLbl.Visible = false; }
-
-            if (IDareaErrorLbl.Visible || nombreAreaErrorLbl.Visible)
-            {
-                MainClass.ShowMSG("Campos con * son obligatorios", "stop", "Error");
-            }
+            if (IDareaTxt.Text == "")
+            { errorProvider1.SetError(IDareaTxt, "¡Seleccione Area a Modificar!"); }
             else
             {
-                DBupdate u = new DBupdate();
+                try
+                {
+                    //Actualizamos los datos
+                    DBupdate u = new DBupdate();
                 u.updateArea(IDareaTxt.Text, nombreAreaTxt.Text);
+                //Mostramos el datagrid con los datos actualizados
                 r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
+                //Hacemos uso de la función limpiar para dejar los cambos vacíos.
+                Limpiar();
+                //Habilitamos el textbox que contiene el ID y el boton de guardar
+                IDareaTxt.Enabled = true;
+                btnGuardar.Visible = true;
+
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.ToString()); } 
             }
         }
 
@@ -151,9 +189,9 @@ namespace LBISGE
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text != "")
+            if (txtAreaBusqueda.Text != "")
             {
-                r.showArea(dgvArea, IDareaColumn, NombreAreaColumn, textBox1.Text);
+                r.showArea(dgvArea, IDareaColumn, NombreAreaColumn, txtAreaBusqueda.Text);
             }
             else
             {
@@ -163,26 +201,82 @@ namespace LBISGE
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Esta seguro de eliminar registro?", "...?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+
+            if (IDareaTxt.Text == "")
+            { errorProvider1.SetError(IDareaTxt, "¡Seleccione Area a Eliminar!"); }
+            else
             {
-                DBdelete d = new DBdelete();
-                d.delete(AreaID, "pr_deleteArea", "@IDareaPr");
-                r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
+                try
+                {
+
+                    DBdelete d = new DBdelete();
+                    d.delete(AreaID, "pr_deleteArea", "@IDareaPr");
+                    //Actualizamos los datos en el datagridView
+                    r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
+                    //Hacemos uso de la función limpiar para dejar los cambos vacíos.
+                    Limpiar();
+                    //Habilitamos el textbox que contiene el ID y el boton de guardar
+                    IDareaTxt.Enabled = true;
+                    btnGuardar.Visible = true;
+
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.ToString()); }
             }
+
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            IDareaTxt.Text = "";
-            nombreAreaTxt.Text = "";
-            IDareaTxt.Enabled = true;
+            Limpiar();
         }
 
         private void txt_AreaT_TextChanged(object sender, EventArgs e)
         {
-            txt_AreaT.Text = "2";
+            //txt_AreaT.Text = "2";
+
+            //Realizamos el calculo del area y lo mostramos en el textBox
+            area();
+            
+        }
+
+        private void IDareaTxt_TextChanged(object sender, EventArgs e)
+        {
+            //Eliminamos errorProvider
+            if (IDareaTxt.Text.Trim() != "")
+            { errorProvider1.SetError(IDareaTxt, ""); }
+        }
+
+        private void nombreAreaTxt_TextChanged(object sender, EventArgs e)
+        {
+            //Eliminamos errorProvider
+            if (nombreAreaTxt.Text.Trim() != "")
+            { errorProvider1.SetError(nombreAreaTxt, ""); }
+        }
+
+        private void TipoArea_TextChanged(object sender, EventArgs e)
+        {
+            //Eliminamos errorProvider
+            if (TipoArea.Text.Trim() != "")
+            { errorProvider1.SetError(TipoArea, ""); }
+        }
+
+        private void txt_LargoArea_TextChanged(object sender, EventArgs e)
+        {
+            //Capturamos el dato de el largo para el calculo de area mediante la funcion area()
+            area();
+            //Eliminamos errorProvider
+            if (txt_LargoArea.Text.Trim() != "")
+            { errorProvider1.SetError(txt_LargoArea, ""); }
+        }
+
+        private void txt_AnchoArea_TextChanged(object sender, EventArgs e)
+        {
+            //Capturamos el dato del ancho para el calculo de area mediante la funcion area()
+            area();
+            //Eliminamos errorProvider
+            if (txt_AnchoArea.Text.Trim() != "")
+            { errorProvider1.SetError(txt_AnchoArea, ""); }
         }
     }
 }

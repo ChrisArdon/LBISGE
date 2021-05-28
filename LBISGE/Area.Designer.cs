@@ -32,12 +32,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Area));
             this.btnMenu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAreaBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvArea = new System.Windows.Forms.DataGridView();
             this.IDareaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreAreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_AreaT = new System.Windows.Forms.TextBox();
+            this.txt_AnchoArea = new System.Windows.Forms.TextBox();
+            this.txt_LargoArea = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TipoArea = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -47,19 +55,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.IDareaErrorLbl = new System.Windows.Forms.Label();
-            this.nombreAreaErrorLbl = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_LargoArea = new System.Windows.Forms.TextBox();
-            this.txt_AnchoArea = new System.Windows.Forms.TextBox();
-            this.txt_AreaT = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArea)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMenu
@@ -77,7 +78,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtAreaBusqueda);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(25, 26);
@@ -87,13 +88,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo De Area";
             // 
-            // textBox1
+            // txtAreaBusqueda
             // 
-            this.textBox1.Location = new System.Drawing.Point(65, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(272, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtAreaBusqueda.Location = new System.Drawing.Point(65, 23);
+            this.txtAreaBusqueda.Name = "txtAreaBusqueda";
+            this.txtAreaBusqueda.Size = new System.Drawing.Size(272, 22);
+            this.txtAreaBusqueda.TabIndex = 1;
+            this.txtAreaBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -146,7 +147,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.TipoArea);
             this.groupBox2.Controls.Add(this.btnGuardar);
             this.groupBox2.Controls.Add(this.btnLimpiar);
             this.groupBox2.Controls.Add(this.btnEliminar);
@@ -156,7 +157,6 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.IDareaErrorLbl);
-            this.groupBox2.Controls.Add(this.nombreAreaErrorLbl);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(476, 26);
             this.groupBox2.Name = "groupBox2";
@@ -166,115 +166,74 @@
             this.groupBox2.Text = "Agregar, Modificar o Eliminar";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // btnGuardar
+            // txt_AreaT
             // 
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(21, 286);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(64, 45);
-            this.btnGuardar.TabIndex = 11;
-            this.btnGuardar.Text = "    ";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.txt_AreaT.Enabled = false;
+            this.txt_AreaT.Location = new System.Drawing.Point(239, 241);
+            this.txt_AreaT.Name = "txt_AreaT";
+            this.txt_AreaT.Size = new System.Drawing.Size(68, 22);
+            this.txt_AreaT.TabIndex = 27;
+            this.txt_AreaT.TextChanged += new System.EventHandler(this.txt_AreaT_TextChanged);
             // 
-            // btnLimpiar
+            // txt_AnchoArea
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
-            this.btnLimpiar.Location = new System.Drawing.Point(251, 285);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(64, 46);
-            this.btnLimpiar.TabIndex = 8;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.txt_AnchoArea.Location = new System.Drawing.Point(107, 251);
+            this.txt_AnchoArea.Name = "txt_AnchoArea";
+            this.txt_AnchoArea.Size = new System.Drawing.Size(100, 22);
+            this.txt_AnchoArea.TabIndex = 26;
+            this.txt_AnchoArea.TextChanged += new System.EventHandler(this.txt_AnchoArea_TextChanged);
             // 
-            // btnEliminar
+            // txt_LargoArea
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.White;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(166, 285);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(79, 46);
-            this.btnEliminar.TabIndex = 7;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.txt_LargoArea.Location = new System.Drawing.Point(107, 216);
+            this.txt_LargoArea.Name = "txt_LargoArea";
+            this.txt_LargoArea.Size = new System.Drawing.Size(100, 22);
+            this.txt_LargoArea.TabIndex = 25;
+            this.txt_LargoArea.TextChanged += new System.EventHandler(this.txt_LargoArea_TextChanged);
             // 
-            // btnModificar
+            // label7
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.White;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.Location = new System.Drawing.Point(90, 285);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(70, 46);
-            this.btnModificar.TabIndex = 6;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(236, 221);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 17);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Area (ft2) :";
             // 
-            // nombreAreaTxt
+            // label6
             // 
-            this.nombreAreaTxt.Location = new System.Drawing.Point(149, 89);
-            this.nombreAreaTxt.Name = "nombreAreaTxt";
-            this.nombreAreaTxt.Size = new System.Drawing.Size(149, 22);
-            this.nombreAreaTxt.TabIndex = 4;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(30, 251);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 17);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Ancho (m) :";
             // 
-            // IDareaTxt
+            // label5
             // 
-            this.IDareaTxt.Location = new System.Drawing.Point(149, 36);
-            this.IDareaTxt.Name = "IDareaTxt";
-            this.IDareaTxt.Size = new System.Drawing.Size(149, 22);
-            this.IDareaTxt.TabIndex = 3;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(30, 219);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 17);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Largo (m) :";
             // 
-            // label3
+            // label4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 89);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 17);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Nombre de Area :";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(87, 139);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 17);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Tipo de Area :";
             // 
-            // label2
+            // TipoArea
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "ID Area :";
-            // 
-            // IDareaErrorLbl
-            // 
-            this.IDareaErrorLbl.AutoSize = true;
-            this.IDareaErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDareaErrorLbl.ForeColor = System.Drawing.Color.Red;
-            this.IDareaErrorLbl.Location = new System.Drawing.Point(296, 38);
-            this.IDareaErrorLbl.Name = "IDareaErrorLbl";
-            this.IDareaErrorLbl.Size = new System.Drawing.Size(16, 21);
-            this.IDareaErrorLbl.TabIndex = 17;
-            this.IDareaErrorLbl.Text = "*";
-            // 
-            // nombreAreaErrorLbl
-            // 
-            this.nombreAreaErrorLbl.AutoSize = true;
-            this.nombreAreaErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreAreaErrorLbl.ForeColor = System.Drawing.Color.Red;
-            this.nombreAreaErrorLbl.Location = new System.Drawing.Point(296, 92);
-            this.nombreAreaErrorLbl.Name = "nombreAreaErrorLbl";
-            this.nombreAreaErrorLbl.Size = new System.Drawing.Size(16, 21);
-            this.nombreAreaErrorLbl.TabIndex = 19;
-            this.nombreAreaErrorLbl.Text = "*";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.TipoArea.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TipoArea.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TipoArea.FormattingEnabled = true;
+            this.TipoArea.Items.AddRange(new object[] {
             "All Others",
             "Auditorium",
             "Auto Repair Workshop",
@@ -332,69 +291,108 @@
             "Theater (Motion Picture)",
             "Theater (Performance)",
             "Vocational Areas"});
-            this.comboBox1.Location = new System.Drawing.Point(33, 152);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(265, 25);
-            this.comboBox1.TabIndex = 20;
+            this.TipoArea.Location = new System.Drawing.Point(33, 167);
+            this.TipoArea.Name = "TipoArea";
+            this.TipoArea.Size = new System.Drawing.Size(265, 25);
+            this.TipoArea.TabIndex = 20;
+            this.TipoArea.TextChanged += new System.EventHandler(this.TipoArea_TextChanged);
             // 
-            // label4
+            // btnGuardar
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(87, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 17);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Tipo de Area :";
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
+            this.btnGuardar.Location = new System.Drawing.Point(21, 314);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(64, 45);
+            this.btnGuardar.TabIndex = 11;
+            this.btnGuardar.Text = "    ";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // label5
+            // btnLimpiar
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 204);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 17);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Largo (m) :";
+            this.btnLimpiar.BackColor = System.Drawing.Color.White;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
+            this.btnLimpiar.Location = new System.Drawing.Point(251, 313);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(64, 46);
+            this.btnLimpiar.TabIndex = 8;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // label6
+            // btnEliminar
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 236);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 17);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Ancho (m) :";
+            this.btnEliminar.BackColor = System.Drawing.Color.White;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(166, 313);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(79, 46);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // label7
+            // btnModificar
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(227, 201);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 17);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Area (ft2) :";
+            this.btnModificar.BackColor = System.Drawing.Color.White;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.Location = new System.Drawing.Point(90, 313);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(70, 46);
+            this.btnModificar.TabIndex = 6;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // txt_LargoArea
+            // nombreAreaTxt
             // 
-            this.txt_LargoArea.Location = new System.Drawing.Point(107, 201);
-            this.txt_LargoArea.Name = "txt_LargoArea";
-            this.txt_LargoArea.Size = new System.Drawing.Size(100, 22);
-            this.txt_LargoArea.TabIndex = 25;
+            this.nombreAreaTxt.Location = new System.Drawing.Point(149, 104);
+            this.nombreAreaTxt.Name = "nombreAreaTxt";
+            this.nombreAreaTxt.Size = new System.Drawing.Size(149, 22);
+            this.nombreAreaTxt.TabIndex = 4;
+            this.nombreAreaTxt.TextChanged += new System.EventHandler(this.nombreAreaTxt_TextChanged);
             // 
-            // txt_AnchoArea
+            // IDareaTxt
             // 
-            this.txt_AnchoArea.Location = new System.Drawing.Point(107, 236);
-            this.txt_AnchoArea.Name = "txt_AnchoArea";
-            this.txt_AnchoArea.Size = new System.Drawing.Size(100, 22);
-            this.txt_AnchoArea.TabIndex = 26;
+            this.IDareaTxt.Location = new System.Drawing.Point(149, 51);
+            this.IDareaTxt.Name = "IDareaTxt";
+            this.IDareaTxt.Size = new System.Drawing.Size(149, 22);
+            this.IDareaTxt.TabIndex = 3;
+            this.IDareaTxt.TextChanged += new System.EventHandler(this.IDareaTxt_TextChanged);
             // 
-            // txt_AreaT
+            // label3
             // 
-            this.txt_AreaT.Enabled = false;
-            this.txt_AreaT.Location = new System.Drawing.Point(230, 221);
-            this.txt_AreaT.Name = "txt_AreaT";
-            this.txt_AreaT.Size = new System.Drawing.Size(68, 22);
-            this.txt_AreaT.TabIndex = 27;
-            this.txt_AreaT.TextChanged += new System.EventHandler(this.txt_AreaT_TextChanged);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(30, 104);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Nombre de Area :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "ID Area :";
+            // 
+            // IDareaErrorLbl
+            // 
+            this.IDareaErrorLbl.AutoSize = true;
+            this.IDareaErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IDareaErrorLbl.ForeColor = System.Drawing.Color.Red;
+            this.IDareaErrorLbl.Location = new System.Drawing.Point(296, 53);
+            this.IDareaErrorLbl.Name = "IDareaErrorLbl";
+            this.IDareaErrorLbl.Size = new System.Drawing.Size(0, 21);
+            this.IDareaErrorLbl.TabIndex = 17;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Area
             // 
@@ -416,6 +414,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvArea)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -424,7 +423,7 @@
 
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAreaBusqueda;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvArea;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -438,10 +437,9 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label IDareaErrorLbl;
-        private System.Windows.Forms.Label nombreAreaErrorLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDareaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreAreaColumn;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox TipoArea;
         private System.Windows.Forms.TextBox txt_AreaT;
         private System.Windows.Forms.TextBox txt_AnchoArea;
         private System.Windows.Forms.TextBox txt_LargoArea;
@@ -449,5 +447,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

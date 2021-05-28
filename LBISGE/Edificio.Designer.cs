@@ -41,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.IDedfErrorLbl = new System.Windows.Forms.Label();
-            this.nombreEdfErrorLbl = new System.Windows.Forms.Label();
             this.dgvEdificio = new System.Windows.Forms.DataGridView();
             this.ID_edificioGvColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreEdificioGvColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,9 +48,11 @@
             this.txtEdificioBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Modificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEdificio)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMenu
@@ -78,7 +79,6 @@
             this.Modificar.Controls.Add(this.label3);
             this.Modificar.Controls.Add(this.label2);
             this.Modificar.Controls.Add(this.IDedfErrorLbl);
-            this.Modificar.Controls.Add(this.nombreEdfErrorLbl);
             this.Modificar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Modificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Modificar.Location = new System.Drawing.Point(387, 32);
@@ -94,7 +94,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(41, 144);
+            this.btnGuardar.Location = new System.Drawing.Point(63, 149);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(64, 45);
             this.btnGuardar.TabIndex = 15;
@@ -107,7 +107,7 @@
             this.btnLimpiar.BackColor = System.Drawing.Color.White;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
-            this.btnLimpiar.Location = new System.Drawing.Point(271, 143);
+            this.btnLimpiar.Location = new System.Drawing.Point(293, 148);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(64, 46);
             this.btnLimpiar.TabIndex = 14;
@@ -119,7 +119,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.White;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(186, 143);
+            this.btnEliminar.Location = new System.Drawing.Point(208, 148);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(79, 46);
             this.btnEliminar.TabIndex = 13;
@@ -131,7 +131,7 @@
             this.btnModificar.BackColor = System.Drawing.Color.White;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.Location = new System.Drawing.Point(110, 143);
+            this.btnModificar.Location = new System.Drawing.Point(132, 148);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(70, 46);
             this.btnModificar.TabIndex = 12;
@@ -144,6 +144,7 @@
             this.txtNombreEdificio.Name = "txtNombreEdificio";
             this.txtNombreEdificio.Size = new System.Drawing.Size(205, 22);
             this.txtNombreEdificio.TabIndex = 5;
+            this.txtNombreEdificio.TextChanged += new System.EventHandler(this.txtNombreEdificio_TextChanged);
             // 
             // txtID_Edificio
             // 
@@ -151,6 +152,7 @@
             this.txtID_Edificio.Name = "txtID_Edificio";
             this.txtID_Edificio.Size = new System.Drawing.Size(205, 22);
             this.txtID_Edificio.TabIndex = 4;
+            this.txtID_Edificio.TextChanged += new System.EventHandler(this.txtID_Edificio_TextChanged);
             // 
             // label3
             // 
@@ -177,20 +179,8 @@
             this.IDedfErrorLbl.ForeColor = System.Drawing.Color.Red;
             this.IDedfErrorLbl.Location = new System.Drawing.Point(155, 42);
             this.IDedfErrorLbl.Name = "IDedfErrorLbl";
-            this.IDedfErrorLbl.Size = new System.Drawing.Size(16, 21);
+            this.IDedfErrorLbl.Size = new System.Drawing.Size(0, 21);
             this.IDedfErrorLbl.TabIndex = 16;
-            this.IDedfErrorLbl.Text = "*";
-            // 
-            // nombreEdfErrorLbl
-            // 
-            this.nombreEdfErrorLbl.AutoSize = true;
-            this.nombreEdfErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreEdfErrorLbl.ForeColor = System.Drawing.Color.Red;
-            this.nombreEdfErrorLbl.Location = new System.Drawing.Point(155, 92);
-            this.nombreEdfErrorLbl.Name = "nombreEdfErrorLbl";
-            this.nombreEdfErrorLbl.Size = new System.Drawing.Size(16, 21);
-            this.nombreEdfErrorLbl.TabIndex = 17;
-            this.nombreEdfErrorLbl.Text = "*";
             // 
             // dgvEdificio
             // 
@@ -257,6 +247,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Edificio :";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Edificio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,6 +271,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEdificio)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -299,8 +294,8 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label IDedfErrorLbl;
-        private System.Windows.Forms.Label nombreEdfErrorLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_edificioGvColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreEdificioGvColumn;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
