@@ -41,21 +41,43 @@ namespace LBISGE
             r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
         }
 
+        //Creamos la función que limpiara los textbox, habilitara textbox de ID y boton guardar
+        public void Limpiar()
+        {
+            txtID_Subsistema.Text = "";
+            txtSubsistema.Text = "";
+            txtSubsistemaBusqueda.Text = "";
+            btnGuardar.Visible = true;
+            txtID_Subsistema.Enabled = true;
+            MainClass.con.Close();
+            errorProvider1.Clear();
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtID_Subsistema.Text == "") { IDsubsistemaErrorLbl.Visible = true; } else { IDsubsistemaErrorLbl.Visible = false; }
-            if (txtID_Subsistema.Text == "") { nombreSubsistemaErrorLbl.Visible = true; } else { nombreSubsistemaErrorLbl.Visible = false; }
-
-            if (IDsubsistemaErrorLbl.Visible || nombreSubsistemaErrorLbl.Visible)
+            if (txtID_Subsistema.Text == "" || txtSubsistema.Text == "")
             {
-                MainClass.ShowMSG("Campos con * son obligatorios", "stop", "Error");
+                errorProvider1.SetError(txtID_Subsistema, "¡Rellenar campo!");
+                errorProvider1.SetError(txtSubsistema, "¡Rellenar Campo!");
             }
             else
             {
-                DBinsert i = new DBinsert();
-                i.insertSubsistema(txtID_Subsistema.Text, txtSubsistema.Text);
-                r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
-            }
+                try
+                {
+                    //Insertamos los datos 
+                    DBinsert i = new DBinsert();
+                    i.insertSubsistema(txtID_Subsistema.Text, txtSubsistema.Text);
+                    //Mostramos el datagrid con los datos actualizados
+                    r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
+                    //Hacemos uso de la función limpiar para dejar los cambos vacíos.
+                    Limpiar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex.ToString(), "ERROR");
+                    MainClass.con.Close();
+                }
+            }    
         }
 
         private void dgvSubsistema_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -72,37 +94,64 @@ namespace LBISGE
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (txtID_Subsistema.Text == "") { IDsubsistemaErrorLbl.Visible = true; } else { IDsubsistemaErrorLbl.Visible = false; }
-            if (txtID_Subsistema.Text == "") { nombreSubsistemaErrorLbl.Visible = true; } else { nombreSubsistemaErrorLbl.Visible = false; }
-
-            if (IDsubsistemaErrorLbl.Visible || nombreSubsistemaErrorLbl.Visible)
-            {
-                MainClass.ShowMSG("Campos con * son obligatorios", "stop", "Error");
-            }
+             if (txtID_Subsistema.Text == "")
+            { errorProvider1.SetError(txtID_Subsistema, "¡Seleccione Subsistema a Modificar!"); }
             else
             {
-                DBupdate u = new DBupdate();
-                u.updateSubsistema(txtID_Subsistema.Text, txtSubsistema.Text);
-                r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
+                try
+                {
+                    //Actualizamos los datos
+                    DBupdate u = new DBupdate();
+                    u.updateSubsistema(txtID_Subsistema.Text, txtSubsistema.Text);
+                    //Mostramos el datagrid con los datos actualizados
+                    r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
+                    //Hacemos uso de la función limpiar para dejar los cambos vacíos.
+                    Limpiar();
+                    //Habilitamos el textbox que contiene el ID y el boton de guardar
+                    txtID_Subsistema.Enabled = true;
+                    btnGuardar.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex.ToString(), "ERROR");
+                    MainClass.con.Close();
+                }
             }
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Esta seguro de eliminar registro?", "...?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            if (txtID_Subsistema.Text == "")
+            { errorProvider1.SetError(txtID_Subsistema, "¡Seleccione Subsistema a Eliminar!");  }              
+            else
             {
-                DBdelete d = new DBdelete();
-                d.delete(subsistemaID, "pr_deleteSubsistema", "@IDsubsistemaPr");
-                r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
+                try
+                {
+                    //Elimanos los datos
+                    DBdelete d = new DBdelete();
+                    d.delete(subsistemaID, "pr_deleteSubsistema", "@IDsubsistemaPr");
+                    //Mostramos el datagrid con los datos actualizados
+                    r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
+                    //Hacemos uso de la función limpiar para dejar los cambos vacíos.
+                    Limpiar();
+                    //Habilitamos el textbox que contiene el ID y el boton de guardar
+                    txtID_Subsistema.Enabled = true;
+                    btnGuardar.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex.ToString(), "ERROR");
+                    MainClass.con.Close();
+                }
             }
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            txtID_Subsistema.Text = "";
-            txtSubsistema.Text = "";
-            txtID_Subsistema.Enabled = true;
+            //Hacemos uso de la función limpiar para dejar los cambos vacíos.
+            Limpiar();
         }
 
         private void txtSubsistemaBusqueda_TextChanged(object sender, EventArgs e)
@@ -115,6 +164,20 @@ namespace LBISGE
             {
                 r.showSubsistema(dgvSubsistema, IDsubsistemaColumn, NombreSubsistemaColumn);
             }
+        }
+
+        private void txtID_Subsistema_TextChanged(object sender, EventArgs e)
+        {
+            //Eliminamos errorProvider
+            if (txtID_Subsistema.Text.Trim() != "")
+            { errorProvider1.SetError(txtID_Subsistema, ""); }
+        }
+
+        private void txtSubsistema_TextChanged(object sender, EventArgs e)
+        {
+            //Eliminamos erroProvider
+            if (txtSubsistema.Text.Trim() != "")
+            { errorProvider1.SetError(txtSubsistema, ""); }
         }
     }
 }

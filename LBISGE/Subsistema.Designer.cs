@@ -45,13 +45,13 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dgvSubsistema = new System.Windows.Forms.DataGridView();
-            this.IDsubsistemaErrorLbl = new System.Windows.Forms.Label();
-            this.nombreSubsistemaErrorLbl = new System.Windows.Forms.Label();
             this.IDsubsistemaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreSubsistemaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.Modificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubsistema)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -95,8 +95,6 @@
             this.Modificar.Controls.Add(this.txtID_Subsistema);
             this.Modificar.Controls.Add(this.label3);
             this.Modificar.Controls.Add(this.label2);
-            this.Modificar.Controls.Add(this.IDsubsistemaErrorLbl);
-            this.Modificar.Controls.Add(this.nombreSubsistemaErrorLbl);
             this.Modificar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Modificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Modificar.Location = new System.Drawing.Point(402, 44);
@@ -114,7 +112,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(60, 155);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(64, 45);
-            this.btnGuardar.TabIndex = 15;
+            this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "    ";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -127,7 +125,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(290, 154);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(64, 46);
-            this.btnLimpiar.TabIndex = 14;
+            this.btnLimpiar.TabIndex = 7;
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
@@ -139,7 +137,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(205, 154);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(79, 46);
-            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.TabIndex = 6;
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -151,7 +149,7 @@
             this.btnModificar.Location = new System.Drawing.Point(129, 154);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(70, 46);
-            this.btnModificar.TabIndex = 12;
+            this.btnModificar.TabIndex = 5;
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -160,14 +158,16 @@
             this.txtSubsistema.Location = new System.Drawing.Point(168, 91);
             this.txtSubsistema.Name = "txtSubsistema";
             this.txtSubsistema.Size = new System.Drawing.Size(205, 22);
-            this.txtSubsistema.TabIndex = 5;
+            this.txtSubsistema.TabIndex = 3;
+            this.txtSubsistema.TextChanged += new System.EventHandler(this.txtSubsistema_TextChanged);
             // 
             // txtID_Subsistema
             // 
             this.txtID_Subsistema.Location = new System.Drawing.Point(168, 42);
             this.txtID_Subsistema.Name = "txtID_Subsistema";
             this.txtID_Subsistema.Size = new System.Drawing.Size(205, 22);
-            this.txtID_Subsistema.TabIndex = 4;
+            this.txtID_Subsistema.TabIndex = 2;
+            this.txtID_Subsistema.TextChanged += new System.EventHandler(this.txtID_Subsistema_TextChanged);
             // 
             // label3
             // 
@@ -196,7 +196,7 @@
             this.btnMenu.Location = new System.Drawing.Point(634, 355);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(171, 41);
-            this.btnMenu.TabIndex = 3;
+            this.btnMenu.TabIndex = 8;
             this.btnMenu.Text = "Menu principal";
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
@@ -221,28 +221,6 @@
             this.dgvSubsistema.TabIndex = 7;
             this.dgvSubsistema.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubsistema_CellClick);
             // 
-            // IDsubsistemaErrorLbl
-            // 
-            this.IDsubsistemaErrorLbl.AutoSize = true;
-            this.IDsubsistemaErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDsubsistemaErrorLbl.ForeColor = System.Drawing.Color.Red;
-            this.IDsubsistemaErrorLbl.Location = new System.Drawing.Point(371, 44);
-            this.IDsubsistemaErrorLbl.Name = "IDsubsistemaErrorLbl";
-            this.IDsubsistemaErrorLbl.Size = new System.Drawing.Size(16, 21);
-            this.IDsubsistemaErrorLbl.TabIndex = 18;
-            this.IDsubsistemaErrorLbl.Text = "*";
-            // 
-            // nombreSubsistemaErrorLbl
-            // 
-            this.nombreSubsistemaErrorLbl.AutoSize = true;
-            this.nombreSubsistemaErrorLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreSubsistemaErrorLbl.ForeColor = System.Drawing.Color.Red;
-            this.nombreSubsistemaErrorLbl.Location = new System.Drawing.Point(371, 92);
-            this.nombreSubsistemaErrorLbl.Name = "nombreSubsistemaErrorLbl";
-            this.nombreSubsistemaErrorLbl.Size = new System.Drawing.Size(16, 21);
-            this.nombreSubsistemaErrorLbl.TabIndex = 19;
-            this.nombreSubsistemaErrorLbl.Text = "*";
-            // 
             // IDsubsistemaColumn
             // 
             this.IDsubsistemaColumn.HeaderText = "IDsubsistema";
@@ -255,6 +233,10 @@
             this.NombreSubsistemaColumn.HeaderText = "Subsistema";
             this.NombreSubsistemaColumn.Name = "NombreSubsistemaColumn";
             this.NombreSubsistemaColumn.ReadOnly = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Subsistema
             // 
@@ -276,6 +258,7 @@
             this.Modificar.ResumeLayout(false);
             this.Modificar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubsistema)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,10 +280,9 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridView dgvSubsistema;
-        private System.Windows.Forms.Label IDsubsistemaErrorLbl;
-        private System.Windows.Forms.Label nombreSubsistemaErrorLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDsubsistemaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreSubsistemaColumn;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

@@ -61,9 +61,11 @@
             this.txtEdificioBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Modificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoArea)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMenu
@@ -219,10 +221,12 @@
             // 
             // txtConsumo
             // 
+            this.txtConsumo.Enabled = false;
             this.txtConsumo.Location = new System.Drawing.Point(168, 339);
             this.txtConsumo.Name = "txtConsumo";
             this.txtConsumo.Size = new System.Drawing.Size(205, 22);
             this.txtConsumo.TabIndex = 19;
+            this.txtConsumo.TextChanged += new System.EventHandler(this.txtConsumo_TextChanged);
             // 
             // label8
             // 
@@ -257,6 +261,7 @@
             this.txtHorasUso.Name = "txtHorasUso";
             this.txtHorasUso.Size = new System.Drawing.Size(205, 22);
             this.txtHorasUso.TabIndex = 12;
+            this.txtHorasUso.TextChanged += new System.EventHandler(this.txtHorasUso_TextChanged);
             // 
             // label6
             // 
@@ -273,6 +278,7 @@
             this.txtCapacidad.Name = "txtCapacidad";
             this.txtCapacidad.Size = new System.Drawing.Size(205, 22);
             this.txtCapacidad.TabIndex = 10;
+            this.txtCapacidad.TextChanged += new System.EventHandler(this.txtCapacidad_TextChanged);
             // 
             // label5
             // 
@@ -289,6 +295,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(205, 22);
             this.txtCantidad.TabIndex = 8;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
             // label4
             // 
@@ -369,6 +376,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Area :";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // InformaciónArea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,6 +400,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoArea)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -426,5 +438,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

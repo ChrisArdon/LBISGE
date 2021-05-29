@@ -100,8 +100,11 @@ namespace LBISGE
 
         private void button1_Click(object sender, EventArgs e)
         {
-            config conf = new config();
-            conf.Show();
+            //Mostramos formulario Configuracion Panel          
+            AbrirFormInPanel(new config());
+            if (PanelMenu.Width == 173)
+                PanelMenu.Width = 50;
+            
         }
     }
 }

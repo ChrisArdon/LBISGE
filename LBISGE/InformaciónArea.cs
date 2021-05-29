@@ -31,14 +31,29 @@ namespace LBISGE
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-
+            Calc_Consumo();
         }
 
         private void label7_Click(object sender, EventArgs e)
         {
 
         }
-
+        public void Calc_Consumo()
+        {
+            if (txtCantidad.Text == "" || txtCapacidad.Text == "" || txtHorasUso.Text == "" || txtDias.Text == "")
+            { }
+            else
+            {
+                Double Consumo, cantidad, capacidad, horas, dias;
+                cantidad = Convert.ToDouble(txtCantidad.Text);
+                capacidad = Convert.ToDouble(txtCapacidad.Text);
+                horas = Convert.ToDouble(txtHorasUso.Text);
+                dias = Convert.ToDouble(txtDias.Text);
+                //Realizamos el calculo del consumo
+                Consumo = (cantidad * capacidad * horas * dias) / 1000;
+                txtConsumo.Text = Consumo.ToString();
+            }
+        }
         private void InformaciónArea_Load(object sender, EventArgs e)
         {
             // Mensajes de descripción en cada uno de los botones
@@ -50,6 +65,26 @@ namespace LBISGE
             r.getEdificioList("st_getEdificioList", cbEdificio, "NombreEdificio", "IDedificio");
             r.getAreaList("st_getAreaList", cbArea, "NombreArea", "IDarea");
             r.getSubsistemaList("st_getSubsistemaList", cbSubsistema, "NombreSubsistema", "IDsubsistema");
+        }
+
+        private void txtConsumo_TextChanged(object sender, EventArgs e)
+        {
+            Calc_Consumo();
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+            Calc_Consumo();
+        }
+
+        private void txtCapacidad_TextChanged(object sender, EventArgs e)
+        {
+            Calc_Consumo();
+        }
+
+        private void txtHorasUso_TextChanged(object sender, EventArgs e)
+        {
+            Calc_Consumo();
         }
     }
 }
