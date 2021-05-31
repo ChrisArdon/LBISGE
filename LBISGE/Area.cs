@@ -92,9 +92,9 @@ namespace LBISGE
             {
                 //Insertamos datos a la DB
                 DBinsert i = new DBinsert();
-                i.insertArea(IDareaTxt.Text, nombreAreaTxt.Text);
+                i.insertArea(IDareaTxt.Text, nombreAreaTxt.Text, TipoArea.Text, txt_LargoArea.Text, txt_AnchoArea.Text, txt_AreaT.Text);
                 //Mostramos los datos en el dataGridView
-                r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
+               r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
                 //Limpiamos campos luego del ingreso de datos
                 Limpiar();
             }
@@ -160,7 +160,7 @@ namespace LBISGE
                 {
                     //Actualizamos los datos
                     DBupdate u = new DBupdate();
-                u.updateArea(IDareaTxt.Text, nombreAreaTxt.Text);
+                    u.updateArea(IDareaTxt.Text, nombreAreaTxt.Text, TipoArea.Text, txt_LargoArea.Text, txt_AnchoArea.Text, txt_AreaT.Text);
                 //Mostramos el datagrid con los datos actualizados
                 r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
                 //Hacemos uso de la función limpiar para dejar los cambos vacíos.
@@ -183,6 +183,9 @@ namespace LBISGE
                 AreaID = row.Cells["IDareaColumn"].Value.ToString();
                 IDareaTxt.Text = row.Cells["IDareaColumn"].Value.ToString();
                 nombreAreaTxt.Text = row.Cells["NombreAreaColumn"].Value.ToString();
+                TipoArea.Text = row.Cells[2].Value.ToString();
+                txt_LargoArea.Text = row.Cells[3].Value.ToString();
+                txt_AnchoArea.Text = row.Cells[4].Value.ToString();
                 IDareaTxt.Enabled = false;
             }
         }

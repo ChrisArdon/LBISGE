@@ -23,7 +23,7 @@ namespace LBISGE
         public static void conec()
         {
             servidor = MiServidor;
-            db = "LBISGE";
+            db = "DBLBISGE";
             conexionN = "true";
             tipoConexion = "integrated security = yes"; ;
             // cadena = "server=" + servidor + ";uid=" + usuario + ";pwd=" + clave + ";database=" + db;
