@@ -1,17 +1,20 @@
 create procedure pr_insertInformacionArea
---@ID_informacionAreaPr varchar(10),
+@ItemPr varchar(10),
 @DescripcionPr varchar(1000),
-@CantidadPr varchar(10),
+@CantidadPersonasPr varchar(10),
+@TipoAreaPr varchar(800),
+@CantidadEquiposPr varchar(10),
 @CapacidadPr varchar(15),
 @HorasDeUsoPr varchar(5),
 @DiasPr varchar(10),
 @ConsumoPr varchar(15),
+@ImagenPr image,
 @ID_edificioPr varchar(10),
 @ID_areaPr varchar(10),
 @ID_subsistemaPr varchar(10)
 as
-insert into InformacionArea(Descripcion,Cantidad,Capacidad,HorasDeUso,Dias,Consumo,ID_edificio,ID_area,ID_subsistema)
-values (@DescripcionPr,@CantidadPr,@CapacidadPr,@HorasDeUsoPr,@DiasPr,@ConsumoPr,@ID_edificioPr,@ID_areaPr,@ID_subsistemaPr)
+insert into InformacionArea(Item, Descripcion,CantidadPersonas,TipoArea,CantidadEquipos,Capacidad,HorasDeUso,Dias,Consumo,ID_edificio,ID_area,ID_subsistema)
+values (@ItemPr,@DescripcionPr,@CantidadPersonasPr,@TipoAreaPr,@CantidadEquiposPr,@CapacidadPr,@HorasDeUsoPr,@DiasPr,@ConsumoPr,@ID_edificioPr,@ID_areaPr,@ID_subsistemaPr)
 
 create procedure pr_updateInformacionArea
 @DescripcionPr varchar(1000),
