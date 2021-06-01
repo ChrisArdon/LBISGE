@@ -77,5 +77,36 @@ namespace LBISGE
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
+        public void updateInformacionArea(string Item, string descripcion, string personas, string tipoarea, string equipos, string capacidad, string horas, string dias, string consumo, string IDedificio,
+            string IDarea, string IDsubsistema)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("pr_updateInformacionArea", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Item", Item);
+                cmd.Parameters.AddWithValue("@DescripcionPr", descripcion);
+                cmd.Parameters.AddWithValue("@CantidadPersonasPr", personas);
+                cmd.Parameters.AddWithValue("@TipoAreaPr", tipoarea);
+                cmd.Parameters.AddWithValue("@CantidadEquiposPr", equipos);
+                cmd.Parameters.AddWithValue("@CapacidadPr", capacidad);
+                cmd.Parameters.AddWithValue("@HorasDeUsoPr", horas);
+                cmd.Parameters.AddWithValue("@DiasPr", dias);
+                cmd.Parameters.AddWithValue("@ConsumoPr", consumo);
+                cmd.Parameters.AddWithValue("@ID_edificioPr", IDedificio);
+                cmd.Parameters.AddWithValue("@ID_areaPr", IDarea);
+                cmd.Parameters.AddWithValue("@ID_subsistemaPr", IDsubsistema);
+                MainClass.con.Open();
+                cmd.ExecuteNonQuery();
+                MainClass.con.Close();
+                MainClass.ShowMSG("Modificado correctamente", "Modificado...", "Success");
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
     }
 }

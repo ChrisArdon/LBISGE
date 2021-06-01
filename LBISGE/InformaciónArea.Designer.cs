@@ -218,6 +218,7 @@
             this.btnModificar.Size = new System.Drawing.Size(70, 46);
             this.btnModificar.TabIndex = 26;
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // cbSubsistema
             // 

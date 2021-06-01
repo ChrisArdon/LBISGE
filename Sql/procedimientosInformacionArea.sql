@@ -15,9 +15,13 @@ as
 insert into InformacionArea(Descripcion,CantidadPersonas,TipoArea,CantidadEquipos,Capacidad,HorasDeUso,Dias,Consumo,ID_edificio,ID_area,ID_subsistema)
 values (@DescripcionPr,@CantidadPersonasPr,@TipoAreaPr,@CantidadEquiposPr,@CapacidadPr,@HorasDeUsoPr,@DiasPr,@ConsumoPr,@ID_edificioPr,@ID_areaPr,@ID_subsistemaPr)
 
+--Update
 create procedure pr_updateInformacionArea
+@Item int,
 @DescripcionPr varchar(1000),
-@CantidadPr varchar(10),
+@CantidadPersonasPr varchar(10),
+@TipoAreaPr varchar(800),
+@CantidadEquiposPr varchar(10),
 @CapacidadPr varchar(15),
 @HorasDeUsoPr varchar(5),
 @DiasPr varchar(10),
@@ -29,7 +33,9 @@ as
 update InformacionArea
 set 
 Descripcion = @DescripcionPr,
-Cantidad = @CantidadPr,
+CantidadPersonas = @CantidadPersonasPr,
+TipoArea = @TipoAreaPr,
+CantidadEquipos = @CantidadEquiposPr,
 Capacidad = @CapacidadPr,
 HorasDeUso = @HorasDeUsoPr,
 Dias = @DiasPr,
@@ -37,12 +43,13 @@ Consumo = @ConsumoPr,
 ID_edificio = @ID_edificioPr,
 ID_area = @ID_areaPr,
 ID_subsistema = @ID_subsistemaPr
-where Descripcion = @DescripcionPr
+where Item = @Item
 
+--Delete 
 create procedure pr_deleteInformacionArea
-@DescripcionPr varchar(1000)
+@Item int
 as
-delete from InformacionArea where Descripcion = @DescripcionPr
+delete from InformacionArea where Item = @Item
 
 create procedure pr_getInformacionAreaData
 as
@@ -62,6 +69,7 @@ from InformacionArea i
 create procedure pr_getInformacionAreaData
 as
 select
+i.Item as 'Item',
 i.Descripcion as 'Descripcion',
 i.CantidadPersonas as 'Personas',
 i.TipoArea as 'Tipo',
@@ -70,8 +78,14 @@ i.Capacidad as 'Capacidad',
 i.HorasDeUso as 'Horas',
 i.Dias as 'Dias',
 i.Consumo as 'Consumo',
-i.ID_edificio as 'IDedificio',
-i.ID_area as 'IDarea',
-i.ID_subsistema as 'IDsubsistema'
-from InformacionArea i
-order by i.ID_edificio
+e.ID_edificio as 'IDedificio',
+e.NombreDeEdificio as 'Edificio',
+a.ID_area as 'IDarea',
+a.NombreDeArea as 'Area',
+s.ID_subsistema as 'IDsubsistema',
+s.NombreDeSubsistema as 'Subsistema'
+from InformacionArea i 
+inner join Edificios e on e.ID_edificio = i.ID_edificio
+inner join Areas a on a.ID_area = i.ID_area
+inner join Subsistema s on s.ID_subsistema = i.ID_subsistema
+order by e.NombreDeEdificio
