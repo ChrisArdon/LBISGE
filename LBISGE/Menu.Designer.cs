@@ -30,12 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.PanelMenu = new System.Windows.Forms.Panel();
+            this.btnInfoArea = new System.Windows.Forms.Button();
             this.Configuración = new System.Windows.Forms.Button();
-            this.btnResumen = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnTipoArea = new System.Windows.Forms.Button();
             this.btnSubsistema = new System.Windows.Forms.Button();
-            this.btnInfoArea = new System.Windows.Forms.Button();
             this.btnEdificio = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,7 +55,6 @@
             this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.PanelMenu.Controls.Add(this.btnInfoArea);
             this.PanelMenu.Controls.Add(this.Configuración);
-            this.PanelMenu.Controls.Add(this.btnResumen);
             this.PanelMenu.Controls.Add(this.btnSalir);
             this.PanelMenu.Controls.Add(this.btnTipoArea);
             this.PanelMenu.Controls.Add(this.btnSubsistema);
@@ -66,6 +64,22 @@
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(249, 509);
             this.PanelMenu.TabIndex = 0;
+            // 
+            // btnInfoArea
+            // 
+            this.btnInfoArea.FlatAppearance.BorderSize = 0;
+            this.btnInfoArea.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.btnInfoArea.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.btnInfoArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfoArea.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfoArea.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnInfoArea.Location = new System.Drawing.Point(-1, 290);
+            this.btnInfoArea.Name = "btnInfoArea";
+            this.btnInfoArea.Size = new System.Drawing.Size(250, 45);
+            this.btnInfoArea.TabIndex = 2;
+            this.btnInfoArea.Text = "Información Area";
+            this.btnInfoArea.UseVisualStyleBackColor = true;
+            this.btnInfoArea.Click += new System.EventHandler(this.btnInfoArea_Click);
             // 
             // Configuración
             // 
@@ -83,22 +97,6 @@
             this.Configuración.Text = "Configuración";
             this.Configuración.UseVisualStyleBackColor = true;
             this.Configuración.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnResumen
-            // 
-            this.btnResumen.FlatAppearance.BorderSize = 0;
-            this.btnResumen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.btnResumen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.btnResumen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResumen.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResumen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnResumen.Location = new System.Drawing.Point(0, 338);
-            this.btnResumen.Name = "btnResumen";
-            this.btnResumen.Size = new System.Drawing.Size(250, 45);
-            this.btnResumen.TabIndex = 6;
-            this.btnResumen.Text = "Resumenes";
-            this.btnResumen.UseVisualStyleBackColor = true;
-            this.btnResumen.Click += new System.EventHandler(this.btnResumen_Click);
             // 
             // btnSalir
             // 
@@ -151,22 +149,6 @@
             this.btnSubsistema.Text = "Subsistemas";
             this.btnSubsistema.UseVisualStyleBackColor = true;
             this.btnSubsistema.Click += new System.EventHandler(this.btnSubsistema_Click);
-            // 
-            // btnInfoArea
-            // 
-            this.btnInfoArea.FlatAppearance.BorderSize = 0;
-            this.btnInfoArea.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.btnInfoArea.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.btnInfoArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfoArea.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfoArea.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnInfoArea.Location = new System.Drawing.Point(-1, 290);
-            this.btnInfoArea.Name = "btnInfoArea";
-            this.btnInfoArea.Size = new System.Drawing.Size(250, 45);
-            this.btnInfoArea.TabIndex = 2;
-            this.btnInfoArea.Text = "Información Area";
-            this.btnInfoArea.UseVisualStyleBackColor = true;
-            this.btnInfoArea.Click += new System.EventHandler(this.btnInfoArea_Click);
             // 
             // btnEdificio
             // 
@@ -289,7 +271,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel PanelContenedor;
-        private System.Windows.Forms.Button btnResumen;
         private System.Windows.Forms.PictureBox BtnMinimizar;
         private System.Windows.Forms.PictureBox BtnMaximizar;
         private System.Windows.Forms.PictureBox BtnCerrar;
