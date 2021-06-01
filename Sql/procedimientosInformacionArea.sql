@@ -1,5 +1,5 @@
+--Insert
 create procedure pr_insertInformacionArea
-@ItemPr varchar(10),
 @DescripcionPr varchar(1000),
 @CantidadPersonasPr varchar(10),
 @TipoAreaPr varchar(800),
@@ -8,13 +8,12 @@ create procedure pr_insertInformacionArea
 @HorasDeUsoPr varchar(5),
 @DiasPr varchar(10),
 @ConsumoPr varchar(15),
-@ImagenPr image,
 @ID_edificioPr varchar(10),
 @ID_areaPr varchar(10),
 @ID_subsistemaPr varchar(10)
 as
-insert into InformacionArea(Item, Descripcion,CantidadPersonas,TipoArea,CantidadEquipos,Capacidad,HorasDeUso,Dias,Consumo,ID_edificio,ID_area,ID_subsistema)
-values (@ItemPr,@DescripcionPr,@CantidadPersonasPr,@TipoAreaPr,@CantidadEquiposPr,@CapacidadPr,@HorasDeUsoPr,@DiasPr,@ConsumoPr,@ID_edificioPr,@ID_areaPr,@ID_subsistemaPr)
+insert into InformacionArea(Descripcion,CantidadPersonas,TipoArea,CantidadEquipos,Capacidad,HorasDeUso,Dias,Consumo,ID_edificio,ID_area,ID_subsistema)
+values (@DescripcionPr,@CantidadPersonasPr,@TipoAreaPr,@CantidadEquiposPr,@CapacidadPr,@HorasDeUsoPr,@DiasPr,@ConsumoPr,@ID_edificioPr,@ID_areaPr,@ID_subsistemaPr)
 
 create procedure pr_updateInformacionArea
 @DescripcionPr varchar(1000),
@@ -58,3 +57,21 @@ i.ID_edificio as 'IDedificio',
 i.ID_area as 'IDarea',
 i.ID_subsistema as 'IDsubsistema'
 from InformacionArea i
+
+--Get data
+create procedure pr_getInformacionAreaData
+as
+select
+i.Descripcion as 'Descripcion',
+i.CantidadPersonas as 'Personas',
+i.TipoArea as 'Tipo',
+i.CantidadEquipos as 'Equipos',
+i.Capacidad as 'Capacidad',
+i.HorasDeUso as 'Horas',
+i.Dias as 'Dias',
+i.Consumo as 'Consumo',
+i.ID_edificio as 'IDedificio',
+i.ID_area as 'IDarea',
+i.ID_subsistema as 'IDsubsistema'
+from InformacionArea i
+order by i.ID_edificio

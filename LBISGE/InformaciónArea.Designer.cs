@@ -60,16 +60,28 @@
             this.txtID_Area = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvInfoArea = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtEdificioBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dgvInformacionArea = new System.Windows.Forms.DataGridView();
+            this.EdificioColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoAreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadPersonasColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubsistemaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CapacidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HorasColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiasColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ConsumoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoArea)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInformacionArea)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMenu
@@ -77,7 +89,7 @@
             this.btnMenu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(34, 446);
+            this.btnMenu.Location = new System.Drawing.Point(12, 438);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(171, 51);
             this.btnMenu.TabIndex = 4;
@@ -117,9 +129,9 @@
             this.Modificar.Controls.Add(this.label2);
             this.Modificar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Modificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Modificar.Location = new System.Drawing.Point(385, 23);
+            this.Modificar.Location = new System.Drawing.Point(422, 23);
             this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(419, 474);
+            this.Modificar.Size = new System.Drawing.Size(396, 474);
             this.Modificar.TabIndex = 10;
             this.Modificar.TabStop = false;
             this.Modificar.Text = "Agregar, Modificar o Eliminar.";
@@ -382,14 +394,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Item :";
             // 
-            // dgvInfoArea
-            // 
-            this.dgvInfoArea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInfoArea.Location = new System.Drawing.Point(25, 100);
-            this.dgvInfoArea.Name = "dgvInfoArea";
-            this.dgvInfoArea.Size = new System.Drawing.Size(323, 329);
-            this.dgvInfoArea.TabIndex = 9;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtEdificioBusqueda);
@@ -398,7 +402,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.Location = new System.Drawing.Point(25, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(323, 56);
+            this.groupBox1.Size = new System.Drawing.Size(391, 56);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Descripción de area";
@@ -424,14 +428,118 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // dgvInformacionArea
+            // 
+            this.dgvInformacionArea.AllowUserToAddRows = false;
+            this.dgvInformacionArea.AllowUserToDeleteRows = false;
+            this.dgvInformacionArea.BackgroundColor = System.Drawing.Color.White;
+            this.dgvInformacionArea.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvInformacionArea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInformacionArea.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EdificioColumn,
+            this.AreaColumn,
+            this.TipoAreaColumn,
+            this.CantidadPersonasColumn,
+            this.SubsistemaColumn,
+            this.ItemColum,
+            this.DescripcionColumn,
+            this.CantidadColumn,
+            this.CapacidadColumn,
+            this.HorasColumn,
+            this.DiasColumn,
+            this.ConsumoColumn});
+            this.dgvInformacionArea.Location = new System.Drawing.Point(12, 95);
+            this.dgvInformacionArea.Name = "dgvInformacionArea";
+            this.dgvInformacionArea.ReadOnly = true;
+            this.dgvInformacionArea.RowHeadersVisible = false;
+            this.dgvInformacionArea.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvInformacionArea.Size = new System.Drawing.Size(404, 337);
+            this.dgvInformacionArea.TabIndex = 11;
+            // 
+            // EdificioColumn
+            // 
+            this.EdificioColumn.HeaderText = "Edificio";
+            this.EdificioColumn.Name = "EdificioColumn";
+            this.EdificioColumn.ReadOnly = true;
+            this.EdificioColumn.Width = 101;
+            // 
+            // AreaColumn
+            // 
+            this.AreaColumn.HeaderText = "Area";
+            this.AreaColumn.Name = "AreaColumn";
+            this.AreaColumn.ReadOnly = true;
+            this.AreaColumn.Width = 101;
+            // 
+            // TipoAreaColumn
+            // 
+            this.TipoAreaColumn.HeaderText = "TipoArea";
+            this.TipoAreaColumn.Name = "TipoAreaColumn";
+            this.TipoAreaColumn.ReadOnly = true;
+            // 
+            // CantidadPersonasColumn
+            // 
+            this.CantidadPersonasColumn.HeaderText = "Personas";
+            this.CantidadPersonasColumn.Name = "CantidadPersonasColumn";
+            this.CantidadPersonasColumn.ReadOnly = true;
+            this.CantidadPersonasColumn.Width = 101;
+            // 
+            // SubsistemaColumn
+            // 
+            this.SubsistemaColumn.HeaderText = "Subsistema";
+            this.SubsistemaColumn.Name = "SubsistemaColumn";
+            this.SubsistemaColumn.ReadOnly = true;
+            // 
+            // ItemColum
+            // 
+            this.ItemColum.HeaderText = "Item";
+            this.ItemColum.Name = "ItemColum";
+            this.ItemColum.ReadOnly = true;
+            this.ItemColum.Visible = false;
+            // 
+            // DescripcionColumn
+            // 
+            this.DescripcionColumn.HeaderText = "Descripcion";
+            this.DescripcionColumn.Name = "DescripcionColumn";
+            this.DescripcionColumn.ReadOnly = true;
+            // 
+            // CantidadColumn
+            // 
+            this.CantidadColumn.HeaderText = "Cantidad";
+            this.CantidadColumn.Name = "CantidadColumn";
+            this.CantidadColumn.ReadOnly = true;
+            // 
+            // CapacidadColumn
+            // 
+            this.CapacidadColumn.HeaderText = "Capacidad";
+            this.CapacidadColumn.Name = "CapacidadColumn";
+            this.CapacidadColumn.ReadOnly = true;
+            // 
+            // HorasColumn
+            // 
+            this.HorasColumn.HeaderText = "Horas";
+            this.HorasColumn.Name = "HorasColumn";
+            this.HorasColumn.ReadOnly = true;
+            // 
+            // DiasColumn
+            // 
+            this.DiasColumn.HeaderText = "Dias";
+            this.DiasColumn.Name = "DiasColumn";
+            this.DiasColumn.ReadOnly = true;
+            // 
+            // ConsumoColumn
+            // 
+            this.ConsumoColumn.HeaderText = "Consumo";
+            this.ConsumoColumn.Name = "ConsumoColumn";
+            this.ConsumoColumn.ReadOnly = true;
+            // 
             // InformaciónArea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(830, 509);
+            this.Controls.Add(this.dgvInformacionArea);
             this.Controls.Add(this.Modificar);
-            this.Controls.Add(this.dgvInfoArea);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -441,10 +549,10 @@
             this.Load += new System.EventHandler(this.InformaciónArea_Load);
             this.Modificar.ResumeLayout(false);
             this.Modificar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfoArea)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInformacionArea)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -457,7 +565,6 @@
         private System.Windows.Forms.TextBox txtID_Area;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvInfoArea;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtEdificioBusqueda;
         private System.Windows.Forms.Label label1;
@@ -487,5 +594,18 @@
         private System.Windows.Forms.TextBox CantidadPersonas;
         private System.Windows.Forms.TextBox TipoAreatxt;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dgvInformacionArea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EdificioColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AreaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoAreaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadPersonasColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubsistemaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemColum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CapacidadColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HorasColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiasColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ConsumoColumn;
     }
 }

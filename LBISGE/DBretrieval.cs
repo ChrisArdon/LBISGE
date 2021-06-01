@@ -232,5 +232,48 @@ namespace LBISGE
             }
         }
 
+        public void showInformacionArea(DataGridView gv, DataGridViewColumn Edificio, DataGridViewColumn area, DataGridViewColumn tipoarea, DataGridViewColumn personas, DataGridViewColumn subsistema,
+            DataGridViewColumn item, DataGridViewColumn descripcion, DataGridViewColumn cantidad, DataGridViewColumn capacidad, DataGridViewColumn horas, DataGridViewColumn dias, DataGridViewColumn consumo, string data=null)
+        {
+            try
+            {
+                SqlCommand cmd;
+                if (data == null)
+                {
+                    cmd = new SqlCommand("pr_getInformacionAreaData", MainClass.con);
+                }
+                else
+                {
+                    cmd = new SqlCommand("busqueda..", MainClass.con);
+                    cmd.Parameters.AddWithValue("@data", data);
+                }
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                Edificio.DataPropertyName = dt.Columns["Edificio"].ToString();
+                area.DataPropertyName = dt.Columns["Area"].ToString();
+                tipoarea.DataPropertyName = dt.Columns["Tipo"].ToString();
+                personas.DataPropertyName = dt.Columns["Personas"].ToString();
+                subsistema.DataPropertyName = dt.Columns["Subsistema"].ToString();
+                item.DataPropertyName = dt.Columns["Item"].ToString();
+                descripcion.DataPropertyName = dt.Columns["Descripcion"].ToString();
+                cantidad.DataPropertyName = dt.Columns["Equipos"].ToString();
+                capacidad.DataPropertyName = dt.Columns["Capacidad"].ToString();
+                horas.DataPropertyName = dt.Columns["Horas"].ToString();
+                dias.DataPropertyName = dt.Columns["Dias"].ToString();
+                consumo.DataPropertyName = dt.Columns["Consumo"].ToString();
+
+
+
+                gv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
+
     }
 }

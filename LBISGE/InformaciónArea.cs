@@ -66,6 +66,9 @@ namespace LBISGE
             r.getAreaList("st_getAreaList", cbArea, "NombreArea", "IDarea");
             r.getSubsistemaList("st_getSubsistemaList", cbSubsistema, "NombreSubsistema", "IDsubsistema");
 
+            r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
+                CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn);
+
             //TipoAreatxt.Text = DBretrieval.getAreaType(cbArea.Text);
         }
 
