@@ -109,6 +109,7 @@ namespace LBISGE
             i.insertInformacionArea(txtDescripcion.Text, CantidadPersonas.Text, TipoAreatxt.Text, txtCantidad.Text, txtCapacidad.Text, txtHorasUso.Text, txtDias.Text, txtConsumo.Text, cbEdificio.SelectedValue.ToString(), cbArea.SelectedValue.ToString(), cbSubsistema.SelectedValue.ToString());
             r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
                 CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
+            Limpiar();
         }
 
         private void dgvInformacionArea_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -142,6 +143,7 @@ namespace LBISGE
                     cbEdificio.SelectedValue.ToString(), cbArea.SelectedValue.ToString(), cbSubsistema.SelectedValue.ToString());
                 r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
                     CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
+                Limpiar();
             }
             
         }
@@ -156,8 +158,29 @@ namespace LBISGE
                 r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
                     CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
 
-                //Limpiar
+                Limpiar();
             }
+        }
+
+        public void Limpiar()
+        {
+            cbEdificio.SelectedIndex = -1;
+            cbArea.SelectedIndex = -1;
+            cbSubsistema.SelectedIndex = -1;
+            TipoAreatxt.Text = "";
+            CantidadPersonas.Text = "";
+            txtID_Area.Text = "";
+            txtDescripcion.Text = "";
+            txtCantidad.Text = "";
+            txtCapacidad.Text = "";
+            txtHorasUso.Text = "";
+            txtDias.Text = "";
+            txtConsumo.Text = "";
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }
