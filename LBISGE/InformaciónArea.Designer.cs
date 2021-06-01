@@ -419,6 +419,7 @@
             this.txtEdificioBusqueda.Name = "txtEdificioBusqueda";
             this.txtEdificioBusqueda.Size = new System.Drawing.Size(196, 22);
             this.txtEdificioBusqueda.TabIndex = 1;
+            this.txtEdificioBusqueda.TextChanged += new System.EventHandler(this.txtEdificioBusqueda_TextChanged);
             // 
             // label1
             // 

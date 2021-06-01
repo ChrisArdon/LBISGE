@@ -67,8 +67,11 @@ namespace LBISGE
             r.getAreaList("st_getAreaList", cbArea, "NombreArea", "IDarea");
             r.getSubsistemaList("st_getSubsistemaList", cbSubsistema, "NombreSubsistema", "IDsubsistema");
 
+            Limpiar();
+
             r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
                 CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
+
 
             //TipoAreatxt.Text = DBretrieval.getAreaType(cbArea.Text);
         }
@@ -181,6 +184,20 @@ namespace LBISGE
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void txtEdificioBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            if (txtEdificioBusqueda.Text != "")
+            {
+                r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
+                    CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn, txtEdificioBusqueda.Text);
+            }
+            else
+            {
+                r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
+                    CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
+            }
         }
     }
 }

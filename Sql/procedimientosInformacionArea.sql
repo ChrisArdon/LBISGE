@@ -89,3 +89,36 @@ inner join Edificios e on e.ID_edificio = i.ID_edificio
 inner join Areas a on a.ID_area = i.ID_area
 inner join Subsistema s on s.ID_subsistema = i.ID_subsistema
 order by e.NombreDeEdificio
+
+--Busqueda
+create procedure pr_getInformacionAreaDataLIKE
+@data varchar(50)
+as
+select
+i.Item as 'Item',
+i.Descripcion as 'Descripcion',
+i.CantidadPersonas as 'Personas',
+i.TipoArea as 'Tipo',
+i.CantidadEquipos as 'Equipos',
+i.Capacidad as 'Capacidad',
+i.HorasDeUso as 'Horas',
+i.Dias as 'Dias',
+i.Consumo as 'Consumo',
+e.ID_edificio as 'IDedificio',
+e.NombreDeEdificio as 'Edificio',
+a.ID_area as 'IDarea',
+a.NombreDeArea as 'Area',
+s.ID_subsistema as 'IDsubsistema',
+s.NombreDeSubsistema as 'Subsistema'
+from InformacionArea i 
+inner join Edificios e on e.ID_edificio = i.ID_edificio
+inner join Areas a on a.ID_area = i.ID_area
+inner join Subsistema s on s.ID_subsistema = i.ID_subsistema
+where
+i.TipoArea like '%'+@data+'%'
+or
+e.NombreDeEdificio like '%'+@data+'%'
+or 
+a.NombreDeArea like '%'+@data+'%'
+or 
+s.NombreDeSubsistema like '%'+@data+'%'
