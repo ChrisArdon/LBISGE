@@ -98,5 +98,11 @@ namespace LBISGE
             else
             { }    
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            DBinsert i = new DBinsert();
+            i.insertInformacionArea(txtDescripcion.Text, CantidadPersonas.Text, TipoAreatxt.Text, txtCantidad.Text, txtCapacidad.Text, txtHorasUso.Text, txtDias.Text, txtConsumo.Text, cbEdificio.SelectedValue.ToString(), cbArea.SelectedValue.ToString(), cbSubsistema.SelectedValue.ToString());
+        }
     }
 }

@@ -79,5 +79,35 @@ namespace LBISGE
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
+        public void insertInformacionArea(string descr, string cantidadPersonas, string tipoArea, string cantidadEquipos, string capacidad, string horas, string dias, string consumo, string IDedificio, string IDarea, string IDsubsistema)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("pr_insertInformacionArea", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@DescripcionPr", descr);
+                cmd.Parameters.AddWithValue("@CantidadPersonasPr", cantidadPersonas);
+                cmd.Parameters.AddWithValue("@TipoAreaPr", tipoArea);
+                cmd.Parameters.AddWithValue("@CantidadEquiposPr", cantidadEquipos);
+                cmd.Parameters.AddWithValue("@CapacidadPr", capacidad);
+                cmd.Parameters.AddWithValue("@HorasDeUsoPr", horas);
+                cmd.Parameters.AddWithValue("@DiasPr", dias);
+                cmd.Parameters.AddWithValue("@ConsumoPr", consumo);
+                //cmd.Parameters.AddWithValue("@ImagenPr", "path");
+                cmd.Parameters.AddWithValue("@ID_edificioPr", IDedificio);
+                cmd.Parameters.AddWithValue("@ID_areaPr", IDarea);
+                cmd.Parameters.AddWithValue("@ID_subsistemaPr", IDsubsistema);
+
+                MainClass.con.Open();
+                cmd.ExecuteNonQuery();
+                MainClass.con.Close();
+                MainClass.ShowMSG("Informacion añadida correctamente", "Guardado...", "Success");
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
     }
 }
