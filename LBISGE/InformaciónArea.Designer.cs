@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformaciónArea));
             this.btnMenu = new System.Windows.Forms.Button();
             this.Modificar = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.CantidadPersonas = new System.Windows.Forms.TextBox();
+            this.TipoAreatxt = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -62,10 +66,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label12 = new System.Windows.Forms.Label();
-            this.TipoAreatxt = new System.Windows.Forms.TextBox();
-            this.CantidadPersonas = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.Modificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfoArea)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -124,6 +124,39 @@
             this.Modificar.TabStop = false;
             this.Modificar.Text = "Agregar, Modificar o Eliminar.";
             this.Modificar.Enter += new System.EventHandler(this.Modificar_Enter);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(24, 136);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(144, 17);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Cantidad de Personas :";
+            // 
+            // CantidadPersonas
+            // 
+            this.CantidadPersonas.Location = new System.Drawing.Point(176, 133);
+            this.CantidadPersonas.Name = "CantidadPersonas";
+            this.CantidadPersonas.Size = new System.Drawing.Size(205, 22);
+            this.CantidadPersonas.TabIndex = 32;
+            // 
+            // TipoAreatxt
+            // 
+            this.TipoAreatxt.Enabled = false;
+            this.TipoAreatxt.Location = new System.Drawing.Point(176, 103);
+            this.TipoAreatxt.Name = "TipoAreatxt";
+            this.TipoAreatxt.Size = new System.Drawing.Size(205, 22);
+            this.TipoAreatxt.TabIndex = 31;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(23, 106);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(89, 17);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Tipo de Area :";
             // 
             // btnGuardar
             // 
@@ -198,6 +231,7 @@
             this.cbArea.Name = "cbArea";
             this.cbArea.Size = new System.Drawing.Size(205, 25);
             this.cbArea.TabIndex = 23;
+            this.cbArea.SelectedIndexChanged += new System.EventHandler(this.cbArea_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -388,39 +422,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(23, 106);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 17);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "Tipo de Area :";
-            // 
-            // TipoAreatxt
-            // 
-            this.TipoAreatxt.Enabled = false;
-            this.TipoAreatxt.Location = new System.Drawing.Point(176, 103);
-            this.TipoAreatxt.Name = "TipoAreatxt";
-            this.TipoAreatxt.Size = new System.Drawing.Size(205, 22);
-            this.TipoAreatxt.TabIndex = 31;
-            // 
-            // CantidadPersonas
-            // 
-            this.CantidadPersonas.Location = new System.Drawing.Point(176, 133);
-            this.CantidadPersonas.Name = "CantidadPersonas";
-            this.CantidadPersonas.Size = new System.Drawing.Size(205, 22);
-            this.CantidadPersonas.TabIndex = 32;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(24, 136);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(144, 17);
-            this.label13.TabIndex = 33;
-            this.label13.Text = "Cantidad de Personas :";
             // 
             // InformaciónArea
             // 

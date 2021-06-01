@@ -65,6 +65,8 @@ namespace LBISGE
             r.getEdificioList("st_getEdificioList", cbEdificio, "NombreEdificio", "IDedificio");
             r.getAreaList("st_getAreaList", cbArea, "NombreArea", "IDarea");
             r.getSubsistemaList("st_getSubsistemaList", cbSubsistema, "NombreSubsistema", "IDsubsistema");
+
+            //TipoAreatxt.Text = DBretrieval.getAreaType(cbArea.Text);
         }
 
         private void txtConsumo_TextChanged(object sender, EventArgs e)
@@ -85,6 +87,16 @@ namespace LBISGE
         private void txtHorasUso_TextChanged(object sender, EventArgs e)
         {
             Calc_Consumo();
+        }
+
+        private void cbArea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbArea.Text != "")
+            {
+                TipoAreatxt.Text = DBretrieval.getAreaType(cbArea.Text);
+            }
+            else
+            { }    
         }
     }
 }
