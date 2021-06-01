@@ -13,6 +13,7 @@ namespace LBISGE
     public partial class InformaciónArea : Form
     {
         DBretrieval r = new DBretrieval();
+        string Item;
         public InformaciónArea()
         {
             InitializeComponent();
@@ -67,7 +68,7 @@ namespace LBISGE
             r.getSubsistemaList("st_getSubsistemaList", cbSubsistema, "NombreSubsistema", "IDsubsistema");
 
             r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
-                CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn);
+                CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
 
             //TipoAreatxt.Text = DBretrieval.getAreaType(cbArea.Text);
         }
@@ -106,6 +107,27 @@ namespace LBISGE
         {
             DBinsert i = new DBinsert();
             i.insertInformacionArea(txtDescripcion.Text, CantidadPersonas.Text, TipoAreatxt.Text, txtCantidad.Text, txtCapacidad.Text, txtHorasUso.Text, txtDias.Text, txtConsumo.Text, cbEdificio.SelectedValue.ToString(), cbArea.SelectedValue.ToString(), cbSubsistema.SelectedValue.ToString());
+        }
+
+        private void dgvInformacionArea_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow row = dgvInformacionArea.Rows[e.RowIndex];
+                Item = row.Cells["ItemColum"].Value.ToString();
+                cbEdificio.SelectedValue = row.Cells["IDedificioColumn"].Value.ToString();
+                cbArea.SelectedValue = row.Cells["IDareaColumn"].Value.ToString();
+                TipoAreatxt.Text = row.Cells["TipoAreaColumn"].Value.ToString();
+                CantidadPersonas.Text = row.Cells["CantidadPersonasColumn"].Value.ToString();
+                cbSubsistema.SelectedValue = row.Cells["IDsubsistemaColumn"].Value.ToString();
+                txtID_Area.Text = row.Cells["ItemColum"].Value.ToString();
+                txtDescripcion.Text = row.Cells["DescripcionColumn"].Value.ToString();
+                txtCantidad.Text = row.Cells["CantidadColumn"].Value.ToString();
+                txtCapacidad.Text = row.Cells["CapacidadColumn"].Value.ToString();
+                txtHorasUso.Text = row.Cells["HorasColumn"].Value.ToString();
+                txtDias.Text = row.Cells["DiasColumn"].Value.ToString();
+                txtConsumo.Text = row.Cells["ConsumoColumn"].Value.ToString();
+            }
         }
     }
 }

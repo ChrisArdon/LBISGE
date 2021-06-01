@@ -78,6 +78,9 @@
             this.HorasColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiasColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConsumoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDedificioColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDareaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDsubsistemaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -447,7 +450,10 @@
             this.CapacidadColumn,
             this.HorasColumn,
             this.DiasColumn,
-            this.ConsumoColumn});
+            this.ConsumoColumn,
+            this.IDedificioColumn,
+            this.IDareaColumn,
+            this.IDsubsistemaColumn});
             this.dgvInformacionArea.Location = new System.Drawing.Point(12, 95);
             this.dgvInformacionArea.Name = "dgvInformacionArea";
             this.dgvInformacionArea.ReadOnly = true;
@@ -455,6 +461,7 @@
             this.dgvInformacionArea.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInformacionArea.Size = new System.Drawing.Size(404, 337);
             this.dgvInformacionArea.TabIndex = 11;
+            this.dgvInformacionArea.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformacionArea_CellClick);
             // 
             // EdificioColumn
             // 
@@ -532,6 +539,27 @@
             this.ConsumoColumn.Name = "ConsumoColumn";
             this.ConsumoColumn.ReadOnly = true;
             // 
+            // IDedificioColumn
+            // 
+            this.IDedificioColumn.HeaderText = "IDedificio";
+            this.IDedificioColumn.Name = "IDedificioColumn";
+            this.IDedificioColumn.ReadOnly = true;
+            this.IDedificioColumn.Visible = false;
+            // 
+            // IDareaColumn
+            // 
+            this.IDareaColumn.HeaderText = "IDarea";
+            this.IDareaColumn.Name = "IDareaColumn";
+            this.IDareaColumn.ReadOnly = true;
+            this.IDareaColumn.Visible = false;
+            // 
+            // IDsubsistemaColumn
+            // 
+            this.IDsubsistemaColumn.HeaderText = "IDsubsistema";
+            this.IDsubsistemaColumn.Name = "IDsubsistemaColumn";
+            this.IDsubsistemaColumn.ReadOnly = true;
+            this.IDsubsistemaColumn.Visible = false;
+            // 
             // InformaciónArea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -607,5 +635,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HorasColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiasColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ConsumoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDedificioColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDareaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDsubsistemaColumn;
     }
 }

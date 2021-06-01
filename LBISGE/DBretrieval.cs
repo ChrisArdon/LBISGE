@@ -233,7 +233,8 @@ namespace LBISGE
         }
 
         public void showInformacionArea(DataGridView gv, DataGridViewColumn Edificio, DataGridViewColumn area, DataGridViewColumn tipoarea, DataGridViewColumn personas, DataGridViewColumn subsistema,
-            DataGridViewColumn item, DataGridViewColumn descripcion, DataGridViewColumn cantidad, DataGridViewColumn capacidad, DataGridViewColumn horas, DataGridViewColumn dias, DataGridViewColumn consumo, string data=null)
+            DataGridViewColumn item, DataGridViewColumn descripcion, DataGridViewColumn cantidad, DataGridViewColumn capacidad, DataGridViewColumn horas, DataGridViewColumn dias, DataGridViewColumn consumo,
+            DataGridViewColumn IDedificio,DataGridViewColumn IDarea,DataGridViewColumn IDsubsistema,string data=null)
         {
             try
             {
@@ -263,6 +264,9 @@ namespace LBISGE
                 horas.DataPropertyName = dt.Columns["Horas"].ToString();
                 dias.DataPropertyName = dt.Columns["Dias"].ToString();
                 consumo.DataPropertyName = dt.Columns["Consumo"].ToString();
+                IDedificio.DataPropertyName = dt.Columns["IDedificio"].ToString();
+                IDarea.DataPropertyName = dt.Columns["IDarea"].ToString();
+                IDsubsistema.DataPropertyName = dt.Columns["IDsubsistema"].ToString();
 
 
 
