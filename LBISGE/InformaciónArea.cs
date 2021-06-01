@@ -145,5 +145,19 @@ namespace LBISGE
             }
             
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Esta seguro que quiere ELIMINAR el registro?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                DBdelete d = new DBdelete();
+                d.delete(Item, "pr_deleteInformacionArea", "@Item");
+                r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
+                    CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
+
+                //Limpiar
+            }
+        }
     }
 }
