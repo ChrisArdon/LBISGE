@@ -76,3 +76,12 @@ a.Ancho as 'Ancho',
 a.CalcArea as 'CalcArea'
 from Areas a
 order by a.NombreDeArea asc
+
+--Obtener el tipo de area
+create procedure st_getAreaType
+@NombreAreaPr varchar(100)
+as
+select 
+a.TipoArea as 'Tipo'
+from Areas a
+where a.NombreDeArea = @NombreAreaPr
