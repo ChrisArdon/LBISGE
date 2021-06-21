@@ -33,6 +33,9 @@ namespace LBISGE
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
             Calc_Consumo();
+            //Eliminamos errorProvider
+            if (txtDias.Text.Trim() != "")
+            { errorProvider1.SetError(txtDias, ""); }
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -84,16 +87,25 @@ namespace LBISGE
         private void txtCantidad_TextChanged(object sender, EventArgs e)
         {
             Calc_Consumo();
+            //Eliminamos errorProvider
+            if (txtCantidad.Text.Trim() != "")
+            { errorProvider1.SetError(txtCantidad, ""); }
         }
 
         private void txtCapacidad_TextChanged(object sender, EventArgs e)
         {
             Calc_Consumo();
+            //Eliminamos errorProvider
+            if (txtCapacidad.Text.Trim() != "")
+            { errorProvider1.SetError(txtCapacidad, ""); }
         }
 
         private void txtHorasUso_TextChanged(object sender, EventArgs e)
         {
             Calc_Consumo();
+            //Eliminamos errorProvider
+            if (txtHorasUso.Text.Trim() != "")
+            { errorProvider1.SetError(txtHorasUso, ""); }
         }
 
         private void cbArea_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,6 +113,7 @@ namespace LBISGE
             if (cbArea.Text != "")
             {
                 TipoAreatxt.Text = DBretrieval.getAreaType(cbArea.Text);
+                CantidadPersonas.Text = DBretrieval.getAreaType1(cbArea.Text);
             }
             else
             { }    
@@ -108,11 +121,28 @@ namespace LBISGE
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            DBinsert i = new DBinsert();
-            i.insertInformacionArea(txtDescripcion.Text, CantidadPersonas.Text, TipoAreatxt.Text, txtCantidad.Text, txtCapacidad.Text, txtHorasUso.Text, txtDias.Text, txtConsumo.Text, cbEdificio.SelectedValue.ToString(), cbArea.SelectedValue.ToString(), cbSubsistema.SelectedValue.ToString());
-            r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
-                CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
-            Limpiar();
+            if (cbEdificio.Text == "" || cbArea.Text == "" ||  cbSubsistema.Text == "" || txtDescripcion.Text == "" || txtCantidad.Text == "" || txtCapacidad.Text == "" || txtHorasUso.Text == "" || txtDias.Text == "")
+            {
+                //Validación de campos
+                errorProvider1.SetError(cbEdificio, "¡Rellenar Campo!");
+                errorProvider1.SetError(cbArea, "¡Rellenar Campo!");
+                errorProvider1.SetError(cbSubsistema, "¡Rellenar Campo!");
+                errorProvider1.SetError(txtDescripcion, "¡Rellenar Campo!");
+                errorProvider1.SetError(txtCantidad, "¡Rellenar Campo!");
+                errorProvider1.SetError(txtCapacidad, "¡Rellenar Campo!");
+                errorProvider1.SetError(txtHorasUso, "¡Rellenar Campo!");
+                errorProvider1.SetError(txtDias, "¡Rellenar Campo!");
+                
+            }
+            else
+            {
+
+                DBinsert i = new DBinsert();
+                i.insertInformacionArea(txtDescripcion.Text, CantidadPersonas.Text, TipoAreatxt.Text, txtCantidad.Text, txtCapacidad.Text, txtHorasUso.Text, txtDias.Text, txtConsumo.Text, cbEdificio.SelectedValue.ToString(), cbArea.SelectedValue.ToString(), cbSubsistema.SelectedValue.ToString());
+                r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
+                    CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
+                Limpiar();
+            }
         }
 
         private void dgvInformacionArea_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -133,26 +163,43 @@ namespace LBISGE
                 txtHorasUso.Text = row.Cells["HorasColumn"].Value.ToString();
                 txtDias.Text = row.Cells["DiasColumn"].Value.ToString();
                 txtConsumo.Text = row.Cells["ConsumoColumn"].Value.ToString();
+                btnGuardar.Visible = false;
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Esta seguro que quiere modificiar el registro?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            if (txtID_Area.Text == "")
+            { errorProvider1.SetError(txtID_Area, "¡Seleccione Area a Modificar!"); }
+            else
             {
-                DBupdate u = new DBupdate();
-                u.updateInformacionArea(Item, txtDescripcion.Text, CantidadPersonas.Text, TipoAreatxt.Text, txtCantidad.Text, txtCapacidad.Text, txtHorasUso.Text, txtDias.Text, txtConsumo.Text,
-                    cbEdificio.SelectedValue.ToString(), cbArea.SelectedValue.ToString(), cbSubsistema.SelectedValue.ToString());
-                r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
-                    CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
-                Limpiar();
+                try
+                {
+                    DialogResult dr = MessageBox.Show("Esta seguro que quiere modificiar el registro?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        DBupdate u = new DBupdate();
+                        u.updateInformacionArea(Item, txtDescripcion.Text, CantidadPersonas.Text, TipoAreatxt.Text, txtCantidad.Text, txtCapacidad.Text, txtHorasUso.Text, txtDias.Text, txtConsumo.Text,
+                            cbEdificio.SelectedValue.ToString(), cbArea.SelectedValue.ToString(), cbSubsistema.SelectedValue.ToString());
+                        r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
+                            CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
+                        Limpiar();
+                    }
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.ToString()); }
+
             }
-            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (txtID_Area.Text == "")
+            { errorProvider1.SetError(txtID_Area, "¡Seleccione Area a Eliminar!"); }
+            else
+            {
+                try
+                {
             DialogResult dr = MessageBox.Show("Esta seguro que quiere ELIMINAR el registro?", "Modificar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
@@ -162,6 +209,10 @@ namespace LBISGE
                     CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
 
                 Limpiar();
+            }
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.ToString()); }
             }
         }
 
@@ -179,6 +230,8 @@ namespace LBISGE
             txtHorasUso.Text = "";
             txtDias.Text = "";
             txtConsumo.Text = "";
+            btnGuardar.Visible = true;
+            errorProvider1.Clear();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -198,6 +251,103 @@ namespace LBISGE
                 r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
                     CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
             }
+        }
+
+        private void cbEdificio_TextChanged(object sender, EventArgs e)
+        {
+            //Eliminamos errorProvider
+            if (cbEdificio.Text.Trim() != "")
+            { errorProvider1.SetError(cbEdificio, ""); }
+        }
+
+        private void cbArea_TextChanged(object sender, EventArgs e)
+        {
+            //Eliminamos errorProvider
+            if (cbArea.Text.Trim() != "")
+            { errorProvider1.SetError(cbArea, ""); }
+        }
+
+        private void cbSubsistema_TextChanged(object sender, EventArgs e)
+        {
+            //Eliminamos errorProvider
+            if (cbSubsistema.Text.Trim() != "")
+            { errorProvider1.SetError(cbSubsistema, ""); }
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            //Eliminamos errorProvider
+            if (txtDescripcion.Text.Trim() != "")
+            { errorProvider1.SetError(txtDescripcion, ""); }
+        }
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Validación de campos para que solo acepte numero y no letras
+            if (char.IsDigit(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsControl(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsPunctuation(e.KeyChar))
+            { e.Handled = false; }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Introducir solo numero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtCapacidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Validación de campos para que solo acepte numero y no letras
+            if (char.IsDigit(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsControl(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsPunctuation(e.KeyChar))
+            { e.Handled = false; }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Introducir solo numero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtHorasUso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Validación de campos para que solo acepte numero y no letras
+            if (char.IsDigit(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsControl(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsPunctuation(e.KeyChar))
+            { e.Handled = false; }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Introducir solo numero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtDias_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Validación de campos para que solo acepte numero y no letras
+            if (char.IsDigit(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsControl(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsPunctuation(e.KeyChar))
+            { e.Handled = false; }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Introducir solo numero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void dgvInformacionArea_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

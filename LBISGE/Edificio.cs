@@ -62,6 +62,7 @@ namespace LBISGE
             txtID_Edificio.Enabled = true;
             errorProvider1.Clear();
 
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -167,6 +168,7 @@ namespace LBISGE
                 txtID_Edificio.Text = row.Cells["ID_edificioGvColumn"].Value.ToString();
                 txtNombreEdificio.Text = row.Cells["NombreEdificioGvColumn"].Value.ToString();
                 txtID_Edificio.Enabled = false;
+                btnGuardar.Visible = false;
             }
             
         }

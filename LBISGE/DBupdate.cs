@@ -31,7 +31,7 @@ namespace LBISGE
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
-        public void updateArea(string ID_area, string nombre_area, string TipoArea, string Largo, string Ancho, string CalcArea)
+        public void updateArea(string ID_area, string nombre_area, string TipoArea, string Largo, string Ancho, string CalcArea, string CantidadPersonas, string Nivel)
         {
             try
             {
@@ -44,6 +44,8 @@ namespace LBISGE
                 cmd.Parameters.AddWithValue("@Largopr", Largo);
                 cmd.Parameters.AddWithValue("@Anchopr", Ancho);
                 cmd.Parameters.AddWithValue("@CalcAreapr", CalcArea);
+                cmd.Parameters.AddWithValue("@CantidadPersonaspr", CantidadPersonas);
+                cmd.Parameters.AddWithValue("@Nivelpr", Nivel);
 
                 MainClass.con.Open();
                 cmd.ExecuteNonQuery();

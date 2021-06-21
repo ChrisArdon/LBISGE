@@ -22,6 +22,7 @@ namespace LBISGE
         {
             new Menu().Show();
             this.Hide();
+
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -39,6 +40,8 @@ namespace LBISGE
             TipoArea.Text = "";
             txt_AnchoArea.Text = "";
             txt_AreaT.Text = "";
+            CantidadPersonas.Text = "";
+            txtNivel.Text = "";
             btnGuardar.Visible = true;
             IDareaTxt.Enabled = true;
             errorProvider1.Clear();
@@ -79,7 +82,7 @@ namespace LBISGE
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (IDareaTxt.Text == "" || nombreAreaTxt.Text == "" || TipoArea.Text == "" || txt_LargoArea.Text == "" || txt_AnchoArea.Text == "")
+            if (IDareaTxt.Text == "" || nombreAreaTxt.Text == "" || TipoArea.Text == "" || txt_LargoArea.Text == "" || txt_AnchoArea.Text == "" || txtNivel.Text == "" || CantidadPersonas.Text == "" || txtNivel.Text == "")
             {
                 //Validación de campos
                 errorProvider1.SetError(IDareaTxt, "¡Rellenar Campo!");
@@ -87,12 +90,14 @@ namespace LBISGE
                 errorProvider1.SetError(TipoArea, "¡Rellenar Campo!");
                 errorProvider1.SetError(txt_LargoArea, "¡Rellenar Campo!");
                 errorProvider1.SetError(txt_AnchoArea, "¡Rellenar Campo!");
+                errorProvider1.SetError(txtNivel, "¡Rellenar Campo!");
+                errorProvider1.SetError(CantidadPersonas, "¡Rellenar Campo!");
             }
             else
             {
                 //Insertamos datos a la DB
                 DBinsert i = new DBinsert();
-                i.insertArea(IDareaTxt.Text, nombreAreaTxt.Text, TipoArea.Text, txt_LargoArea.Text, txt_AnchoArea.Text, txt_AreaT.Text);
+                i.insertArea(IDareaTxt.Text, nombreAreaTxt.Text, TipoArea.Text, txt_LargoArea.Text, txt_AnchoArea.Text, txt_AreaT.Text, CantidadPersonas.Text, txtNivel.Text);
                 //Mostramos los datos en el dataGridView
                r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
                 //Limpiamos campos luego del ingreso de datos
@@ -160,7 +165,7 @@ namespace LBISGE
                 {
                     //Actualizamos los datos
                     DBupdate u = new DBupdate();
-                    u.updateArea(IDareaTxt.Text, nombreAreaTxt.Text, TipoArea.Text, txt_LargoArea.Text, txt_AnchoArea.Text, txt_AreaT.Text);
+                    u.updateArea(IDareaTxt.Text, nombreAreaTxt.Text, TipoArea.Text, txt_LargoArea.Text, txt_AnchoArea.Text, txt_AreaT.Text, CantidadPersonas.Text, txtNivel.Text);
                 //Mostramos el datagrid con los datos actualizados
                 r.showArea(dgvArea, IDareaColumn, NombreAreaColumn);
                 //Hacemos uso de la función limpiar para dejar los cambos vacíos.
@@ -186,7 +191,10 @@ namespace LBISGE
                 TipoArea.Text = row.Cells[2].Value.ToString();
                 txt_LargoArea.Text = row.Cells[3].Value.ToString();
                 txt_AnchoArea.Text = row.Cells[4].Value.ToString();
+                CantidadPersonas.Text = row.Cells[6].Value.ToString();
+                txtNivel.Text = row.Cells[7].Value.ToString();
                 IDareaTxt.Enabled = false;
+                btnGuardar.Visible = false;
             }
         }
 
@@ -280,6 +288,68 @@ namespace LBISGE
             //Eliminamos errorProvider
             if (txt_AnchoArea.Text.Trim() != "")
             { errorProvider1.SetError(txt_AnchoArea, ""); }
+        }
+
+        private void CantidadPersonas_TextChanged(object sender, EventArgs e)
+        {
+            //Eliminamos errorProvider
+            if (CantidadPersonas.Text.Trim() != "")
+            { errorProvider1.SetError(CantidadPersonas, ""); }
+        }
+
+        private void txtNivel_TextChanged(object sender, EventArgs e)
+        {
+            //Eliminamos errorProvider
+            if (txtNivel.Text.Trim() != "")
+            { errorProvider1.SetError(txtNivel, ""); }
+        }
+
+        private void txt_LargoArea_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Validación de campos para que solo acepte numero y no letras
+            if (char.IsDigit(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsControl(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsPunctuation(e.KeyChar))
+            { e.Handled = false; }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Introducir solo numero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txt_AnchoArea_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Validación de campos para que solo acepte numero y no letras
+            if (char.IsDigit(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsControl(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsPunctuation(e.KeyChar))
+            { e.Handled = false; }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Introducir solo numero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void CantidadPersonas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Validación de campos para que solo acepte numero y no letras
+            if (char.IsDigit(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsControl(e.KeyChar))
+            { e.Handled = false; }
+            else if (char.IsPunctuation(e.KeyChar))
+            { e.Handled = false; }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Introducir solo numero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

@@ -89,6 +89,7 @@ namespace LBISGE
                 txtID_Subsistema.Text = row.Cells["IDsubsistemaColumn"].Value.ToString();
                 txtSubsistema.Text = row.Cells["NombreSubsistemaColumn"].Value.ToString();
                 txtID_Subsistema.Enabled = false;
+                btnGuardar.Visible = false;
             }
         }
 

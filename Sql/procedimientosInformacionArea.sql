@@ -55,14 +55,15 @@ create procedure pr_getInformacionAreaData
 as
 select 
 i.Descripcion as 'Descripcion',
-i.Cantidad as 'Cantidad',
+i.CantidadEquipos as 'Cantidad',
 i.Capacidad as 'Capacidad',
 i.HorasDeUso as 'HorasDeUso',
 i.Dias as 'Dias',
 i.Consumo as 'Consumo',
 i.ID_edificio as 'IDedificio',
 i.ID_area as 'IDarea',
-i.ID_subsistema as 'IDsubsistema'
+i.ID_subsistema as 'IDsubsistema',
+
 from InformacionArea i
 
 --Get data

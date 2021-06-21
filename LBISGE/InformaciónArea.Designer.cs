@@ -151,6 +151,7 @@
             // 
             // CantidadPersonas
             // 
+            this.CantidadPersonas.Enabled = false;
             this.CantidadPersonas.Location = new System.Drawing.Point(176, 133);
             this.CantidadPersonas.Name = "CantidadPersonas";
             this.CantidadPersonas.Size = new System.Drawing.Size(205, 22);
@@ -231,6 +232,7 @@
             this.cbSubsistema.Name = "cbSubsistema";
             this.cbSubsistema.Size = new System.Drawing.Size(205, 25);
             this.cbSubsistema.TabIndex = 25;
+            this.cbSubsistema.TextChanged += new System.EventHandler(this.cbSubsistema_TextChanged);
             // 
             // label11
             // 
@@ -251,6 +253,7 @@
             this.cbArea.Size = new System.Drawing.Size(205, 25);
             this.cbArea.TabIndex = 23;
             this.cbArea.SelectedIndexChanged += new System.EventHandler(this.cbArea_SelectedIndexChanged);
+            this.cbArea.TextChanged += new System.EventHandler(this.cbArea_TextChanged);
             // 
             // label10
             // 
@@ -270,6 +273,7 @@
             this.cbEdificio.Name = "cbEdificio";
             this.cbEdificio.Size = new System.Drawing.Size(205, 25);
             this.cbEdificio.TabIndex = 21;
+            this.cbEdificio.TextChanged += new System.EventHandler(this.cbEdificio_TextChanged);
             // 
             // label9
             // 
@@ -305,6 +309,7 @@
             this.txtDias.Size = new System.Drawing.Size(205, 22);
             this.txtDias.TabIndex = 17;
             this.txtDias.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.txtDias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDias_KeyPress);
             // 
             // label7
             // 
@@ -323,6 +328,7 @@
             this.txtHorasUso.Size = new System.Drawing.Size(205, 22);
             this.txtHorasUso.TabIndex = 12;
             this.txtHorasUso.TextChanged += new System.EventHandler(this.txtHorasUso_TextChanged);
+            this.txtHorasUso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHorasUso_KeyPress);
             // 
             // label6
             // 
@@ -340,6 +346,7 @@
             this.txtCapacidad.Size = new System.Drawing.Size(205, 22);
             this.txtCapacidad.TabIndex = 10;
             this.txtCapacidad.TextChanged += new System.EventHandler(this.txtCapacidad_TextChanged);
+            this.txtCapacidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCapacidad_KeyPress);
             // 
             // label5
             // 
@@ -357,15 +364,16 @@
             this.txtCantidad.Size = new System.Drawing.Size(205, 22);
             this.txtCantidad.TabIndex = 8;
             this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(24, 255);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 17);
+            this.label4.Size = new System.Drawing.Size(137, 17);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Cantidad :";
+            this.label4.Text = "Cantidad de Equipos :";
             // 
             // txtDescripcion
             // 
@@ -373,6 +381,7 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(205, 22);
             this.txtDescripcion.TabIndex = 5;
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // txtID_Area
             // 
@@ -387,9 +396,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(23, 224);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 17);
+            this.label3.Size = new System.Drawing.Size(149, 17);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Descripción :";
+            this.label3.Text = "Descripción de Equipos:";
             // 
             // label2
             // 
@@ -466,6 +475,7 @@
             this.dgvInformacionArea.Size = new System.Drawing.Size(404, 337);
             this.dgvInformacionArea.TabIndex = 11;
             this.dgvInformacionArea.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformacionArea_CellClick);
+            this.dgvInformacionArea.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformacionArea_CellContentClick);
             // 
             // EdificioColumn
             // 

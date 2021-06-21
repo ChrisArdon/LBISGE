@@ -18,7 +18,9 @@ NombreDeArea varchar(500) not null,
 TipoArea varchar (800) not null,
 Largo varchar (10),
 Ancho varchar (10),
-CalcArea varchar (10)
+CalcArea varchar (10),
+CantidadPersonas varchar (10),
+Nivel varchar (10)
 )
 
 --Creación de tabla Subsistemas.

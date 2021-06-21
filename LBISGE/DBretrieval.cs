@@ -147,6 +147,7 @@ namespace LBISGE
             }
         }
         private static string tipoArea=null;
+        private static string CantidadPersonas = null;
         public static string getAreaType(string Area) //Funcion que obtiene el tipo del area segun el nombre del area seleccionado
         {
             try
@@ -161,6 +162,7 @@ namespace LBISGE
                     while (dr.Read())//Loop que para hasta que halla leido toda la informacion del procedimiento almacenado o comando sql
                     {
                         tipoArea = dr["Tipo"].ToString(); //sintaxis para seleccionar la columna que se va a leer en la base de datos
+                        
                     }
                 }
                 else
@@ -177,7 +179,37 @@ namespace LBISGE
             }
             return tipoArea; //No olvidemos retornar la variable, ya que la funcion al ser un string es necesario retornar algo
         }
+        public static string getAreaType1(string Area) //Funcion que obtiene el tipo del area segun el nombre del area seleccionado
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_getAreaType", MainClass.con); //Se crea un comando sql
+                cmd.CommandType = CommandType.StoredProcedure; //Se especifica que el comando es tipo Procedimiento almacenado
+                cmd.Parameters.AddWithValue("@NombreAreaPr", Area); //Se especifica que se va a pasar un parametro con valor
+                MainClass.con.Open();
+                SqlDataReader dr = cmd.ExecuteReader(); //Se crea un Data reader para un manejo de datos mas facil (el SqlDataReader lee linea por linea lo cual nos interesa)
+                if (dr.HasRows) //Si el SqlDataReader encuentra informacion
+                {
+                    while (dr.Read())//Loop que para hasta que halla leido toda la informacion del procedimiento almacenado o comando sql
+                    {
+                         //sintaxis para seleccionar la columna que se va a leer en la base de datos
+                        CantidadPersonas = dr["CantidadPersonas"].ToString();
+                    }
+                }
+                else
+                {
+                    //MainClass.ShowMSG("Data NO Found", "NOoo", "Error"); 
+                }
+                MainClass.con.Close();
+            }
+            catch (Exception)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG("No se pudo encontrar el tipo de area", "Error", "Error");
 
+            }
+            return CantidadPersonas; //No olvidemos retornar la variable, ya que la funcion al ser un string es necesario retornar algo
+        }
         public void showSubsistema(DataGridView gv, DataGridViewColumn IDsubsistemaGv, DataGridViewColumn NombresubsistemaGv, string data = null)
         {
             try
