@@ -486,7 +486,7 @@
             // 
             // AreaColumn
             // 
-            this.AreaColumn.HeaderText = "Area";
+            this.AreaColumn.HeaderText = "NombreArea";
             this.AreaColumn.Name = "AreaColumn";
             this.AreaColumn.ReadOnly = true;
             this.AreaColumn.Width = 101;
@@ -499,7 +499,7 @@
             // 
             // CantidadPersonasColumn
             // 
-            this.CantidadPersonasColumn.HeaderText = "Personas";
+            this.CantidadPersonasColumn.HeaderText = "CantidadPersonas";
             this.CantidadPersonasColumn.Name = "CantidadPersonasColumn";
             this.CantidadPersonasColumn.ReadOnly = true;
             this.CantidadPersonasColumn.Width = 101;
@@ -525,7 +525,7 @@
             // 
             // CantidadColumn
             // 
-            this.CantidadColumn.HeaderText = "Cantidad";
+            this.CantidadColumn.HeaderText = "CantidadEquipos";
             this.CantidadColumn.Name = "CantidadColumn";
             this.CantidadColumn.ReadOnly = true;
             // 

@@ -79,7 +79,7 @@ namespace LBISGE
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
-        public void updateInformacionArea(string Item, string descripcion, string personas, string tipoarea, string equipos, string capacidad, string horas, string dias, string consumo, string IDedificio,
+        public void updateInformacionArea(string Item, string descripcion,  string equipos, string capacidad, string horas, string dias, string consumo, string IDedificio,
             string IDarea, string IDsubsistema)
         {
             try
@@ -89,8 +89,6 @@ namespace LBISGE
 
                 cmd.Parameters.AddWithValue("@Item", Item);
                 cmd.Parameters.AddWithValue("@DescripcionPr", descripcion);
-                cmd.Parameters.AddWithValue("@CantidadPersonasPr", personas);
-                cmd.Parameters.AddWithValue("@TipoAreaPr", tipoarea);
                 cmd.Parameters.AddWithValue("@CantidadEquiposPr", equipos);
                 cmd.Parameters.AddWithValue("@CapacidadPr", capacidad);
                 cmd.Parameters.AddWithValue("@HorasDeUsoPr", horas);

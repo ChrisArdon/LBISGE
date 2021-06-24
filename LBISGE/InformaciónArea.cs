@@ -138,7 +138,7 @@ namespace LBISGE
             {
 
                 DBinsert i = new DBinsert();
-                i.insertInformacionArea(txtDescripcion.Text, CantidadPersonas.Text, TipoAreatxt.Text, txtCantidad.Text, txtCapacidad.Text, txtHorasUso.Text, txtDias.Text, txtConsumo.Text, cbEdificio.SelectedValue.ToString(), cbArea.SelectedValue.ToString(), cbSubsistema.SelectedValue.ToString());
+                i.insertInformacionArea(txtDescripcion.Text, txtCantidad.Text, txtCapacidad.Text, txtHorasUso.Text, txtDias.Text, txtConsumo.Text, cbEdificio.SelectedValue.ToString(), cbArea.SelectedValue.ToString(), cbSubsistema.SelectedValue.ToString());
                 r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
                     CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
                 Limpiar();
@@ -179,7 +179,7 @@ namespace LBISGE
                     if (dr == DialogResult.Yes)
                     {
                         DBupdate u = new DBupdate();
-                        u.updateInformacionArea(Item, txtDescripcion.Text, CantidadPersonas.Text, TipoAreatxt.Text, txtCantidad.Text, txtCapacidad.Text, txtHorasUso.Text, txtDias.Text, txtConsumo.Text,
+                        u.updateInformacionArea(Item, txtDescripcion.Text,  txtCantidad.Text, txtCapacidad.Text, txtHorasUso.Text, txtDias.Text, txtConsumo.Text,
                             cbEdificio.SelectedValue.ToString(), cbArea.SelectedValue.ToString(), cbSubsistema.SelectedValue.ToString());
                         r.showInformacionArea(dgvInformacionArea, EdificioColumn, AreaColumn, TipoAreaColumn, CantidadPersonasColumn, SubsistemaColumn, ItemColum, DescripcionColumn, CantidadColumn,
                             CapacidadColumn, HorasColumn, DiasColumn, ConsumoColumn, IDedificioColumn, IDareaColumn, IDsubsistemaColumn);
