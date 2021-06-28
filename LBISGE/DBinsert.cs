@@ -81,15 +81,13 @@ namespace LBISGE
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
-        public void insertInformacionArea(string descr, string cantidadPersonas, string tipoArea, string cantidadEquipos, string capacidad, string horas, string dias, string consumo, string IDedificio, string IDarea, string IDsubsistema)
+        public void insertInformacionArea(string descr,  string cantidadEquipos, string capacidad, string horas, string dias, string consumo, string IDedificio, string IDarea, string IDsubsistema)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("pr_insertInformacionArea", MainClass.con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@DescripcionPr", descr);
-                cmd.Parameters.AddWithValue("@CantidadPersonasPr", cantidadPersonas);
-                cmd.Parameters.AddWithValue("@TipoAreaPr", tipoArea);
                 cmd.Parameters.AddWithValue("@CantidadEquiposPr", cantidadEquipos);
                 cmd.Parameters.AddWithValue("@CapacidadPr", capacidad);
                 cmd.Parameters.AddWithValue("@HorasDeUsoPr", horas);

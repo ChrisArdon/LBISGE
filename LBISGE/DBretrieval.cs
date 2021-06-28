@@ -300,8 +300,6 @@ namespace LBISGE
                 IDarea.DataPropertyName = dt.Columns["IDarea"].ToString();
                 IDsubsistema.DataPropertyName = dt.Columns["IDsubsistema"].ToString();
 
-
-
                 gv.DataSource = dt;
             }
             catch (Exception ex)
