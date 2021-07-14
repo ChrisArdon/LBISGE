@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBISGE", "LBISGE\LBISGE.csproj", "{D6474F5A-461E-4D2F-9080-D83DBB5D9C61}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LBISGE setup", "setup\LBISGE setup.vdproj", "{21306D73-92A5-49E3-87A5-C4533A2AFFB4}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LBISGE setup", "LBISGE setup\LBISGE setup.vdproj", "{B4C62A88-BBEC-4997-8E8C-FFD11FFDAAEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{D6474F5A-461E-4D2F-9080-D83DBB5D9C61}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{D6474F5A-461E-4D2F-9080-D83DBB5D9C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6474F5A-461E-4D2F-9080-D83DBB5D9C61}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21306D73-92A5-49E3-87A5-C4533A2AFFB4}.Debug|Any CPU.ActiveCfg = Debug
-		{21306D73-92A5-49E3-87A5-C4533A2AFFB4}.Release|Any CPU.ActiveCfg = Release
+		{B4C62A88-BBEC-4997-8E8C-FFD11FFDAAEE}.Debug|Any CPU.ActiveCfg = Debug
+		{B4C62A88-BBEC-4997-8E8C-FFD11FFDAAEE}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
