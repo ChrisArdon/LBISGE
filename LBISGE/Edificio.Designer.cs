@@ -45,22 +45,29 @@
             this.ID_edificioGvColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreEdificioGvColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtEdificioBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.datosLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvdatosLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.Modificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEdificio)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.datosLayoutPanel.SuspendLayout();
+            this.dgvdatosLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMenu
             // 
+            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMenu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(647, 446);
+            this.btnMenu.Location = new System.Drawing.Point(647, 587);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(171, 51);
             this.btnMenu.TabIndex = 4;
@@ -70,6 +77,7 @@
             // 
             // Modificar
             // 
+            this.Modificar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Modificar.Controls.Add(this.btnGuardar);
             this.Modificar.Controls.Add(this.btnLimpiar);
             this.Modificar.Controls.Add(this.btnEliminar);
@@ -81,9 +89,9 @@
             this.Modificar.Controls.Add(this.IDedfErrorLbl);
             this.Modificar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Modificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Modificar.Location = new System.Drawing.Point(387, 32);
+            this.Modificar.Location = new System.Drawing.Point(8, 84);
             this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(419, 250);
+            this.Modificar.Size = new System.Drawing.Size(399, 265);
             this.Modificar.TabIndex = 7;
             this.Modificar.TabStop = false;
             this.Modificar.Text = "Agregar, Modificar o Eliminar.";
@@ -186,6 +194,9 @@
             // 
             this.dgvEdificio.AllowUserToAddRows = false;
             this.dgvEdificio.AllowUserToDeleteRows = false;
+            this.dgvEdificio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEdificio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEdificio.BackgroundColor = System.Drawing.Color.White;
             this.dgvEdificio.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -193,12 +204,12 @@
             this.dgvEdificio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_edificioGvColumn,
             this.NombreEdificioGvColumn});
-            this.dgvEdificio.Location = new System.Drawing.Point(27, 109);
+            this.dgvEdificio.Location = new System.Drawing.Point(3, 3);
             this.dgvEdificio.Name = "dgvEdificio";
             this.dgvEdificio.ReadOnly = true;
             this.dgvEdificio.RowHeadersVisible = false;
             this.dgvEdificio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEdificio.Size = new System.Drawing.Size(323, 297);
+            this.dgvEdificio.Size = new System.Drawing.Size(326, 510);
             this.dgvEdificio.TabIndex = 6;
             this.dgvEdificio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEdificio_CellClick);
             this.dgvEdificio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEdificio_CellContentClick);
@@ -217,31 +228,48 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtEdificioBusqueda);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(27, 32);
+            this.groupBox1.Location = new System.Drawing.Point(27, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(323, 56);
+            this.groupBox1.Size = new System.Drawing.Size(323, 47);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nombre de Edificio";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.22186F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.77814F));
+            this.tableLayoutPanel1.Controls.Add(this.txtEdificioBusqueda, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(317, 26);
+            this.tableLayoutPanel1.TabIndex = 8;
+            // 
             // txtEdificioBusqueda
             // 
-            this.txtEdificioBusqueda.Location = new System.Drawing.Point(94, 18);
+            this.txtEdificioBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEdificioBusqueda.Location = new System.Drawing.Point(70, 3);
             this.txtEdificioBusqueda.Name = "txtEdificioBusqueda";
-            this.txtEdificioBusqueda.Size = new System.Drawing.Size(196, 22);
+            this.txtEdificioBusqueda.Size = new System.Drawing.Size(244, 22);
             this.txtEdificioBusqueda.TabIndex = 1;
             this.txtEdificioBusqueda.TextChanged += new System.EventHandler(this.txtEdificioBusqueda_TextChanged);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(6, 21);
+            this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 0;
@@ -251,16 +279,46 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // datosLayoutPanel
+            // 
+            this.datosLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datosLayoutPanel.ColumnCount = 1;
+            this.datosLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.datosLayoutPanel.Controls.Add(this.Modificar, 0, 0);
+            this.datosLayoutPanel.Location = new System.Drawing.Point(335, 3);
+            this.datosLayoutPanel.Name = "datosLayoutPanel";
+            this.datosLayoutPanel.RowCount = 1;
+            this.datosLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.datosLayoutPanel.Size = new System.Drawing.Size(410, 433);
+            this.datosLayoutPanel.TabIndex = 9;
+            // 
+            // dgvdatosLayoutPanel
+            // 
+            this.dgvdatosLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvdatosLayoutPanel.ColumnCount = 2;
+            this.dgvdatosLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.dgvdatosLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 416F));
+            this.dgvdatosLayoutPanel.Controls.Add(this.datosLayoutPanel, 1, 0);
+            this.dgvdatosLayoutPanel.Controls.Add(this.dgvEdificio, 0, 0);
+            this.dgvdatosLayoutPanel.Location = new System.Drawing.Point(27, 65);
+            this.dgvdatosLayoutPanel.Name = "dgvdatosLayoutPanel";
+            this.dgvdatosLayoutPanel.RowCount = 1;
+            this.dgvdatosLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.dgvdatosLayoutPanel.Size = new System.Drawing.Size(748, 516);
+            this.dgvdatosLayoutPanel.TabIndex = 10;
+            // 
             // Edificio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(830, 509);
-            this.Controls.Add(this.Modificar);
-            this.Controls.Add(this.dgvEdificio);
+            this.ClientSize = new System.Drawing.Size(830, 650);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnMenu);
+            this.Controls.Add(this.dgvdatosLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Edificio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -270,8 +328,11 @@
             this.Modificar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEdificio)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.datosLayoutPanel.ResumeLayout(false);
+            this.dgvdatosLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -297,5 +358,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_edificioGvColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreEdificioGvColumn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel datosLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel dgvdatosLayoutPanel;
     }
 }

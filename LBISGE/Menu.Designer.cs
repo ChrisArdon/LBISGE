@@ -43,6 +43,7 @@
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -50,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenu
@@ -60,7 +62,7 @@
             this.PanelMenu.Controls.Add(this.tableLayoutPanel1);
             this.PanelMenu.Location = new System.Drawing.Point(-1, 31);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(249, 554);
+            this.PanelMenu.Size = new System.Drawing.Size(249, 620);
             this.PanelMenu.TabIndex = 0;
             // 
             // btnInfoArea
@@ -72,9 +74,9 @@
             this.btnInfoArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInfoArea.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfoArea.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnInfoArea.Location = new System.Drawing.Point(3, 340);
+            this.btnInfoArea.Location = new System.Drawing.Point(3, 382);
             this.btnInfoArea.Name = "btnInfoArea";
-            this.btnInfoArea.Size = new System.Drawing.Size(243, 47);
+            this.btnInfoArea.Size = new System.Drawing.Size(243, 54);
             this.btnInfoArea.TabIndex = 2;
             this.btnInfoArea.Text = "Información Area";
             this.btnInfoArea.UseVisualStyleBackColor = true;
@@ -90,9 +92,9 @@
             this.Configuración.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.Configuración.Image = ((System.Drawing.Image)(resources.GetObject("Configuración.Image")));
             this.Configuración.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Configuración.Location = new System.Drawing.Point(3, 446);
+            this.Configuración.Location = new System.Drawing.Point(3, 502);
             this.Configuración.Name = "Configuración";
-            this.Configuración.Size = new System.Drawing.Size(243, 47);
+            this.Configuración.Size = new System.Drawing.Size(243, 54);
             this.Configuración.TabIndex = 7;
             this.Configuración.Text = "Configuración";
             this.Configuración.UseVisualStyleBackColor = true;
@@ -110,9 +112,9 @@
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(3, 499);
+            this.btnSalir.Location = new System.Drawing.Point(3, 562);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(243, 52);
+            this.btnSalir.Size = new System.Drawing.Size(243, 55);
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -127,9 +129,9 @@
             this.btnTipoArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoArea.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoArea.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTipoArea.Location = new System.Drawing.Point(3, 234);
+            this.btnTipoArea.Location = new System.Drawing.Point(3, 262);
             this.btnTipoArea.Name = "btnTipoArea";
-            this.btnTipoArea.Size = new System.Drawing.Size(243, 47);
+            this.btnTipoArea.Size = new System.Drawing.Size(243, 54);
             this.btnTipoArea.TabIndex = 4;
             this.btnTipoArea.Text = "Tipo de Area";
             this.btnTipoArea.UseVisualStyleBackColor = true;
@@ -144,9 +146,9 @@
             this.btnSubsistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubsistema.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubsistema.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSubsistema.Location = new System.Drawing.Point(3, 287);
+            this.btnSubsistema.Location = new System.Drawing.Point(3, 322);
             this.btnSubsistema.Name = "btnSubsistema";
-            this.btnSubsistema.Size = new System.Drawing.Size(243, 47);
+            this.btnSubsistema.Size = new System.Drawing.Size(243, 54);
             this.btnSubsistema.TabIndex = 3;
             this.btnSubsistema.Text = "Subsistemas";
             this.btnSubsistema.UseVisualStyleBackColor = true;
@@ -164,9 +166,9 @@
             this.btnEdificio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdificio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdificio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEdificio.Location = new System.Drawing.Point(3, 181);
+            this.btnEdificio.Location = new System.Drawing.Point(3, 202);
             this.btnEdificio.Name = "btnEdificio";
-            this.btnEdificio.Size = new System.Drawing.Size(243, 47);
+            this.btnEdificio.Size = new System.Drawing.Size(243, 54);
             this.btnEdificio.TabIndex = 1;
             this.btnEdificio.Text = "Información Edificio";
             this.btnEdificio.UseVisualStyleBackColor = false;
@@ -176,7 +178,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(23, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(203, 150);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -237,10 +239,11 @@
             // 
             // PanelContenedor
             // 
-            this.PanelContenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PanelContenedor.Location = new System.Drawing.Point(253, 31);
+            this.PanelContenedor.BackColor = System.Drawing.Color.Transparent;
+            this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelContenedor.Location = new System.Drawing.Point(3, 3);
             this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(830, 497);
+            this.PanelContenedor.Size = new System.Drawing.Size(826, 611);
             this.PanelContenedor.TabIndex = 2;
             this.PanelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
             // 
@@ -267,16 +270,32 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(249, 554);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(249, 620);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.PanelContenedor, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(251, 31);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(832, 617);
+            this.tableLayoutPanel2.TabIndex = 3;
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1083, 584);
-            this.Controls.Add(this.PanelContenedor);
+            this.ClientSize = new System.Drawing.Size(1083, 650);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -291,6 +310,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -311,5 +331,6 @@
         private System.Windows.Forms.PictureBox BtnCerrar;
         private System.Windows.Forms.Button Configuración;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
