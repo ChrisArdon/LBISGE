@@ -81,18 +81,21 @@
             this.IDedificioColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDareaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDsubsistemaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Modificar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformacionArea)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMenu
             // 
+            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMenu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(12, 438);
+            this.btnMenu.Location = new System.Drawing.Point(647, 587);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(171, 51);
             this.btnMenu.TabIndex = 4;
@@ -102,6 +105,7 @@
             // 
             // Modificar
             // 
+            this.Modificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Modificar.Controls.Add(this.label13);
             this.Modificar.Controls.Add(this.CantidadPersonas);
             this.Modificar.Controls.Add(this.TipoAreatxt);
@@ -132,9 +136,9 @@
             this.Modificar.Controls.Add(this.label2);
             this.Modificar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Modificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Modificar.Location = new System.Drawing.Point(422, 23);
+            this.Modificar.Location = new System.Drawing.Point(411, 3);
             this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(396, 474);
+            this.Modificar.Size = new System.Drawing.Size(392, 474);
             this.Modificar.TabIndex = 10;
             this.Modificar.TabStop = false;
             this.Modificar.Text = "Agregar, Modificar o Eliminar.";
@@ -415,7 +419,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(25, 23);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(391, 56);
             this.groupBox1.TabIndex = 8;
@@ -424,7 +428,7 @@
             // 
             // txtEdificioBusqueda
             // 
-            this.txtEdificioBusqueda.Location = new System.Drawing.Point(94, 18);
+            this.txtEdificioBusqueda.Location = new System.Drawing.Point(55, 21);
             this.txtEdificioBusqueda.Name = "txtEdificioBusqueda";
             this.txtEdificioBusqueda.Size = new System.Drawing.Size(196, 22);
             this.txtEdificioBusqueda.TabIndex = 1;
@@ -467,12 +471,13 @@
             this.IDedificioColumn,
             this.IDareaColumn,
             this.IDsubsistemaColumn});
-            this.dgvInformacionArea.Location = new System.Drawing.Point(12, 95);
+            this.dgvInformacionArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvInformacionArea.Location = new System.Drawing.Point(3, 3);
             this.dgvInformacionArea.Name = "dgvInformacionArea";
             this.dgvInformacionArea.ReadOnly = true;
             this.dgvInformacionArea.RowHeadersVisible = false;
             this.dgvInformacionArea.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInformacionArea.Size = new System.Drawing.Size(404, 337);
+            this.dgvInformacionArea.Size = new System.Drawing.Size(397, 501);
             this.dgvInformacionArea.TabIndex = 11;
             this.dgvInformacionArea.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformacionArea_CellClick);
             this.dgvInformacionArea.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInformacionArea_CellContentClick);
@@ -574,14 +579,30 @@
             this.IDsubsistemaColumn.ReadOnly = true;
             this.IDsubsistemaColumn.Visible = false;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 403F));
+            this.tableLayoutPanel1.Controls.Add(this.dgvInformacionArea, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Modificar, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 74);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(806, 507);
+            this.tableLayoutPanel1.TabIndex = 12;
+            // 
             // InformaciónArea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(830, 509);
-            this.Controls.Add(this.dgvInformacionArea);
-            this.Controls.Add(this.Modificar);
+            this.ClientSize = new System.Drawing.Size(830, 650);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -595,6 +616,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInformacionArea)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -652,5 +674,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDedificioColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDareaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDsubsistemaColumn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
