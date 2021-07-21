@@ -180,5 +180,10 @@ namespace LBISGE
             if (txtSubsistema.Text.Trim() != "")
             { errorProvider1.SetError(txtSubsistema, ""); }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

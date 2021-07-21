@@ -148,6 +148,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.txtNivel);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.CantidadPersonas);

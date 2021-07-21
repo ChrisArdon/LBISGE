@@ -48,10 +48,12 @@
             this.IDsubsistemaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreSubsistemaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.Modificar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubsistema)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -60,12 +62,13 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(42, 44);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(323, 56);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nombre subsistema";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtSubsistemaBusqueda
             // 
@@ -87,6 +90,7 @@
             // 
             // Modificar
             // 
+            this.Modificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Modificar.Controls.Add(this.btnGuardar);
             this.Modificar.Controls.Add(this.btnLimpiar);
             this.Modificar.Controls.Add(this.btnEliminar);
@@ -97,9 +101,9 @@
             this.Modificar.Controls.Add(this.label2);
             this.Modificar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Modificar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Modificar.Location = new System.Drawing.Point(402, 44);
+            this.Modificar.Location = new System.Drawing.Point(415, 3);
             this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(419, 250);
+            this.Modificar.Size = new System.Drawing.Size(388, 250);
             this.Modificar.TabIndex = 2;
             this.Modificar.TabStop = false;
             this.Modificar.Text = "Agregar, Modificar o Eliminar.";
@@ -190,10 +194,11 @@
             // 
             // btnMenu
             // 
+            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMenu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
             this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(634, 355);
+            this.btnMenu.Location = new System.Drawing.Point(647, 597);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(171, 41);
             this.btnMenu.TabIndex = 8;
@@ -212,7 +217,8 @@
             this.dgvSubsistema.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDsubsistemaColumn,
             this.NombreSubsistemaColumn});
-            this.dgvSubsistema.Location = new System.Drawing.Point(12, 109);
+            this.dgvSubsistema.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSubsistema.Location = new System.Drawing.Point(3, 3);
             this.dgvSubsistema.Name = "dgvSubsistema";
             this.dgvSubsistema.ReadOnly = true;
             this.dgvSubsistema.RowHeadersVisible = false;
@@ -238,15 +244,31 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 394F));
+            this.tableLayoutPanel1.Controls.Add(this.Modificar, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dgvSubsistema, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 74);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(806, 517);
+            this.tableLayoutPanel1.TabIndex = 9;
+            // 
             // Subsistema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(830, 509);
-            this.Controls.Add(this.dgvSubsistema);
+            this.ClientSize = new System.Drawing.Size(830, 650);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnMenu);
-            this.Controls.Add(this.Modificar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Subsistema";
@@ -259,6 +281,7 @@
             this.Modificar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubsistema)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -283,6 +306,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDsubsistemaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreSubsistemaColumn;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 
