@@ -30,27 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.PanelMenu = new System.Windows.Forms.Panel();
-            this.btnInfoArea = new System.Windows.Forms.Button();
-            this.Configuración = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.Configuración = new System.Windows.Forms.Button();
+            this.btnInfoArea = new System.Windows.Forms.Button();
+            this.btnEdificio = new System.Windows.Forms.Button();
             this.btnTipoArea = new System.Windows.Forms.Button();
             this.btnSubsistema = new System.Windows.Forms.Button();
-            this.btnEdificio = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnMinimizar = new System.Windows.Forms.PictureBox();
             this.BtnMaximizar = new System.Windows.Forms.PictureBox();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.PanelContenedor = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.PanelMenu.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,40 +65,31 @@
             this.PanelMenu.Size = new System.Drawing.Size(249, 620);
             this.PanelMenu.TabIndex = 0;
             // 
-            // btnInfoArea
+            // tableLayoutPanel1
             // 
-            this.btnInfoArea.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInfoArea.FlatAppearance.BorderSize = 0;
-            this.btnInfoArea.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.btnInfoArea.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.btnInfoArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInfoArea.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfoArea.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnInfoArea.Location = new System.Drawing.Point(3, 382);
-            this.btnInfoArea.Name = "btnInfoArea";
-            this.btnInfoArea.Size = new System.Drawing.Size(243, 54);
-            this.btnInfoArea.TabIndex = 2;
-            this.btnInfoArea.Text = "Información Area";
-            this.btnInfoArea.UseVisualStyleBackColor = true;
-            this.btnInfoArea.Click += new System.EventHandler(this.btnInfoArea_Click);
-            // 
-            // Configuración
-            // 
-            this.Configuración.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Configuración.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Configuración.FlatAppearance.BorderSize = 0;
-            this.Configuración.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Configuración.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.Configuración.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Configuración.Image = ((System.Drawing.Image)(resources.GetObject("Configuración.Image")));
-            this.Configuración.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Configuración.Location = new System.Drawing.Point(3, 502);
-            this.Configuración.Name = "Configuración";
-            this.Configuración.Size = new System.Drawing.Size(243, 54);
-            this.Configuración.TabIndex = 7;
-            this.Configuración.Text = "Configuración";
-            this.Configuración.UseVisualStyleBackColor = true;
-            this.Configuración.Click += new System.EventHandler(this.button1_Click);
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.Configuración, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.btnInfoArea, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnEdificio, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnTipoArea, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnSubsistema, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.2064F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(249, 620);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnSalir
             // 
@@ -119,6 +110,61 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // Configuración
+            // 
+            this.Configuración.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Configuración.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Configuración.FlatAppearance.BorderSize = 0;
+            this.Configuración.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Configuración.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.Configuración.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Configuración.Image = ((System.Drawing.Image)(resources.GetObject("Configuración.Image")));
+            this.Configuración.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Configuración.Location = new System.Drawing.Point(3, 502);
+            this.Configuración.Name = "Configuración";
+            this.Configuración.Size = new System.Drawing.Size(243, 54);
+            this.Configuración.TabIndex = 7;
+            this.Configuración.Text = "Configuración";
+            this.Configuración.UseVisualStyleBackColor = true;
+            this.Configuración.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnInfoArea
+            // 
+            this.btnInfoArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnInfoArea.FlatAppearance.BorderSize = 0;
+            this.btnInfoArea.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.btnInfoArea.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.btnInfoArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfoArea.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfoArea.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnInfoArea.Location = new System.Drawing.Point(3, 382);
+            this.btnInfoArea.Name = "btnInfoArea";
+            this.btnInfoArea.Size = new System.Drawing.Size(243, 54);
+            this.btnInfoArea.TabIndex = 2;
+            this.btnInfoArea.Text = "Información Area";
+            this.btnInfoArea.UseVisualStyleBackColor = true;
+            this.btnInfoArea.Click += new System.EventHandler(this.btnInfoArea_Click);
+            // 
+            // btnEdificio
+            // 
+            this.btnEdificio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.btnEdificio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEdificio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEdificio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEdificio.FlatAppearance.BorderSize = 0;
+            this.btnEdificio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.btnEdificio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.btnEdificio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdificio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdificio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEdificio.Location = new System.Drawing.Point(3, 202);
+            this.btnEdificio.Name = "btnEdificio";
+            this.btnEdificio.Size = new System.Drawing.Size(243, 54);
+            this.btnEdificio.TabIndex = 1;
+            this.btnEdificio.Text = "Información Edificio";
+            this.btnEdificio.UseVisualStyleBackColor = false;
+            this.btnEdificio.Click += new System.EventHandler(this.btnEdificio_Click);
             // 
             // btnTipoArea
             // 
@@ -153,26 +199,6 @@
             this.btnSubsistema.Text = "Subsistemas";
             this.btnSubsistema.UseVisualStyleBackColor = true;
             this.btnSubsistema.Click += new System.EventHandler(this.btnSubsistema_Click);
-            // 
-            // btnEdificio
-            // 
-            this.btnEdificio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.btnEdificio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnEdificio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdificio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEdificio.FlatAppearance.BorderSize = 0;
-            this.btnEdificio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.btnEdificio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.btnEdificio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdificio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdificio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEdificio.Location = new System.Drawing.Point(3, 202);
-            this.btnEdificio.Name = "btnEdificio";
-            this.btnEdificio.Size = new System.Drawing.Size(243, 54);
-            this.btnEdificio.TabIndex = 1;
-            this.btnEdificio.Text = "Información Edificio";
-            this.btnEdificio.UseVisualStyleBackColor = false;
-            this.btnEdificio.Click += new System.EventHandler(this.btnEdificio_Click);
             // 
             // pictureBox1
             // 
@@ -247,32 +273,6 @@
             this.PanelContenedor.TabIndex = 2;
             this.PanelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.Configuración, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.btnInfoArea, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnEdificio, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnTipoArea, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnSubsistema, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.2064F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.684799F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(249, 620);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -303,13 +303,14 @@
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.PanelMenu.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
