@@ -309,5 +309,54 @@ namespace LBISGE
             }
         }
 
+        public void getTipoAreaList(string proc, ComboBox cb, string displayMember, string valueMember)
+        {
+            try
+            {
+                cb.Items.Clear();
+                cb.DataSource = null;
+                cb.Items.Insert(0, "Seleccionar...");
+
+                SqlCommand cmd = new SqlCommand(proc, MainClass.con);
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cb.DataSource = dt;
+                cb.DisplayMember = displayMember; //tipo de area
+                cb.ValueMember = valueMember; //ID tipo de area
+
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
+
+
+        //PRUEBA
+        public void carga_nombreA(string proc, string id_area, ComboBox cb, string displayMember, string valueMember)
+        {
+            try
+            {
+                MainClass.con.Open();
+                SqlCommand cmd = new SqlCommand("", MainClass.con);
+                cmd.Parameters.AddWithValue("@ID_area", id_area);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                cb.DataSource = dt;
+                cb.DisplayMember = displayMember; //tipo de area
+                cb.ValueMember = valueMember; //ID tipo de area
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
+
     }
 }
