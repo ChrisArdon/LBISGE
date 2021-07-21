@@ -281,8 +281,7 @@
             // 
             // datosLayoutPanel
             // 
-            this.datosLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datosLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.datosLayoutPanel.ColumnCount = 1;
             this.datosLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.datosLayoutPanel.Controls.Add(this.Modificar, 0, 0);
@@ -301,13 +300,13 @@
             this.dgvdatosLayoutPanel.ColumnCount = 2;
             this.dgvdatosLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.dgvdatosLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 416F));
-            this.dgvdatosLayoutPanel.Controls.Add(this.datosLayoutPanel, 1, 0);
             this.dgvdatosLayoutPanel.Controls.Add(this.dgvEdificio, 0, 0);
+            this.dgvdatosLayoutPanel.Controls.Add(this.datosLayoutPanel, 1, 0);
             this.dgvdatosLayoutPanel.Location = new System.Drawing.Point(27, 65);
             this.dgvdatosLayoutPanel.Name = "dgvdatosLayoutPanel";
             this.dgvdatosLayoutPanel.RowCount = 1;
             this.dgvdatosLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.dgvdatosLayoutPanel.Size = new System.Drawing.Size(748, 516);
+            this.dgvdatosLayoutPanel.Size = new System.Drawing.Size(791, 516);
             this.dgvdatosLayoutPanel.TabIndex = 10;
             // 
             // Edificio
