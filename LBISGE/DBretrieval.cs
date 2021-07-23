@@ -92,6 +92,29 @@ namespace LBISGE
             }
         }
 
+        public void getEdificioReport(string proceso, ComboBox cb,string lb ,string displayMember, string valueMember)
+        {
+            try
+            {
+                cb.Items.Clear();
+                cb.DataSource = null;
+                cb.Items.Insert(0, "Seleccionar...");
+
+                SqlCommand cmd = new SqlCommand(proceso, MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cb.DataSource = dt;
+                cb.DisplayMember = displayMember; //nombre del edificio
+                cb.ValueMember = valueMember; //ID del edificio
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
         public void showArea(DataGridView gv, DataGridViewColumn IDareaGv, DataGridViewColumn NombreAreaGv, string data = null) 
         {
             try

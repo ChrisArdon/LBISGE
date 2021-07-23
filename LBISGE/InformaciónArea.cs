@@ -349,5 +349,10 @@ namespace LBISGE
         {
 
         }
+
+        private void cbEdificio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
