@@ -38,6 +38,10 @@
             this.IDareaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreAreaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtNivel = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.CantidadPersonas = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txt_AreaT = new System.Windows.Forms.TextBox();
             this.txt_AnchoArea = new System.Windows.Forms.TextBox();
             this.txt_LargoArea = new System.Windows.Forms.TextBox();
@@ -57,10 +61,6 @@
             this.IDareaErrorLbl = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.CantidadPersonas = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtNivel = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArea)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -128,6 +128,7 @@
             this.dgvArea.Size = new System.Drawing.Size(423, 331);
             this.dgvArea.TabIndex = 6;
             this.dgvArea.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArea_CellClick);
+            this.dgvArea.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvArea_CellContentClick);
             // 
             // IDareaColumn
             // 
@@ -173,6 +174,41 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Agregar, Modificar o Eliminar";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // txtNivel
+            // 
+            this.txtNivel.Location = new System.Drawing.Point(167, 144);
+            this.txtNivel.Name = "txtNivel";
+            this.txtNivel.Size = new System.Drawing.Size(146, 22);
+            this.txtNivel.TabIndex = 31;
+            this.txtNivel.TextChanged += new System.EventHandler(this.txtNivel_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(18, 147);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 17);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Nivel :";
+            // 
+            // CantidadPersonas
+            // 
+            this.CantidadPersonas.Location = new System.Drawing.Point(167, 109);
+            this.CantidadPersonas.Name = "CantidadPersonas";
+            this.CantidadPersonas.Size = new System.Drawing.Size(146, 22);
+            this.CantidadPersonas.TabIndex = 29;
+            this.CantidadPersonas.TextChanged += new System.EventHandler(this.CantidadPersonas_TextChanged);
+            this.CantidadPersonas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadPersonas_KeyPress);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 109);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(144, 17);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Cantidad de Personas :";
             // 
             // txt_AreaT
             // 
@@ -403,41 +439,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 109);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 17);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Cantidad de Personas :";
-            // 
-            // CantidadPersonas
-            // 
-            this.CantidadPersonas.Location = new System.Drawing.Point(167, 109);
-            this.CantidadPersonas.Name = "CantidadPersonas";
-            this.CantidadPersonas.Size = new System.Drawing.Size(146, 22);
-            this.CantidadPersonas.TabIndex = 29;
-            this.CantidadPersonas.TextChanged += new System.EventHandler(this.CantidadPersonas_TextChanged);
-            this.CantidadPersonas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadPersonas_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 147);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 17);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Nivel :";
-            // 
-            // txtNivel
-            // 
-            this.txtNivel.Location = new System.Drawing.Point(167, 144);
-            this.txtNivel.Name = "txtNivel";
-            this.txtNivel.Size = new System.Drawing.Size(146, 22);
-            this.txtNivel.TabIndex = 31;
-            this.txtNivel.TextChanged += new System.EventHandler(this.txtNivel_TextChanged);
             // 
             // Area
             // 

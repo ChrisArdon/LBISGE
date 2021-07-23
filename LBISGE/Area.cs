@@ -351,5 +351,10 @@ namespace LBISGE
                 MessageBox.Show("Introducir solo numero", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void dgvArea_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
