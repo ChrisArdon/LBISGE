@@ -61,15 +61,11 @@
             this.IDareaErrorLbl = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-<<<<<<< HEAD
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-||||||| 9f2fa73
             this.label8 = new System.Windows.Forms.Label();
             this.CantidadPersonas = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNivel = new System.Windows.Forms.TextBox();
-=======
->>>>>>> 5173426cfd8160a947440d57de791b69924954b4
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArea)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -452,8 +448,7 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-<<<<<<< HEAD
+            //
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -470,8 +465,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(783, 467);
             this.tableLayoutPanel1.TabIndex = 8;
-            // 
-||||||| 9f2fa73
+            //
             // label8
             // 
             this.label8.AutoSize = true;
@@ -507,8 +501,6 @@
             this.txtNivel.TabIndex = 31;
             this.txtNivel.TextChanged += new System.EventHandler(this.txtNivel_TextChanged);
             // 
-=======
->>>>>>> 5173426cfd8160a947440d57de791b69924954b4
             // Area
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
