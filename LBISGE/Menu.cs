@@ -114,5 +114,14 @@ namespace LBISGE
                 PanelMenu.Width = 50;
             
         }
+
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            //Mostramos formulario Configuracion Panel          
+            AbrirFormInPanel(new FormReport());
+            if (PanelMenu.Width == 173)
+                PanelMenu.Width = 50;
+            
+        }
     }
 }

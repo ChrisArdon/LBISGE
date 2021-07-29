@@ -61,9 +61,9 @@
             reportDataSource1.Value = this.SubsistemaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "LBISGE.ReportEdificioSelect.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 91);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 79);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(830, 418);
+            this.reportViewer1.Size = new System.Drawing.Size(1125, 483);
             this.reportViewer1.TabIndex = 0;
             // 
             // groupBox1
@@ -74,18 +74,21 @@
             this.groupBox1.Controls.Add(this.Buscar);
             this.groupBox1.Controls.Add(this.cbEdificio);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(806, 73);
+            this.groupBox1.Size = new System.Drawing.Size(1125, 73);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Seleccionar edificio del cual desea solicitar informacion";
+            this.groupBox1.Text = "Seleccionar edificio del cual desea solicitar información";
             // 
             // Reporte2
             // 
-            this.Reporte2.Location = new System.Drawing.Point(570, 23);
+            this.Reporte2.Location = new System.Drawing.Point(592, 23);
             this.Reporte2.Name = "Reporte2";
-            this.Reporte2.Size = new System.Drawing.Size(203, 37);
+            this.Reporte2.Size = new System.Drawing.Size(221, 37);
             this.Reporte2.TabIndex = 25;
             this.Reporte2.Text = "Reporte General por subsitema";
             this.Reporte2.UseVisualStyleBackColor = true;
@@ -94,17 +97,17 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(67, 35);
+            this.label9.Location = new System.Drawing.Point(18, 35);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 13);
+            this.label9.Size = new System.Drawing.Size(57, 17);
             this.label9.TabIndex = 22;
             this.label9.Text = "Edificio :";
             // 
             // Buscar
             // 
-            this.Buscar.Location = new System.Drawing.Point(381, 23);
+            this.Buscar.Location = new System.Drawing.Point(332, 23);
             this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(167, 37);
+            this.Buscar.Size = new System.Drawing.Size(231, 37);
             this.Buscar.TabIndex = 24;
             this.Buscar.Text = "Generar reporte de edificio";
             this.Buscar.UseVisualStyleBackColor = true;
@@ -115,17 +118,17 @@
             this.cbEdificio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbEdificio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbEdificio.FormattingEnabled = true;
-            this.cbEdificio.Location = new System.Drawing.Point(150, 32);
+            this.cbEdificio.Location = new System.Drawing.Point(101, 32);
             this.cbEdificio.Name = "cbEdificio";
-            this.cbEdificio.Size = new System.Drawing.Size(205, 21);
+            this.cbEdificio.Size = new System.Drawing.Size(205, 25);
             this.cbEdificio.TabIndex = 23;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(203, 35);
+            this.label1.Location = new System.Drawing.Point(154, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 26;
             this.label1.Text = "label1";
             // 
@@ -138,11 +141,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(830, 509);
+            this.ClientSize = new System.Drawing.Size(1125, 561);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ReporteEdificio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReporteEdificio";
             this.Load += new System.EventHandler(this.ReporteEdificio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SubsistemaBindingSource)).EndInit();

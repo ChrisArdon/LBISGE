@@ -209,7 +209,7 @@
             this.dgvEdificio.ReadOnly = true;
             this.dgvEdificio.RowHeadersVisible = false;
             this.dgvEdificio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEdificio.Size = new System.Drawing.Size(326, 510);
+            this.dgvEdificio.Size = new System.Drawing.Size(369, 510);
             this.dgvEdificio.TabIndex = 6;
             this.dgvEdificio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEdificio_CellClick);
             this.dgvEdificio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEdificio_CellContentClick);
@@ -285,7 +285,7 @@
             this.datosLayoutPanel.ColumnCount = 1;
             this.datosLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.datosLayoutPanel.Controls.Add(this.Modificar, 0, 0);
-            this.datosLayoutPanel.Location = new System.Drawing.Point(335, 3);
+            this.datosLayoutPanel.Location = new System.Drawing.Point(378, 3);
             this.datosLayoutPanel.Name = "datosLayoutPanel";
             this.datosLayoutPanel.RowCount = 1;
             this.datosLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
