@@ -80,7 +80,7 @@
             this.eQuest.Name = "eQuest";
             this.eQuest.Size = new System.Drawing.Size(213, 51);
             this.eQuest.TabIndex = 2;
-            this.eQuest.Text = "eQuest";
+            this.eQuest.Text = "eQuest Nivel 1";
             this.eQuest.UseVisualStyleBackColor = false;
             // 
             // FormReport

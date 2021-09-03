@@ -123,5 +123,10 @@ namespace LBISGE
                 PanelMenu.Width = 50;
             
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

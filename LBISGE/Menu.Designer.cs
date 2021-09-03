@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnReportes = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.Configuración = new System.Windows.Forms.Button();
             this.btnInfoArea = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.BtnReportes = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,6 +93,24 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(249, 758);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // BtnReportes
+            // 
+            this.BtnReportes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnReportes.FlatAppearance.BorderSize = 0;
+            this.BtnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.BtnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReportes.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.BtnReportes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnReportes.Location = new System.Drawing.Point(3, 539);
+            this.BtnReportes.Name = "BtnReportes";
+            this.BtnReportes.Size = new System.Drawing.Size(243, 67);
+            this.BtnReportes.TabIndex = 0;
+            this.BtnReportes.Text = "Reportes";
+            this.BtnReportes.UseVisualStyleBackColor = true;
+            this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
             // btnSalir
             // 
@@ -291,23 +309,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(832, 755);
             this.tableLayoutPanel2.TabIndex = 3;
-            // 
-            // BtnReportes
-            // 
-            this.BtnReportes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnReportes.FlatAppearance.BorderSize = 0;
-            this.BtnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.BtnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReportes.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.BtnReportes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnReportes.Location = new System.Drawing.Point(3, 539);
-            this.BtnReportes.Name = "BtnReportes";
-            this.BtnReportes.Size = new System.Drawing.Size(243, 67);
-            this.BtnReportes.TabIndex = 0;
-            this.BtnReportes.Text = "Reportes";
-            this.BtnReportes.UseVisualStyleBackColor = true;
-            this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
             // Menu
             // 
