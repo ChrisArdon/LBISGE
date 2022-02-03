@@ -31,6 +31,8 @@
             this.BtnReporteGeneralSubs = new System.Windows.Forms.Button();
             this.BtnReportEdificio = new System.Windows.Forms.Button();
             this.eQuest = new System.Windows.Forms.Button();
+            this.eQuestN2 = new System.Windows.Forms.Button();
+            this.eQuestN3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnReporteGeneralSubs
@@ -82,6 +84,41 @@
             this.eQuest.TabIndex = 2;
             this.eQuest.Text = "eQuest Nivel 1";
             this.eQuest.UseVisualStyleBackColor = false;
+            this.eQuest.Click += new System.EventHandler(this.eQuest_Click);
+            // 
+            // eQuestN2
+            // 
+            this.eQuestN2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.eQuestN2.FlatAppearance.BorderSize = 0;
+            this.eQuestN2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.eQuestN2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.eQuestN2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eQuestN2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eQuestN2.ForeColor = System.Drawing.Color.White;
+            this.eQuestN2.Location = new System.Drawing.Point(42, 104);
+            this.eQuestN2.Name = "eQuestN2";
+            this.eQuestN2.Size = new System.Drawing.Size(224, 51);
+            this.eQuestN2.TabIndex = 3;
+            this.eQuestN2.Text = "eQuest Nivel 2";
+            this.eQuestN2.UseVisualStyleBackColor = false;
+            this.eQuestN2.Click += new System.EventHandler(this.eQuestN2_Click);
+            // 
+            // eQuestN3
+            // 
+            this.eQuestN3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.eQuestN3.FlatAppearance.BorderSize = 0;
+            this.eQuestN3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.eQuestN3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.eQuestN3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eQuestN3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eQuestN3.ForeColor = System.Drawing.Color.White;
+            this.eQuestN3.Location = new System.Drawing.Point(289, 104);
+            this.eQuestN3.Name = "eQuestN3";
+            this.eQuestN3.Size = new System.Drawing.Size(235, 51);
+            this.eQuestN3.TabIndex = 4;
+            this.eQuestN3.Text = "eQuest Nivel 3";
+            this.eQuestN3.UseVisualStyleBackColor = false;
+            this.eQuestN3.Click += new System.EventHandler(this.eQuestN3_Click);
             // 
             // FormReport
             // 
@@ -89,6 +126,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(830, 650);
+            this.Controls.Add(this.eQuestN3);
+            this.Controls.Add(this.eQuestN2);
             this.Controls.Add(this.eQuest);
             this.Controls.Add(this.BtnReportEdificio);
             this.Controls.Add(this.BtnReporteGeneralSubs);
@@ -104,5 +143,7 @@
         private System.Windows.Forms.Button BtnReporteGeneralSubs;
         private System.Windows.Forms.Button BtnReportEdificio;
         private System.Windows.Forms.Button eQuest;
+        private System.Windows.Forms.Button eQuestN2;
+        private System.Windows.Forms.Button eQuestN3;
     }
 }

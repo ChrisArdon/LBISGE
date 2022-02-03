@@ -29,5 +29,10 @@ namespace LBISGE
         {
 
         }
+
+        private void sp_ConsumoPorSubSBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

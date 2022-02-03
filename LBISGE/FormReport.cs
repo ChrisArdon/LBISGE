@@ -28,5 +28,23 @@ namespace LBISGE
             Form ReporteGeneralEdificioSubs = new ReporteEdificio();
             ReporteGeneralEdificioSubs.Show();
         }
+
+        private void eQuest_Click(object sender, EventArgs e)
+        {
+            Form eQuest = new eQuest();
+            eQuest.Show();
+        }
+
+        private void eQuestN2_Click(object sender, EventArgs e)
+        {
+            Form eQuestN2 = new eQuest_Nivel_2();
+            eQuestN2.Show();
+        }
+
+        private void eQuestN3_Click(object sender, EventArgs e)
+        {
+            Form eQuestN2 = new eQuest_Nivel_3();
+            eQuestN2.Show();
+        }
     }
 }
