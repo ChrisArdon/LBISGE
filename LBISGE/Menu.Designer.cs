@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnReportes = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.Configuración = new System.Windows.Forms.Button();
             this.btnInfoArea = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.BtnReportes = new System.Windows.Forms.Button();
             this.PanelMenu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,6 +93,26 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(249, 758);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // BtnReportes
+            // 
+            this.BtnReportes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnReportes.FlatAppearance.BorderSize = 0;
+            this.BtnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.BtnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
+            this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReportes.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.BtnReportes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnReportes.Image = ((System.Drawing.Image)(resources.GetObject("BtnReportes.Image")));
+            this.BtnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnReportes.Location = new System.Drawing.Point(3, 539);
+            this.BtnReportes.Name = "BtnReportes";
+            this.BtnReportes.Size = new System.Drawing.Size(243, 67);
+            this.BtnReportes.TabIndex = 0;
+            this.BtnReportes.Text = "Reportes";
+            this.BtnReportes.UseVisualStyleBackColor = true;
+            this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
             // btnSalir
             // 
@@ -141,6 +161,8 @@
             this.btnInfoArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInfoArea.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInfoArea.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnInfoArea.Image = ((System.Drawing.Image)(resources.GetObject("btnInfoArea.Image")));
+            this.btnInfoArea.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInfoArea.Location = new System.Drawing.Point(3, 466);
             this.btnInfoArea.Name = "btnInfoArea";
             this.btnInfoArea.Size = new System.Drawing.Size(243, 67);
@@ -161,6 +183,8 @@
             this.btnEdificio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdificio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdificio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEdificio.Image = ((System.Drawing.Image)(resources.GetObject("btnEdificio.Image")));
+            this.btnEdificio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdificio.Location = new System.Drawing.Point(3, 247);
             this.btnEdificio.Name = "btnEdificio";
             this.btnEdificio.Size = new System.Drawing.Size(243, 67);
@@ -178,6 +202,8 @@
             this.btnTipoArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTipoArea.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTipoArea.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTipoArea.Image = ((System.Drawing.Image)(resources.GetObject("btnTipoArea.Image")));
+            this.btnTipoArea.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTipoArea.Location = new System.Drawing.Point(3, 320);
             this.btnTipoArea.Name = "btnTipoArea";
             this.btnTipoArea.Size = new System.Drawing.Size(243, 67);
@@ -195,6 +221,8 @@
             this.btnSubsistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubsistema.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubsistema.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSubsistema.Image = ((System.Drawing.Image)(resources.GetObject("btnSubsistema.Image")));
+            this.btnSubsistema.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSubsistema.Location = new System.Drawing.Point(3, 393);
             this.btnSubsistema.Name = "btnSubsistema";
             this.btnSubsistema.Size = new System.Drawing.Size(243, 67);
@@ -234,7 +262,7 @@
             this.BtnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnMinimizar.Image")));
             this.BtnMinimizar.Location = new System.Drawing.Point(945, 2);
             this.BtnMinimizar.Name = "BtnMinimizar";
-            this.BtnMinimizar.Size = new System.Drawing.Size(38, 28);
+            this.BtnMinimizar.Size = new System.Drawing.Size(24, 28);
             this.BtnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnMinimizar.TabIndex = 9;
             this.BtnMinimizar.TabStop = false;
@@ -247,7 +275,7 @@
             this.BtnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("BtnMaximizar.Image")));
             this.BtnMaximizar.Location = new System.Drawing.Point(995, 2);
             this.BtnMaximizar.Name = "BtnMaximizar";
-            this.BtnMaximizar.Size = new System.Drawing.Size(38, 28);
+            this.BtnMaximizar.Size = new System.Drawing.Size(20, 26);
             this.BtnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnMaximizar.TabIndex = 8;
             this.BtnMaximizar.TabStop = false;
@@ -258,9 +286,9 @@
             this.BtnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCerrar.Image")));
-            this.BtnCerrar.Location = new System.Drawing.Point(1042, 6);
+            this.BtnCerrar.Location = new System.Drawing.Point(1033, 1);
             this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(20, 19);
+            this.BtnCerrar.Size = new System.Drawing.Size(38, 29);
             this.BtnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnCerrar.TabIndex = 7;
             this.BtnCerrar.TabStop = false;
@@ -291,23 +319,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(832, 755);
             this.tableLayoutPanel2.TabIndex = 3;
-            // 
-            // BtnReportes
-            // 
-            this.BtnReportes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnReportes.FlatAppearance.BorderSize = 0;
-            this.BtnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.BtnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(89)))));
-            this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReportes.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.BtnReportes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnReportes.Location = new System.Drawing.Point(3, 539);
-            this.BtnReportes.Name = "BtnReportes";
-            this.BtnReportes.Size = new System.Drawing.Size(243, 67);
-            this.BtnReportes.TabIndex = 0;
-            this.BtnReportes.Text = "Reportes";
-            this.BtnReportes.UseVisualStyleBackColor = true;
-            this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
             // Menu
             // 

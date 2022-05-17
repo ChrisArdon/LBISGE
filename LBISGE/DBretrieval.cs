@@ -381,5 +381,119 @@ namespace LBISGE
             }
         }
 
+        //REPORTES DATA eQuest
+        public void showArea_eQuest(DataGridView gv, string data = null)
+        {
+            try
+            {
+                SqlCommand cmd;
+                if (data == null) //si el textbox de busqueda esta vacio, mostrar todos los datos
+                {
+                    cmd = new SqlCommand("sp_eQUESTNivel1", MainClass.con);
+                }
+                else //mostrar los datos con la palabra clave en el buscador
+                {
+                    cmd = new SqlCommand("sp_eQUESTLIKE", MainClass.con);
+                    cmd.Parameters.AddWithValue("@data", data);
+                }
+                //SqlCommand cmd = new SqlCommand("pr_getEdificioData", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+
+                gv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
+
+        public void showArea_eQuestN2(DataGridView gv, string data = null)
+        {
+            try
+            {
+                SqlCommand cmd;
+                if (data == null) //si el textbox de busqueda esta vacio, mostrar todos los datos
+                {
+                    cmd = new SqlCommand("sp_eQUESTNivel2", MainClass.con);
+                }
+                else //mostrar los datos con la palabra clave en el buscador
+                {
+                    cmd = new SqlCommand("sp_eQUESTLIKE", MainClass.con);
+                    cmd.Parameters.AddWithValue("@data", data);
+                }
+                //SqlCommand cmd = new SqlCommand("pr_getEdificioData", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+
+                gv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
+
+        public void showArea_eQuestN3(DataGridView gv, string data = null)
+        {
+            try
+            {
+                SqlCommand cmd;
+                if (data == null) //si el textbox de busqueda esta vacio, mostrar todos los datos
+                {
+                    cmd = new SqlCommand("sp_eQUESTNivel3", MainClass.con);
+                }
+                else //mostrar los datos con la palabra clave en el buscador
+                {
+                    cmd = new SqlCommand("sp_eQUESTLIKE", MainClass.con);
+                    cmd.Parameters.AddWithValue("@data", data);
+                }
+                //SqlCommand cmd = new SqlCommand("pr_getEdificioData", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+
+                gv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
+        public void showeQuestFinal(DataGridView gv, string parameter)
+        {
+            try
+            {
+
+                SqlCommand cmd;
+                cmd = new SqlCommand("sp_TablaEQUEST_PRUEBA2", MainClass.con);
+                cmd.Parameters.AddWithValue("@ListaNombreA", parameter);
+                //SqlCommand cmd = new SqlCommand("pr_getEdificioData", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+
+                gv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
+
     }
 }

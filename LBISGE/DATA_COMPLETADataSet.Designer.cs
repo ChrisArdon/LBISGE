@@ -20,17 +20,17 @@ namespace LBISGE {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("ReportSelectEdificio")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DATA_COMPLETADataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class ReportSelectEdificio : global::System.Data.DataSet {
+    public partial class DATA_COMPLETADataSet : global::System.Data.DataSet {
         
-        private SubsistemaDataTable tableSubsistema;
+        private sp_ConsumoPorSubSDataTable tablesp_ConsumoPorSubS;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public ReportSelectEdificio() {
+        public DATA_COMPLETADataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace LBISGE {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected ReportSelectEdificio(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DATA_COMPLETADataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace LBISGE {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Subsistema"] != null)) {
-                    base.Tables.Add(new SubsistemaDataTable(ds.Tables["Subsistema"]));
+                if ((ds.Tables["sp_ConsumoPorSubS"] != null)) {
+                    base.Tables.Add(new sp_ConsumoPorSubSDataTable(ds.Tables["sp_ConsumoPorSubS"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace LBISGE {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SubsistemaDataTable Subsistema {
+        public sp_ConsumoPorSubSDataTable sp_ConsumoPorSubS {
             get {
-                return this.tableSubsistema;
+                return this.tablesp_ConsumoPorSubS;
             }
         }
         
@@ -127,7 +127,7 @@ namespace LBISGE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            ReportSelectEdificio cln = ((ReportSelectEdificio)(base.Clone()));
+            DATA_COMPLETADataSet cln = ((DATA_COMPLETADataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace LBISGE {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Subsistema"] != null)) {
-                    base.Tables.Add(new SubsistemaDataTable(ds.Tables["Subsistema"]));
+                if ((ds.Tables["sp_ConsumoPorSubS"] != null)) {
+                    base.Tables.Add(new sp_ConsumoPorSubSDataTable(ds.Tables["sp_ConsumoPorSubS"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace LBISGE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableSubsistema = ((SubsistemaDataTable)(base.Tables["Subsistema"]));
+            this.tablesp_ConsumoPorSubS = ((sp_ConsumoPorSubSDataTable)(base.Tables["sp_ConsumoPorSubS"]));
             if ((initTable == true)) {
-                if ((this.tableSubsistema != null)) {
-                    this.tableSubsistema.InitVars();
+                if ((this.tablesp_ConsumoPorSubS != null)) {
+                    this.tablesp_ConsumoPorSubS.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace LBISGE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "ReportSelectEdificio";
+            this.DataSetName = "DATA_COMPLETADataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/ReportSelectEdificio.xsd";
+            this.Namespace = "http://tempuri.org/DATA_COMPLETADataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableSubsistema = new SubsistemaDataTable();
-            base.Tables.Add(this.tableSubsistema);
+            this.tablesp_ConsumoPorSubS = new sp_ConsumoPorSubSDataTable();
+            base.Tables.Add(this.tablesp_ConsumoPorSubS);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeSubsistema() {
+        private bool ShouldSerializesp_ConsumoPorSubS() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace LBISGE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            ReportSelectEdificio ds = new ReportSelectEdificio();
+            DATA_COMPLETADataSet ds = new DATA_COMPLETADataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace LBISGE {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void SubsistemaRowChangeEventHandler(object sender, SubsistemaRowChangeEvent e);
+        public delegate void sp_ConsumoPorSubSRowChangeEventHandler(object sender, sp_ConsumoPorSubSRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SubsistemaDataTable : global::System.Data.TypedTableBase<SubsistemaRow> {
+        public partial class sp_ConsumoPorSubSDataTable : global::System.Data.TypedTableBase<sp_ConsumoPorSubSRow> {
             
             private global::System.Data.DataColumn columnNombreDeSubsistema;
             
@@ -285,8 +285,8 @@ namespace LBISGE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SubsistemaDataTable() {
-                this.TableName = "Subsistema";
+            public sp_ConsumoPorSubSDataTable() {
+                this.TableName = "sp_ConsumoPorSubS";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +294,7 @@ namespace LBISGE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal SubsistemaDataTable(global::System.Data.DataTable table) {
+            internal sp_ConsumoPorSubSDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,7 +311,7 @@ namespace LBISGE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected SubsistemaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected sp_ConsumoPorSubSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -343,46 +343,46 @@ namespace LBISGE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SubsistemaRow this[int index] {
+            public sp_ConsumoPorSubSRow this[int index] {
                 get {
-                    return ((SubsistemaRow)(this.Rows[index]));
+                    return ((sp_ConsumoPorSubSRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SubsistemaRowChangeEventHandler SubsistemaRowChanging;
+            public event sp_ConsumoPorSubSRowChangeEventHandler sp_ConsumoPorSubSRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SubsistemaRowChangeEventHandler SubsistemaRowChanged;
+            public event sp_ConsumoPorSubSRowChangeEventHandler sp_ConsumoPorSubSRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SubsistemaRowChangeEventHandler SubsistemaRowDeleting;
+            public event sp_ConsumoPorSubSRowChangeEventHandler sp_ConsumoPorSubSRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SubsistemaRowChangeEventHandler SubsistemaRowDeleted;
+            public event sp_ConsumoPorSubSRowChangeEventHandler sp_ConsumoPorSubSRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddSubsistemaRow(SubsistemaRow row) {
+            public void Addsp_ConsumoPorSubSRow(sp_ConsumoPorSubSRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SubsistemaRow AddSubsistemaRow(string NombreDeSubsistema, decimal ConsumoTotal) {
-                SubsistemaRow rowSubsistemaRow = ((SubsistemaRow)(this.NewRow()));
+            public sp_ConsumoPorSubSRow Addsp_ConsumoPorSubSRow(string NombreDeSubsistema, decimal ConsumoTotal) {
+                sp_ConsumoPorSubSRow rowsp_ConsumoPorSubSRow = ((sp_ConsumoPorSubSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NombreDeSubsistema,
                         ConsumoTotal};
-                rowSubsistemaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSubsistemaRow);
-                return rowSubsistemaRow;
+                rowsp_ConsumoPorSubSRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowsp_ConsumoPorSubSRow);
+                return rowsp_ConsumoPorSubSRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SubsistemaDataTable cln = ((SubsistemaDataTable)(base.Clone()));
+                sp_ConsumoPorSubSDataTable cln = ((sp_ConsumoPorSubSDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -390,7 +390,7 @@ namespace LBISGE {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SubsistemaDataTable();
+                return new sp_ConsumoPorSubSDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,28 +414,28 @@ namespace LBISGE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SubsistemaRow NewSubsistemaRow() {
-                return ((SubsistemaRow)(this.NewRow()));
+            public sp_ConsumoPorSubSRow Newsp_ConsumoPorSubSRow() {
+                return ((sp_ConsumoPorSubSRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SubsistemaRow(builder);
+                return new sp_ConsumoPorSubSRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SubsistemaRow);
+                return typeof(sp_ConsumoPorSubSRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SubsistemaRowChanged != null)) {
-                    this.SubsistemaRowChanged(this, new SubsistemaRowChangeEvent(((SubsistemaRow)(e.Row)), e.Action));
+                if ((this.sp_ConsumoPorSubSRowChanged != null)) {
+                    this.sp_ConsumoPorSubSRowChanged(this, new sp_ConsumoPorSubSRowChangeEvent(((sp_ConsumoPorSubSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -443,8 +443,8 @@ namespace LBISGE {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SubsistemaRowChanging != null)) {
-                    this.SubsistemaRowChanging(this, new SubsistemaRowChangeEvent(((SubsistemaRow)(e.Row)), e.Action));
+                if ((this.sp_ConsumoPorSubSRowChanging != null)) {
+                    this.sp_ConsumoPorSubSRowChanging(this, new sp_ConsumoPorSubSRowChangeEvent(((sp_ConsumoPorSubSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -452,8 +452,8 @@ namespace LBISGE {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SubsistemaRowDeleted != null)) {
-                    this.SubsistemaRowDeleted(this, new SubsistemaRowChangeEvent(((SubsistemaRow)(e.Row)), e.Action));
+                if ((this.sp_ConsumoPorSubSRowDeleted != null)) {
+                    this.sp_ConsumoPorSubSRowDeleted(this, new sp_ConsumoPorSubSRowChangeEvent(((sp_ConsumoPorSubSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -461,14 +461,14 @@ namespace LBISGE {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SubsistemaRowDeleting != null)) {
-                    this.SubsistemaRowDeleting(this, new SubsistemaRowChangeEvent(((SubsistemaRow)(e.Row)), e.Action));
+                if ((this.sp_ConsumoPorSubSRowDeleting != null)) {
+                    this.sp_ConsumoPorSubSRowDeleting(this, new sp_ConsumoPorSubSRowChangeEvent(((sp_ConsumoPorSubSRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveSubsistemaRow(SubsistemaRow row) {
+            public void Removesp_ConsumoPorSubSRow(sp_ConsumoPorSubSRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -477,7 +477,7 @@ namespace LBISGE {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                ReportSelectEdificio ds = new ReportSelectEdificio();
+                DATA_COMPLETADataSet ds = new DATA_COMPLETADataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -495,7 +495,7 @@ namespace LBISGE {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SubsistemaDataTable";
+                attribute2.FixedValue = "sp_ConsumoPorSubSDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -539,25 +539,25 @@ namespace LBISGE {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SubsistemaRow : global::System.Data.DataRow {
+        public partial class sp_ConsumoPorSubSRow : global::System.Data.DataRow {
             
-            private SubsistemaDataTable tableSubsistema;
+            private sp_ConsumoPorSubSDataTable tablesp_ConsumoPorSubS;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal SubsistemaRow(global::System.Data.DataRowBuilder rb) : 
+            internal sp_ConsumoPorSubSRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSubsistema = ((SubsistemaDataTable)(this.Table));
+                this.tablesp_ConsumoPorSubS = ((sp_ConsumoPorSubSDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string NombreDeSubsistema {
                 get {
-                    return ((string)(this[this.tableSubsistema.NombreDeSubsistemaColumn]));
+                    return ((string)(this[this.tablesp_ConsumoPorSubS.NombreDeSubsistemaColumn]));
                 }
                 set {
-                    this[this.tableSubsistema.NombreDeSubsistemaColumn] = value;
+                    this[this.tablesp_ConsumoPorSubS.NombreDeSubsistemaColumn] = value;
                 }
             }
             
@@ -566,27 +566,27 @@ namespace LBISGE {
             public decimal ConsumoTotal {
                 get {
                     try {
-                        return ((decimal)(this[this.tableSubsistema.ConsumoTotalColumn]));
+                        return ((decimal)(this[this.tablesp_ConsumoPorSubS.ConsumoTotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ConsumoTotal\' de la tabla \'Subsistema\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ConsumoTotal\' de la tabla \'sp_ConsumoPorSubS\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSubsistema.ConsumoTotalColumn] = value;
+                    this[this.tablesp_ConsumoPorSubS.ConsumoTotalColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsConsumoTotalNull() {
-                return this.IsNull(this.tableSubsistema.ConsumoTotalColumn);
+                return this.IsNull(this.tablesp_ConsumoPorSubS.ConsumoTotalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetConsumoTotalNull() {
-                this[this.tableSubsistema.ConsumoTotalColumn] = global::System.Convert.DBNull;
+                this[this.tablesp_ConsumoPorSubS.ConsumoTotalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -594,22 +594,22 @@ namespace LBISGE {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class SubsistemaRowChangeEvent : global::System.EventArgs {
+        public class sp_ConsumoPorSubSRowChangeEvent : global::System.EventArgs {
             
-            private SubsistemaRow eventRow;
+            private sp_ConsumoPorSubSRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SubsistemaRowChangeEvent(SubsistemaRow row, global::System.Data.DataRowAction action) {
+            public sp_ConsumoPorSubSRowChangeEvent(sp_ConsumoPorSubSRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SubsistemaRow Row {
+            public sp_ConsumoPorSubSRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -625,7 +625,7 @@ namespace LBISGE {
         }
     }
 }
-namespace LBISGE.ReportSelectEdificioTableAdapters {
+namespace LBISGE.DATA_COMPLETADataSetTableAdapters {
     
     
     /// <summary>
@@ -637,7 +637,7 @@ namespace LBISGE.ReportSelectEdificioTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SubsistemaTableAdapter : global::System.ComponentModel.Component {
+    public partial class sp_ConsumoPorSubSTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -651,7 +651,7 @@ namespace LBISGE.ReportSelectEdificioTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public SubsistemaTableAdapter() {
+        public sp_ConsumoPorSubSTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -748,7 +748,7 @@ namespace LBISGE.ReportSelectEdificioTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Subsistema";
+            tableMapping.DataSetTable = "sp_ConsumoPorSubS";
             tableMapping.ColumnMappings.Add("NombreDeSubsistema", "NombreDeSubsistema");
             tableMapping.ColumnMappings.Add("ConsumoTotal", "ConsumoTotal");
             this._adapter.TableMappings.Add(tableMapping);
@@ -764,80 +764,20 @@ namespace LBISGE.ReportSelectEdificioTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Subsistema.NombreDeSubsistema, SUM(CONVERT(numeric(10, 4), Informac" +
-                "ionArea.Consumo)) AS ConsumoTotal\r\nFROM            Areas INNER JOIN\r\n           " +
-                "              InformacionArea ON Areas.ID_area = InformacionArea.ID_area INNER J" +
-                "OIN\r\n                         Edificios ON InformacionArea.ID_edificio = Edifici" +
-                "os.ID_edificio INNER JOIN\r\n                         Subsistema ON InformacionAre" +
-                "a.ID_subsistema = Subsistema.ID_subsistema\r\nWHERE        (Edificios.ID_edificio " +
-                "= @e) AND (Subsistema.NombreDeSubsistema = \'Iluminación Interior\' OR\r\n          " +
-                "               Subsistema.NombreDeSubsistema = \'Equipo audiovisual\' OR\r\n        " +
-                "                 Subsistema.NombreDeSubsistema = \'Aire comprimido\' OR\r\n         " +
-                "                Subsistema.NombreDeSubsistema = \'Aire acondicionado\' OR\r\n       " +
-                "                  Subsistema.NombreDeSubsistema = \'Aire Acondicionado\' OR\r\n     " +
-                "                    Subsistema.NombreDeSubsistema = \'Equipo de Cocina\' OR\r\n     " +
-                "                    Subsistema.NombreDeSubsistema = \'Equipo de oficina\' OR\r\n    " +
-                "                     Subsistema.NombreDeSubsistema = \'Equipo de procesos de fabr" +
-                "icación\' OR\r\n                         Subsistema.NombreDeSubsistema = \'Equipo de" +
-                " medicion \' OR\r\n                         Subsistema.NombreDeSubsistema = \'Equipo" +
-                " de prueba \' OR\r\n                         Subsistema.NombreDeSubsistema = \'Equip" +
-                "o de refrigeración\' OR\r\n                         Subsistema.NombreDeSubsistema =" +
-                " \'Fuentes de Voltaje \' OR\r\n                         Subsistema.NombreDeSubsistem" +
-                "a = \'Horno de potencia \' OR\r\n                         Subsistema.NombreDeSubsist" +
-                "ema = \'Iluminación Exterior \' OR\r\n                         Subsistema.NombreDeSu" +
-                "bsistema = \'Motores electricos \' OR\r\n                         Subsistema.NombreD" +
-                "eSubsistema = \'Miscelaneos \' OR\r\n                         Subsistema.NombreDeSub" +
-                "sistema = \'Transformador de potencia  \' OR\r\n                         Subsistema." +
-                "NombreDeSubsistema = \'Ventilacion Forzada \')\r\nGROUP BY Edificios.ID_edificio, Su" +
-                "bsistema.NombreDeSubsistema";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@e", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ID_edificio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Subsistema.NombreDeSubsistema, SUM(CONVERT(numeric(10, 4), Informac" +
-                "ionArea.Consumo)) AS ConsumoTotal\r\nFROM            Areas INNER JOIN\r\n           " +
-                "              InformacionArea ON Areas.ID_area = InformacionArea.ID_area INNER J" +
-                "OIN\r\n                         Edificios ON InformacionArea.ID_edificio = Edifici" +
-                "os.ID_edificio INNER JOIN\r\n                         Subsistema ON InformacionAre" +
-                "a.ID_subsistema = Subsistema.ID_subsistema\r\nWHERE        (Subsistema.NombreDeSub" +
-                "sistema = \'Iluminación Interior\') OR\r\n                         (Subsistema.Nombr" +
-                "eDeSubsistema = \'Equipo audiovisual\') OR\r\n                         (Subsistema.N" +
-                "ombreDeSubsistema = \'Aire comprimido\') OR\r\n                         (Subsistema." +
-                "NombreDeSubsistema = \'Aire acondicionado\') OR\r\n                         (Subsist" +
-                "ema.NombreDeSubsistema = \'Aire Acondicionado\') OR\r\n                         (Sub" +
-                "sistema.NombreDeSubsistema = \'Equipo de Cocina\') OR\r\n                         (S" +
-                "ubsistema.NombreDeSubsistema = \'Equipo de oficina\') OR\r\n                        " +
-                " (Subsistema.NombreDeSubsistema = \'Equipo de procesos de fabricación\') OR\r\n     " +
-                "                    (Subsistema.NombreDeSubsistema = \'Equipo de medicion \') OR\r\n" +
-                "                         (Subsistema.NombreDeSubsistema = \'Equipo de prueba \') O" +
-                "R\r\n                         (Subsistema.NombreDeSubsistema = \'Equipo de refriger" +
-                "ación\') OR\r\n                         (Subsistema.NombreDeSubsistema = \'Fuentes d" +
-                "e Voltaje \') OR\r\n                         (Subsistema.NombreDeSubsistema = \'Horn" +
-                "o de potencia \') OR\r\n                         (Subsistema.NombreDeSubsistema = \'" +
-                "Iluminación Exterior \') OR\r\n                         (Subsistema.NombreDeSubsist" +
-                "ema = \'Motores electricos \') OR\r\n                         (Subsistema.NombreDeSu" +
-                "bsistema = \'Miscelaneos \') OR\r\n                         (Subsistema.NombreDeSubs" +
-                "istema = \'Transformador de potencia  \') OR\r\n                         (Subsistema" +
-                ".NombreDeSubsistema = \'Ventilacion Forzada \')\r\nGROUP BY Subsistema.NombreDeSubsi" +
-                "stema";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].CommandText = "dbo.sp_ConsumoPorSubS";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int FiltroEdificio(ReportSelectEdificio.SubsistemaDataTable dataTable, string e) {
+        public virtual int Fill(DATA_COMPLETADataSet.sp_ConsumoPorSubSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((e == null)) {
-                throw new global::System.ArgumentNullException("e");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(e));
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -849,39 +789,9 @@ namespace LBISGE.ReportSelectEdificioTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual ReportSelectEdificio.SubsistemaDataTable GetData(string e) {
+        public virtual DATA_COMPLETADataSet.sp_ConsumoPorSubSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((e == null)) {
-                throw new global::System.ArgumentNullException("e");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(e));
-            }
-            ReportSelectEdificio.SubsistemaDataTable dataTable = new ReportSelectEdificio.SubsistemaDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int VerTodos(ReportSelectEdificio.SubsistemaDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual ReportSelectEdificio.SubsistemaDataTable GetDataBy() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            ReportSelectEdificio.SubsistemaDataTable dataTable = new ReportSelectEdificio.SubsistemaDataTable();
+            DATA_COMPLETADataSet.sp_ConsumoPorSubSDataTable dataTable = new DATA_COMPLETADataSet.sp_ConsumoPorSubSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -955,7 +865,7 @@ namespace LBISGE.ReportSelectEdificioTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(ReportSelectEdificio dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DATA_COMPLETADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -965,7 +875,7 @@ namespace LBISGE.ReportSelectEdificioTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(ReportSelectEdificio dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DATA_COMPLETADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -975,7 +885,7 @@ namespace LBISGE.ReportSelectEdificioTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(ReportSelectEdificio dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DATA_COMPLETADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1009,7 +919,7 @@ namespace LBISGE.ReportSelectEdificioTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(ReportSelectEdificio dataSet) {
+        public virtual int UpdateAll(DATA_COMPLETADataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

@@ -63,6 +63,11 @@
     <Compile Include="config.Designer.cs">
       <DependentUpon>config.cs</DependentUpon>
     </Compile>
+    <Compile Include="DATA_COMPLETADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DATA_COMPLETADataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DBdelete.cs" />
     <Compile Include="DBinsert.cs" />
     <Compile Include="DBretrieval.cs" />
@@ -73,6 +78,24 @@
     </Compile>
     <Compile Include="Edificio.Designer.cs">
       <DependentUpon>Edificio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eQuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eQuest.Designer.cs">
+      <DependentUpon>eQuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eQuest_Nivel_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eQuest_Nivel_2.Designer.cs">
+      <DependentUpon>eQuest_Nivel_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eQuest_Nivel_3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eQuest_Nivel_3.Designer.cs">
+      <DependentUpon>eQuest_Nivel_3.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReport.cs">
       <SubType>Form</SubType>
@@ -99,6 +122,10 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="PRUEBA_DATA_HSDataSet.cs">
+      <DependentUpon>PRUEBA_DATA_HSDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PRUEBA_DATA_HSDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,6 +147,18 @@
     </Compile>
     <Compile Include="ReporteEdificio.Designer.cs">
       <DependentUpon>ReporteEdificio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_eQuestN1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte_eQuestN1.Designer.cs">
+      <DependentUpon>Reporte_eQuestN1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTE_GENERAL_EDIFICIOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTE_GENERAL_EDIFICIOS.Designer.cs">
+      <DependentUpon>REPORTE_GENERAL_EDIFICIOS.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportSelectEdificio.cs">
       <DependentUpon>ReportSelectEdificio.xsd</DependentUpon>
@@ -153,6 +192,15 @@
     <EmbeddedResource Include="Edificio.resx">
       <DependentUpon>Edificio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="eQuest.resx">
+      <DependentUpon>eQuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eQuest_Nivel_2.resx">
+      <DependentUpon>eQuest_Nivel_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eQuest_Nivel_3.resx">
+      <DependentUpon>eQuest_Nivel_3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +213,10 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte_eQuestN1.resx">
+      <DependentUpon>Reporte_eQuestN1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGeneral_2.rdlc" />
     <EmbeddedResource Include="Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +225,9 @@
       <DependentUpon>ReporteEdificio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteGeneralSubs.rdlc" />
+    <EmbeddedResource Include="REPORTE_GENERAL_EDIFICIOS.resx">
+      <DependentUpon>REPORTE_GENERAL_EDIFICIOS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resumenes.resx">
       <DependentUpon>Resumenes.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +243,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DATA_COMPLETADataSet.xsc">
+      <DependentUpon>DATA_COMPLETADataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DATA_COMPLETADataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DATA_COMPLETADataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DATA_COMPLETADataSet.xss">
+      <DependentUpon>DATA_COMPLETADataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

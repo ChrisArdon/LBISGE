@@ -63,7 +63,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "LBISGE.ReportEdificioSelect.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 79);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1125, 483);
+            this.reportViewer1.Size = new System.Drawing.Size(1276, 483);
             this.reportViewer1.TabIndex = 0;
             // 
             // groupBox1
@@ -79,7 +79,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1125, 73);
+            this.groupBox1.Size = new System.Drawing.Size(1276, 73);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccionar edificio del cual desea solicitar información";
@@ -141,7 +141,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1125, 561);
+            this.ClientSize = new System.Drawing.Size(1276, 561);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
