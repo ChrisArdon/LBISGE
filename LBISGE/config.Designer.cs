@@ -40,7 +40,12 @@ namespace LBISGE
             this.saveBtn = new System.Windows.Forms.Button();
             this.serverTextbox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -142,20 +147,63 @@ namespace LBISGE
             this.groupBox1.Controls.Add(this.userIdTxt);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(219, 61);
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(31, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(418, 333);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Configuración de parametros de conexión para base de datos";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(495, 49);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(298, 333);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "DESARROLLADO POR";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(260, 51);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Jorge Alberto Torres Lima.\r\nIngenieria en Ciencias de la Computación.\r\nCorreo: jo" +
+    "rge2604lima@gmail.com";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 137);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(260, 51);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Christian Rodrigo Ardón Rivas.\r\nIngenieria en Ciencias de la Computación.\r\nCorreo" +
+    ":";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 203);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(260, 51);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Wilber Adonay Cruz Cruz.\r\nIngenieria en Ciencias de la Computación.\r\nCorreo:";
+            // 
             // config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(150)))), ((int)(((byte)(166)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(830, 509);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "config";
@@ -164,6 +212,8 @@ namespace LBISGE
             this.Load += new System.EventHandler(this.config_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -181,5 +231,9 @@ namespace LBISGE
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.TextBox serverTextbox;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

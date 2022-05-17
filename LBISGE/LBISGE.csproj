@@ -148,6 +148,12 @@
     <Compile Include="ReporteEdificio.Designer.cs">
       <DependentUpon>ReporteEdificio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reporte_eQuestN1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte_eQuestN1.Designer.cs">
+      <DependentUpon>Reporte_eQuestN1.cs</DependentUpon>
+    </Compile>
     <Compile Include="REPORTE_GENERAL_EDIFICIOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte_eQuestN1.resx">
+      <DependentUpon>Reporte_eQuestN1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportGeneral_2.rdlc" />
     <EmbeddedResource Include="Reporte.resx">
