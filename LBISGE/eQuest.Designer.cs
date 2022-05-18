@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BtnReport = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNombreAreaSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,15 +39,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvfinal)).BeginInit();
             this.SuspendLayout();
-            // 
-            // BtnReport
-            // 
-            this.BtnReport.Location = new System.Drawing.Point(836, 23);
-            this.BtnReport.Name = "BtnReport";
-            this.BtnReport.Size = new System.Drawing.Size(184, 35);
-            this.BtnReport.TabIndex = 11;
-            this.BtnReport.Text = "Generar reporte eQuest";
-            this.BtnReport.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -119,7 +109,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1313, 696);
-            this.Controls.Add(this.BtnReport);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.dgv1);
@@ -138,7 +127,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button BtnReport;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNombreAreaSearch;
         private System.Windows.Forms.Label label1;

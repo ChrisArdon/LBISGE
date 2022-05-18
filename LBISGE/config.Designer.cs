@@ -41,9 +41,9 @@ namespace LBISGE
             this.serverTextbox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -168,15 +168,15 @@ namespace LBISGE
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "DESARROLLADO POR";
             // 
-            // label5
+            // label7
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(260, 51);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Jorge Alberto Torres Lima.\r\nIngenieria en Ciencias de la Computación.\r\nCorreo: jo" +
-    "rge2604lima@gmail.com";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 203);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(260, 51);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Wilber Adonay Cruz Cruz.\r\nIngenieria en Ciencias de la Computación.\r\nCorreo: wilb" +
+    "ercruz2@hotmail.com";
             // 
             // label6
             // 
@@ -186,16 +186,17 @@ namespace LBISGE
             this.label6.Size = new System.Drawing.Size(260, 51);
             this.label6.TabIndex = 1;
             this.label6.Text = "Christian Rodrigo Ardón Rivas.\r\nIngenieria en Ciencias de la Computación.\r\nCorreo" +
-    ":";
+    ": rockrisbl@gmail.com";
             // 
-            // label7
+            // label5
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 203);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(260, 51);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Wilber Adonay Cruz Cruz.\r\nIngenieria en Ciencias de la Computación.\r\nCorreo:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(260, 51);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Jorge Alberto Torres Lima.\r\nIngenieria en Ciencias de la Computación.\r\nCorreo: jo" +
+    "rge2604lima@gmail.com";
             // 
             // config
             // 

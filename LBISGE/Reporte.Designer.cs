@@ -31,36 +31,34 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.sp_ConsumoPorSubSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PRUEBA_DATA_HSDataSet = new LBISGE.PRUEBA_DATA_HSDataSet();
+            this.LBISGE_DATADataSet = new LBISGE.LBISGE_DATADataSet();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.sp_ConsumoPorSubSTableAdapter = new LBISGE.PRUEBA_DATA_HSDataSetTableAdapters.sp_ConsumoPorSubSTableAdapter();
+            this.sp_ConsumoPorSubSTableAdapter = new LBISGE.LBISGE_DATADataSetTableAdapters.sp_ConsumoPorSubSTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.sp_ConsumoPorSubSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PRUEBA_DATA_HSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LBISGE_DATADataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // sp_ConsumoPorSubSBindingSource
             // 
             this.sp_ConsumoPorSubSBindingSource.DataMember = "sp_ConsumoPorSubS";
-            this.sp_ConsumoPorSubSBindingSource.DataSource = this.PRUEBA_DATA_HSDataSet;
-            this.sp_ConsumoPorSubSBindingSource.CurrentChanged += new System.EventHandler(this.sp_ConsumoPorSubSBindingSource_CurrentChanged);
+            this.sp_ConsumoPorSubSBindingSource.DataSource = this.LBISGE_DATADataSet;
             // 
-            // PRUEBA_DATA_HSDataSet
+            // LBISGE_DATADataSet
             // 
-            this.PRUEBA_DATA_HSDataSet.DataSetName = "PRUEBA_DATA_HSDataSet";
-            this.PRUEBA_DATA_HSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.LBISGE_DATADataSet.DataSetName = "LBISGE_DATADataSet";
+            this.LBISGE_DATADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "Subs_General_Report";
+            reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.sp_ConsumoPorSubSBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "LBISGE.ReporteGeneralSubs.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "LBISGE.ReportGeneralSubs.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(953, 524);
             this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // sp_ConsumoPorSubSTableAdapter
             // 
@@ -72,13 +70,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 524);
             this.Controls.Add(this.reportViewer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Reporte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte";
             this.Load += new System.EventHandler(this.Reporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sp_ConsumoPorSubSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PRUEBA_DATA_HSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LBISGE_DATADataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -87,7 +84,7 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource sp_ConsumoPorSubSBindingSource;
-        private PRUEBA_DATA_HSDataSet PRUEBA_DATA_HSDataSet;
-        private PRUEBA_DATA_HSDataSetTableAdapters.sp_ConsumoPorSubSTableAdapter sp_ConsumoPorSubSTableAdapter;
+        private LBISGE_DATADataSet LBISGE_DATADataSet;
+        private LBISGE_DATADataSetTableAdapters.sp_ConsumoPorSubSTableAdapter sp_ConsumoPorSubSTableAdapter;
     }
 }

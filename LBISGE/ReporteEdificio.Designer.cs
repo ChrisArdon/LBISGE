@@ -29,49 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.SubsistemaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ReportSelectEdificio = new LBISGE.ReportSelectEdificio();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Reporte2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.Buscar = new System.Windows.Forms.Button();
+            this.ReportEdificio = new System.Windows.Forms.Button();
             this.cbEdificio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.SubsistemaTableAdapter = new LBISGE.ReportSelectEdificioTableAdapters.SubsistemaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.SubsistemaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReportSelectEdificio)).BeginInit();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.LBISGE_DATADataSet = new LBISGE.LBISGE_DATADataSet();
+            this.Subsistema1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Subsistema1TableAdapter = new LBISGE.LBISGE_DATADataSetTableAdapters.Subsistema1TableAdapter();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LBISGE_DATADataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Subsistema1BindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // SubsistemaBindingSource
-            // 
-            this.SubsistemaBindingSource.DataMember = "Subsistema";
-            this.SubsistemaBindingSource.DataSource = this.ReportSelectEdificio;
-            // 
-            // ReportSelectEdificio
-            // 
-            this.ReportSelectEdificio.DataSetName = "ReportSelectEdificio";
-            this.ReportSelectEdificio.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reportViewer1
-            // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.SubsistemaBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "LBISGE.ReportEdificioSelect.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 79);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1276, 483);
-            this.reportViewer1.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.Reporte2);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.Buscar);
+            this.groupBox1.Controls.Add(this.ReportEdificio);
             this.groupBox1.Controls.Add(this.cbEdificio);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -80,19 +57,9 @@
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1276, 73);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccionar edificio del cual desea solicitar información";
-            // 
-            // Reporte2
-            // 
-            this.Reporte2.Location = new System.Drawing.Point(592, 23);
-            this.Reporte2.Name = "Reporte2";
-            this.Reporte2.Size = new System.Drawing.Size(221, 37);
-            this.Reporte2.TabIndex = 25;
-            this.Reporte2.Text = "Reporte General por subsitema";
-            this.Reporte2.UseVisualStyleBackColor = true;
-            this.Reporte2.Click += new System.EventHandler(this.Reporte2_Click);
             // 
             // label9
             // 
@@ -103,15 +70,15 @@
             this.label9.TabIndex = 22;
             this.label9.Text = "Edificio :";
             // 
-            // Buscar
+            // ReportEdificio
             // 
-            this.Buscar.Location = new System.Drawing.Point(332, 23);
-            this.Buscar.Name = "Buscar";
-            this.Buscar.Size = new System.Drawing.Size(231, 37);
-            this.Buscar.TabIndex = 24;
-            this.Buscar.Text = "Generar reporte de edificio";
-            this.Buscar.UseVisualStyleBackColor = true;
-            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
+            this.ReportEdificio.Location = new System.Drawing.Point(332, 23);
+            this.ReportEdificio.Name = "ReportEdificio";
+            this.ReportEdificio.Size = new System.Drawing.Size(231, 37);
+            this.ReportEdificio.TabIndex = 24;
+            this.ReportEdificio.Text = "Generar reporte de edificio";
+            this.ReportEdificio.UseVisualStyleBackColor = true;
+            this.ReportEdificio.Click += new System.EventHandler(this.ReportEdificio_Click);
             // 
             // cbEdificio
             // 
@@ -132,42 +99,61 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "label1";
             // 
-            // SubsistemaTableAdapter
+            // reportViewer1
             // 
-            this.SubsistemaTableAdapter.ClearBeforeFill = true;
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.Subsistema1BindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "LBISGE.ReporteEdificioSelect.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 75);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(1276, 485);
+            this.reportViewer1.TabIndex = 3;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            // 
+            // LBISGE_DATADataSet
+            // 
+            this.LBISGE_DATADataSet.DataSetName = "LBISGE_DATADataSet";
+            this.LBISGE_DATADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Subsistema1BindingSource
+            // 
+            this.Subsistema1BindingSource.DataMember = "Subsistema1";
+            this.Subsistema1BindingSource.DataSource = this.LBISGE_DATADataSet;
+            // 
+            // Subsistema1TableAdapter
+            // 
+            this.Subsistema1TableAdapter.ClearBeforeFill = true;
             // 
             // ReporteEdificio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1276, 561);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportViewer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Controls.Add(this.groupBox1);
             this.Name = "ReporteEdificio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReporteEdificio";
             this.Load += new System.EventHandler(this.ReporteEdificio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SubsistemaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReportSelectEdificio)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LBISGE_DATADataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Subsistema1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button Buscar;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.BindingSource SubsistemaBindingSource;
-        private ReportSelectEdificio ReportSelectEdificio;
-        private ReportSelectEdificioTableAdapters.SubsistemaTableAdapter SubsistemaTableAdapter;
-        private System.Windows.Forms.Button Reporte2;
+        private System.Windows.Forms.Button ReportEdificio;
         private System.Windows.Forms.ComboBox cbEdificio;
         private System.Windows.Forms.Label label1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource Subsistema1BindingSource;
+        private LBISGE_DATADataSet LBISGE_DATADataSet;
+        private LBISGE_DATADataSetTableAdapters.Subsistema1TableAdapter Subsistema1TableAdapter;
     }
 }

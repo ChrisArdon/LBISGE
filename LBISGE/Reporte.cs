@@ -19,20 +19,10 @@ namespace LBISGE
 
         private void Reporte_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'PRUEBA_DATA_HSDataSet.sp_ConsumoPorSubS' Puede moverla o quitarla según sea necesario.
-            this.sp_ConsumoPorSubSTableAdapter.Fill(this.PRUEBA_DATA_HSDataSet.sp_ConsumoPorSubS);
+            // TODO: esta línea de código carga datos en la tabla 'LBISGE_DATADataSet.sp_ConsumoPorSubS' Puede moverla o quitarla según sea necesario.
+            this.sp_ConsumoPorSubSTableAdapter.Fill(this.LBISGE_DATADataSet.sp_ConsumoPorSubS);
 
             this.reportViewer1.RefreshReport();
-        }
-
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sp_ConsumoPorSubSBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

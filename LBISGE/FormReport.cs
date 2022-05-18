@@ -46,5 +46,10 @@ namespace LBISGE
             Form eQuestN2 = new eQuest_Nivel_3();
             eQuestN2.Show();
         }
+
+        private void FormReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
