@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-
 namespace LBISGE
 {
     public partial class ReporteEdificio : Form
@@ -31,7 +30,7 @@ namespace LBISGE
                 cbEdificio.Items.Insert(0, "Seleccionar...");
 
                 SqlCommand cmd = new SqlCommand("Select*from Edificios", MainClass.con);
-                
+
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -44,24 +43,31 @@ namespace LBISGE
                 MainClass.con.Close();
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
-            
 
             //this.reportViewer1.RefreshReport();
         }
 
-        private void Buscar_Click(object sender, EventArgs e)
+        private void ReportEdificio_Click(object sender, EventArgs e)
         {
 
-            
-            // TODO: esta línea de código carga datos en la tabla 'ReportSelectEdificio.Subsistema' Puede moverla o quitarla según sea necesario.
-            this.SubsistemaTableAdapter.FiltroEdificio(this.ReportSelectEdificio.Subsistema, label1.Text);
-            reportViewer1.RefreshReport();
+            this.Subsistema1TableAdapter.FiltroEdificio(this.LBISGE_DATADataSet.Subsistema1, label1.Text);
+            this.reportViewer1.RefreshReport();
+     
+
         }
 
-        private void Reporte2_Click(object sender, EventArgs e)
+        private void reportViewer1_Load(object sender, EventArgs e)
         {
-            this.SubsistemaTableAdapter.VerTodos(this.ReportSelectEdificio.Subsistema);
-            reportViewer1.RefreshReport();
+
+        }
+
+        private void ReporteGeneral_Click(object sender, EventArgs e)
+        {
+
+            this.Subsistema1TableAdapter.VerTodos(this.LBISGE_DATADataSet.Subsistema1);
+            this.reportViewer1.RefreshReport();
+     
+            
         }
     }
 }

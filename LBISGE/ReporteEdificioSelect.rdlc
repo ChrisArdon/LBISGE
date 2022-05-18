@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>6.65396cm</Width>
+              <Width>7.67292cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>4.00812cm</Width>
@@ -14,7 +14,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.78521cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -27,15 +27,12 @@
                             <TextRun>
                               <Value>Nombre De Subsistema</Value>
                               <Style>
-                                <FontFamily>Arial Black</FontFamily>
                                 <FontSize>12pt</FontSize>
-                                <TextDecoration>None</TextDecoration>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -63,14 +60,12 @@
                             <TextRun>
                               <Value>Consumo Total</Value>
                               <Style>
-                                <FontFamily>Arial Black</FontFamily>
                                 <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
+                          <Style />
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -90,7 +85,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.78521cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -172,44 +167,18 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>Subs_General_Report</DataSetName>
-        <SortExpressions>
-          <SortExpression>
-            <Value>=Fields!ConsumoTotal.Value</Value>
-            <Direction>Descending</Direction>
-          </SortExpression>
-        </SortExpressions>
-        <Top>1.90183cm</Top>
-        <Left>0.40724cm</Left>
-        <Height>1.57042cm</Height>
-        <Width>10.66208cm</Width>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.7112cm</Top>
+        <Left>1.13454cm</Left>
+        <Height>1.2cm</Height>
+        <Width>11.68104cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
-          <TopBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </TopBorder>
-          <BottomBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </BottomBorder>
-          <LeftBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </LeftBorder>
-          <RightBorder>
-            <Color>Black</Color>
-            <Style>Solid</Style>
-            <Width>1pt</Width>
-          </RightBorder>
         </Style>
       </Tablix>
-      <Chart Name="GraficoConsumoTotal">
+      <Chart Name="Chart1">
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
@@ -227,8 +196,7 @@
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!ConsumoTotal.Value</Value>
-                  <Direction>Descending</Direction>
+                  <Value>=Fields!NombreDeSubsistema.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <Label>=Fields!NombreDeSubsistema.Value</Label>
@@ -245,11 +213,8 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
-                    <UseValueAsLabel>true</UseValueAsLabel>
                   </ChartDataLabel>
-                  <Style>
-                    <Border />
-                  </Style>
+                  <Style />
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -268,16 +233,16 @@
               </ChartEmptyPoints>
               <CustomProperties>
                 <CustomProperty>
-                  <Name>PointWidth</Name>
-                  <Value>1</Value>
-                </CustomProperty>
-                <CustomProperty>
                   <Name>MaxPixelPointWidth</Name>
                   <Value>20000</Value>
                 </CustomProperty>
                 <CustomProperty>
                   <Name>PixelPointWidth</Name>
                   <Value>350</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PointWidth</Name>
+                  <Value>1</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -298,7 +263,9 @@
                 </Style>
                 <ChartAxisTitle>
                   <Caption>Subsistema</Caption>
-                  <Style />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
                 </ChartAxisTitle>
                 <ChartMajorGridLines>
                   <Enabled>False</Enabled>
@@ -370,8 +337,10 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Consumo Total</Caption>
-                  <Style />
+                  <Caption>Consumo</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
                 </ChartAxisTitle>
                 <ChartMajorGridLines>
                   <Style>
@@ -446,7 +415,6 @@
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontSize>8pt</FontSize>
             </Style>
-            <DockOutsideChartArea>true</DockOutsideChartArea>
             <ChartLegendTitle>
               <Caption />
               <Style>
@@ -461,10 +429,9 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Consumo Total</Caption>
+            <Caption>REPORTE GENERAL EDIFICIO</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
-              <FontSize>12pt</FontSize>
               <FontWeight>Bold</FontWeight>
               <TextAlign>General</TextAlign>
               <VerticalAlign>Top</VerticalAlign>
@@ -487,11 +454,11 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>Subs_General_Report</DataSetName>
-        <Top>1.90183cm</Top>
-        <Left>11.85078cm</Left>
-        <Height>10.45042cm</Height>
-        <Width>20.14708cm</Width>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.7112cm</Top>
+        <Left>14.25787cm</Left>
+        <Height>11.40292cm</Height>
+        <Width>20.49104cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -503,18 +470,15 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>5.39434in</Height>
+    <Height>6.45784in</Height>
     <Style>
-      <Border>
-        <Style>Solid</Style>
-      </Border>
       <BackgroundColor>#bbffee</BackgroundColor>
     </Style>
   </Body>
-  <Width>12.93091in</Width>
+  <Width>14.13901in</Width>
   <Page>
     <PageHeader>
-      <Height>2.16958cm</Height>
+      <Height>2.54cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -525,25 +489,21 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>REPORTE GENERAL DE CONSUMO POR SUBSISTEMA</Value>
+                  <Value>Reporte General por Edificio</Value>
                   <Style>
                     <FontFamily>Arial Black</FontFamily>
                     <FontSize>14pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextDecoration>Underline</TextDecoration>
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
+              <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>0.76412cm</Top>
-          <Left>7.0612cm</Left>
+          <Top>0.82448cm</Top>
+          <Left>13.79613cm</Left>
           <Height>0.89104cm</Height>
-          <Width>15.67625cm</Width>
+          <Width>8.32083cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -557,7 +517,7 @@
       </ReportItems>
       <Style>
         <Border>
-          <Style>Solid</Style>
+          <Style>None</Style>
         </Border>
         <BackgroundColor>#83ddff</BackgroundColor>
       </Style>
@@ -569,26 +529,22 @@
     <TopMargin>2cm</TopMargin>
     <BottomMargin>2cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
-    <Style>
-      <Border>
-        <Style>None</Style>
-      </Border>
-    </Style>
+    <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="PRUEBA_DATA_HSDataSet">
+    <DataSource Name="LBISGE_DATADataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>f11222f6-34cd-423b-89fb-94b61834780d</rd:DataSourceID>
+      <rd:DataSourceID>2e5b1d11-c69e-48f8-a3e3-7e138d0c8d59</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Subs_General_Report">
+    <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>PRUEBA_DATA_HSDataSet</DataSourceName>
+        <DataSourceName>LBISGE_DATADataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -602,15 +558,15 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>PRUEBA_DATA_HSDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Jorge\Documents\HORAS SOCIALES\Git-LBISGE\LBISGE\LBISGE\PRUEBA_DATA_HSDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>sp_ConsumoPorSubS</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:DataSetName>LBISGE_DATADataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Jorge\Desktop\PRUEBA\LBISGE\LBISGE\LBISGE_DATADataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Subsistema1</rd:TableName>
+        <rd:TableAdapterFillMethod>FiltroEdificio</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>sp_ConsumoPorSubSTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>Subsistema1TableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>5fc7bf83-71d1-4a8e-9108-e38b494edb58</rd:ReportID>
+  <rd:ReportID>690b98bc-6994-483b-8b68-3409f593bb25</rd:ReportID>
 </Report>

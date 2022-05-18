@@ -63,11 +63,6 @@
     <Compile Include="config.Designer.cs">
       <DependentUpon>config.cs</DependentUpon>
     </Compile>
-    <Compile Include="DATA_COMPLETADataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DATA_COMPLETADataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DBdelete.cs" />
     <Compile Include="DBinsert.cs" />
     <Compile Include="DBretrieval.cs" />
@@ -109,6 +104,15 @@
     <Compile Include="InformaciónArea.Designer.cs">
       <DependentUpon>InformaciónArea.cs</DependentUpon>
     </Compile>
+    <Compile Include="LBISGE_DATADataSet.cs">
+      <DependentUpon>LBISGE_DATADataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LBISGE_DATADataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LBISGE_DATADataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MainClass.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -121,20 +125,6 @@
     </Compile>
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PRUEBA_DATA_HSDataSet.cs">
-      <DependentUpon>PRUEBA_DATA_HSDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="PRUEBA_DATA_HSDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PRUEBA_DATA_HSDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="PRUEBA_DATA_HSDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PRUEBA_DATA_HSDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reporte.cs">
       <SubType>Form</SubType>
@@ -159,15 +149,6 @@
     </Compile>
     <Compile Include="REPORTE_GENERAL_EDIFICIOS.Designer.cs">
       <DependentUpon>REPORTE_GENERAL_EDIFICIOS.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReportSelectEdificio.cs">
-      <DependentUpon>ReportSelectEdificio.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ReportSelectEdificio.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReportSelectEdificio.xsd</DependentUpon>
     </Compile>
     <Compile Include="Resumenes.cs">
       <SubType>Form</SubType>
@@ -213,21 +194,20 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte_eQuestN1.resx">
-      <DependentUpon>Reporte_eQuestN1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReportGeneral_2.rdlc" />
     <EmbeddedResource Include="Reporte.resx">
       <DependentUpon>Reporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportEdificioSelect.rdlc" />
     <EmbeddedResource Include="ReporteEdificio.resx">
       <DependentUpon>ReporteEdificio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReporteGeneralSubs.rdlc" />
+    <EmbeddedResource Include="ReporteEdificioSelect.rdlc" />
+    <EmbeddedResource Include="Reporte_eQuestN1.resx">
+      <DependentUpon>Reporte_eQuestN1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORTE_GENERAL_EDIFICIOS.resx">
       <DependentUpon>REPORTE_GENERAL_EDIFICIOS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportGeneralSubs.rdlc" />
     <EmbeddedResource Include="Resumenes.resx">
       <DependentUpon>Resumenes.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,16 +223,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DATA_COMPLETADataSet.xsc">
-      <DependentUpon>DATA_COMPLETADataSet.xsd</DependentUpon>
+    <None Include="LBISGE_DATADataSet.xsc">
+      <DependentUpon>LBISGE_DATADataSet.xsd</DependentUpon>
     </None>
-    <None Include="DATA_COMPLETADataSet.xsd">
+    <None Include="LBISGE_DATADataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DATA_COMPLETADataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>LBISGE_DATADataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DATA_COMPLETADataSet.xss">
-      <DependentUpon>DATA_COMPLETADataSet.xsd</DependentUpon>
+    <None Include="LBISGE_DATADataSet.xss">
+      <DependentUpon>LBISGE_DATADataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -263,39 +243,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="PRUEBA_DATA_HSDataSet.xsc">
-      <DependentUpon>PRUEBA_DATA_HSDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="PRUEBA_DATA_HSDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PRUEBA_DATA_HSDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PRUEBA_DATA_HSDataSet.xss">
-      <DependentUpon>PRUEBA_DATA_HSDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="PRUEBA_DATA_HSDataSet1.xsc">
-      <DependentUpon>PRUEBA_DATA_HSDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="PRUEBA_DATA_HSDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PRUEBA_DATA_HSDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="PRUEBA_DATA_HSDataSet1.xss">
-      <DependentUpon>PRUEBA_DATA_HSDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="ReportSelectEdificio.xsc">
-      <DependentUpon>ReportSelectEdificio.xsd</DependentUpon>
-    </None>
-    <None Include="ReportSelectEdificio.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ReportSelectEdificio.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="ReportSelectEdificio.xss">
-      <DependentUpon>ReportSelectEdificio.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -52,5 +52,15 @@ namespace LBISGE.Properties {
                 return ((string)(this["DATA_COMPLETAConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=LBISGE_DATA;Integrated Security=True")]
+        public string LBISGE_DATAConnectionString {
+            get {
+                return ((string)(this["LBISGE_DATAConnectionString"]));
+            }
+        }
     }
 }

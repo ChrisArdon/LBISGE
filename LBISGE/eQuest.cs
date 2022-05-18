@@ -78,5 +78,10 @@ namespace LBISGE
             FiltrarDatosDatagridview(dgv1, nombreArea, txtNombreAreaSearch);
         }
 
+        private void BtnReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
