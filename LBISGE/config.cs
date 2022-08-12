@@ -86,5 +86,28 @@ namespace LBISGE
                 passwordTxt.Enabled = true;
             }
         }
+
+        private void Btn_Delete_DB_Click(object sender, EventArgs e)
+        {
+            if(TxtUser.Text =="Administrador" && TxtPass.Text =="LBISGE") 
+            {
+                try
+            {
+                //Elimanos los datos de las tablas
+                    DBdelete d = new DBdelete();
+                    d.delete_Datos_Table();
+                    
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex.ToString(), "ERROR");
+                    MainClass.con.Close();
+            }
+            
+            
+            }
+                else{ MessageBox.Show("Porfavor ingrese las credenciales correctas","ERROR"); }
+            
+        }
     }
 }

@@ -30,5 +30,25 @@ namespace LBISGE
                 MainClass.ShowMSG(ex.Message, "Error...", "Error");
             }
         }
+
+        public void delete_Datos_Table()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SPdeleteinfo", MainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                
+                MainClass.con.Open();
+                cmd.ExecuteNonQuery();
+                MainClass.con.Close();
+                MainClass.ShowMSG("Datos eliminados correctamente", "Eliminado...", "Success");
+            }
+            catch (Exception ex)
+            {
+                MainClass.con.Close();
+                MainClass.ShowMSG(ex.Message, "Error...", "Error");
+            }
+        }
     }
 }

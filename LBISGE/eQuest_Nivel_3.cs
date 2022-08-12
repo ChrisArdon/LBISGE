@@ -18,7 +18,7 @@ namespace LBISGE
             InitializeComponent();
         }
 
-        string nombreArea = "NombreArea";
+        string nombreArea = "Nombre";
         private void eQuest_Nivel_3_Load(object sender, EventArgs e)
         {
             //Mostramos datos eQuest Nivel 3

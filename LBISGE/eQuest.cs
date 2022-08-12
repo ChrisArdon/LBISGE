@@ -54,7 +54,7 @@ namespace LBISGE
             //MessageBox.Show(str);
         }
 
-        string nombreArea = "NombreArea";
+        string nombreArea = "Nombre";
 
         private void dgv1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {

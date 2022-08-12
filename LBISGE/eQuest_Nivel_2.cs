@@ -46,7 +46,7 @@ namespace LBISGE
             //MessageBox.Show(str);
         }
 
-        string nombreArea = "NombreArea";
+        string nombreArea = "Nombre";
 
         private void eQuest_Nivel_2_Load(object sender, EventArgs e)
         {
