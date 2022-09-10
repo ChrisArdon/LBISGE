@@ -43,8 +43,9 @@
             this.BtnMinimizar = new System.Windows.Forms.PictureBox();
             this.BtnMaximizar = new System.Windows.Forms.PictureBox();
             this.BtnCerrar = new System.Windows.Forms.PictureBox();
-            this.PanelContenedor = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.PanelContenedor = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PanelMenu.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -53,8 +54,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).BeginInit();
-            this.PanelContenedor.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.PanelContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -257,6 +259,7 @@
             this.panel1.Size = new System.Drawing.Size(1083, 32);
             this.panel1.TabIndex = 1;
             this.panel1.TabStop = true;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // BtnMinimizar
             // 
@@ -297,17 +300,6 @@
             this.BtnCerrar.TabStop = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
-            // PanelContenedor
-            // 
-            this.PanelContenedor.BackColor = System.Drawing.Color.Transparent;
-            this.PanelContenedor.Controls.Add(this.pictureBox2);
-            this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenedor.Location = new System.Drawing.Point(3, 3);
-            this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(826, 749);
-            this.PanelContenedor.TabIndex = 2;
-            this.PanelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -317,20 +309,43 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.PanelContenedor, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(251, 31);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(248, 31);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(832, 755);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(835, 758);
             this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // PanelContenedor
+            // 
+            this.PanelContenedor.BackColor = System.Drawing.Color.Transparent;
+            this.PanelContenedor.Controls.Add(this.pictureBox3);
+            this.PanelContenedor.Controls.Add(this.pictureBox2);
+            this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelContenedor.Location = new System.Drawing.Point(0, 0);
+            this.PanelContenedor.Margin = new System.Windows.Forms.Padding(0);
+            this.PanelContenedor.Name = "PanelContenedor";
+            this.PanelContenedor.Size = new System.Drawing.Size(835, 758);
+            this.PanelContenedor.TabIndex = 2;
+            this.PanelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelContenedor_Paint);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(835, 758);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(-1190, 44);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(826, 751);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -356,8 +371,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCerrar)).EndInit();
-            this.PanelContenedor.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.PanelContenedor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -373,14 +389,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel PanelContenedor;
         private System.Windows.Forms.PictureBox BtnMinimizar;
         private System.Windows.Forms.PictureBox BtnMaximizar;
         private System.Windows.Forms.PictureBox BtnCerrar;
         private System.Windows.Forms.Button Configuración;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button BtnReportes;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel PanelContenedor;
+        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
